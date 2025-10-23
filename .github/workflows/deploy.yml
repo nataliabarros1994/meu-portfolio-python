@@ -1,4 +1,6 @@
-name: Deploy to GitHub Pages
+cat > .github/workflows/deploy.yml << 'EOF'
+name: Deploy Python Portfolio to GitHub Pages
+
 on:
   push:
     branches: [ main ]
@@ -37,7 +39,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
-          path: './docs'
+          path: ./docs
           
   deploy:
     environment:
@@ -49,3 +51,4 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
+EOF
