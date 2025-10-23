@@ -15,8 +15,11 @@ jobs:
       - run: pip install -r requirements.txt
       - run: python build_portfolio.py
       - run: python freeze.py
+      # 🧹 Limpa quaisquer arquivos .py gerados dentro de docs/
+      - run: find ./docs -name "*.py" -delete
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./docs
+
