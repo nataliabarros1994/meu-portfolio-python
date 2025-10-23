@@ -1,0 +1,72 @@
+name: Update Projects Daily
+
+on:
+  schedule:
+    # Executa diariamente à meia-noite (UTC)
+    - cron: '0 0 * * *'
+  workflow_dispatch:  # Permite execução manual
+
+permissions:
+  contents: write
+
+jobs:
+  update-projects:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout código
+        uses: actions/checkout@v4
+
+      - name: 🐍 Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: 📦 Instalar dependências
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: 🔄 Buscar novos projetos do GitHub
+        run: |
+          echo "🔍 Buscando projetos do GitHub..."
+          python build_portfolio.py --force
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: ❄️  Regenerar site estático
+        run: |
+          echo "🔨 Gerando site estático..."
+          python freeze.py
+
+      - name: 📊 Verificar mudanças
+        id: check_changes
+        run: |
+          if [[ -n $(git status -s) ]]; then
+            echo "changes=true" >> $GITHUB_OUTPUT
+            echo "✅ Mudanças detectadas!"
+          else
+            echo "changes=false" >> $GITHUB_OUTPUT
+            echo "ℹ️  Nenhuma mudança detectada"
+          fi
+
+      - name: 💾 Commit e Push
+        if: steps.check_changes.outputs.changes == 'true'
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add docs/ projects_data.json static/data/projects.json
+          git commit -m "🤖 Auto-update: Projetos atualizados $(date +'%Y-%m-%d %H:%M')"
+          git push
+
+      - name: ✅ Atualização completa
+        if: steps.check_changes.outputs.changes == 'true'
+        run: |
+          echo "✨ Projetos atualizados e site republicado!"
+          echo "🌐 https://nataliabarros1994.github.io/portfolio-python/"
+
+      - name: ℹ️  Sem mudanças
+        if: steps.check_changes.outputs.changes == 'false'
+        run: |
+          echo "ℹ️  Nenhum projeto novo ou atualizado"

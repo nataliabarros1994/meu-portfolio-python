@@ -1,0 +1,246 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ nome_portfolio }} - Desenvolvedora Python Full Stack{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="container">
+        <div class="row align-items-center min-vh-100">
+            <div class="col-lg-6 text-center text-lg-start">
+                <div class="hero-content" data-aos="fade-right">
+                    <span class="badge bg-primary-subtle text-primary mb-3 px-3 py-2">
+                        <i class="bi bi-circle-fill pulse me-2" style="font-size: 8px;"></i>
+                        Disponível para projetos
+                    </span>
+                    <h1 class="display-3 fw-bold mb-3">
+                        Olá, eu sou<br>
+                        <span class="text-primary">{{ nome_portfolio }}</span>
+                    </h1>
+                    <h2 class="h3 text-muted mb-4">{{ titulo_portfolio }}</h2>
+                    <p class="lead mb-4 text-muted">
+                        Especializada em criar aplicações web robustas e escaláveis usando Python, Flask e tecnologias modernas.
+                        Transformo ideias em soluções digitais eficientes.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="{{ url_for('projetos') }}" class="btn btn-primary btn-lg me-3 mb-3">
+                            <i class="bi bi-folder-check"></i> Ver Projetos
+                        </a>
+                        <a href="{{ url_for('contato') }}" class="btn btn-outline-primary btn-lg mb-3">
+                            <i class="bi bi-envelope"></i> Entre em Contato
+                        </a>
+                    </div>
+                    <div class="hero-stats mt-5">
+                        <div class="row text-center">
+                            <div class="col-4">
+                                <h3 class="fw-bold text-primary mb-0">{{ total_projetos }}+</h3>
+                                <p class="text-muted small mb-0">Projetos</p>
+                            </div>
+                            <div class="col-4">
+                                <h3 class="fw-bold text-primary mb-0">3+</h3>
+                                <p class="text-muted small mb-0">Anos</p>
+                            </div>
+                            <div class="col-4">
+                                <h3 class="fw-bold text-primary mb-0">15+</h3>
+                                <p class="text-muted small mb-0">Tecnologias</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 text-center" data-aos="fade-left">
+                <div class="hero-image">
+                    <div class="code-window">
+                        <div class="code-window-header">
+                            <span class="dot dot-red"></span>
+                            <span class="dot dot-yellow"></span>
+                            <span class="dot dot-green"></span>
+                            <span class="code-title">portfolio.py</span>
+                        </div>
+                        <div class="code-window-body">
+                            <pre><code><span class="code-keyword">from</span> flask <span class="code-keyword">import</span> Flask
+
+<span class="code-keyword">class</span> <span class="code-class">Developer</span>:
+    <span class="code-keyword">def</span> <span class="code-function">__init__</span>(<span class="code-param">self</span>):
+        <span class="code-param">self</span>.nome = <span class="code-string">"{{ nome_portfolio }}"</span>
+        <span class="code-param">self</span>.skills = [
+            <span class="code-string">"Python"</span>, <span class="code-string">"Flask"</span>,
+            <span class="code-string">"Django"</span>, <span class="code-string">"PostgreSQL"</span>
+        ]
+
+    <span class="code-keyword">def</span> <span class="code-function">criar_solucoes</span>(<span class="code-param">self</span>):
+        <span class="code-keyword">return</span> <span class="code-string">"Código limpo e eficiente"</span></code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="hero-scroll">
+        <a href="#projetos-destaque" class="scroll-down">
+            <i class="bi bi-chevron-down"></i>
+        </a>
+    </div>
+</section>
+
+<!-- Projetos em Destaque -->
+<section id="projetos-destaque" class="py-5 bg-light">
+    <div class="container">
+        <div class="section-header text-center mb-5" data-aos="fade-up">
+            <span class="badge bg-primary-subtle text-primary mb-3">Portfolio</span>
+            <h2 class="display-5 fw-bold mb-3">Projetos em Destaque</h2>
+            <p class="lead text-muted">Confira alguns dos meus trabalhos mais recentes</p>
+        </div>
+
+        {% if projetos %}
+        <div class="row g-4">
+            {% for projeto in projetos %}
+            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="{{ loop.index * 100 }}">
+                <div class="project-card h-100">
+                    <div class="project-image">
+                        <img src="{{ url_for('static', filename='images/' + projeto.imagem) }}"
+                             alt="{{ projeto.titulo }}"
+                             onerror="this.src='https://via.placeholder.com/400x250/007bff/ffffff?text={{ projeto.titulo }}'">
+                        <div class="project-overlay">
+                            <a href="{{ url_for('projeto_detalhe', id=projeto.id) }}" class="btn btn-light">
+                                <i class="bi bi-eye"></i> Ver Detalhes
+                            </a>
+                        </div>
+                        {% if projeto.destaque %}
+                        <span class="badge bg-warning position-absolute top-0 end-0 m-3">
+                            <i class="bi bi-star-fill"></i> Destaque
+                        </span>
+                        {% endif %}
+                    </div>
+                    <div class="project-content">
+                        <div class="project-category mb-2">
+                            <span class="badge bg-primary-subtle text-primary">{{ projeto.categoria }}</span>
+                        </div>
+                        <h4 class="project-title">{{ projeto.titulo }}</h4>
+                        <p class="project-description">
+                            {{ projeto.descricao_curta or projeto.descricao[:100] + '...' }}
+                        </p>
+                        <div class="project-tech mb-3">
+                            {% for tech in projeto.tecnologias.split(',')[:4] %}
+                            <span class="tech-badge">{{ tech.strip() }}</span>
+                            {% endfor %}
+                        </div>
+                        <div class="project-links">
+                            {% if projeto.github_url %}
+                            <a href="{{ projeto.github_url }}" target="_blank" class="btn btn-sm btn-outline-dark me-2">
+                                <i class="bi bi-github"></i> Código
+                            </a>
+                            {% endif %}
+                            {% if projeto.demo_url %}
+                            <a href="{{ projeto.demo_url }}" target="_blank" class="btn btn-sm btn-outline-primary">
+                                <i class="bi bi-box-arrow-up-right"></i> Demo
+                            </a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="text-center mt-5" data-aos="fade-up">
+            <a href="{{ url_for('projetos') }}" class="btn btn-primary btn-lg">
+                Ver Todos os Projetos <i class="bi bi-arrow-right ms-2"></i>
+            </a>
+        </div>
+        {% else %}
+        <div class="text-center py-5">
+            <i class="bi bi-folder2-open display-1 text-muted"></i>
+            <p class="lead text-muted mt-3">Nenhum projeto em destaque no momento.</p>
+            <a href="{{ url_for('add_project') }}" class="btn btn-primary">Adicionar Projeto</a>
+        </div>
+        {% endif %}
+    </div>
+</section>
+
+<!-- Tecnologias -->
+<section class="py-5">
+    <div class="container">
+        <div class="section-header text-center mb-5" data-aos="fade-up">
+            <span class="badge bg-primary-subtle text-primary mb-3">Skills</span>
+            <h2 class="display-5 fw-bold mb-3">Tecnologias</h2>
+            <p class="lead text-muted">Ferramentas e linguagens que domino</p>
+        </div>
+
+        <div class="row g-4" data-aos="fade-up">
+            <div class="col-6 col-md-3 text-center">
+                <div class="tech-icon-card">
+                    <i class="bi bi-filetype-py display-3 text-primary"></i>
+                    <h6 class="mt-3 fw-bold">Python</h6>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 text-center">
+                <div class="tech-icon-card">
+                    <i class="bi bi-bootstrap-fill display-3 text-primary"></i>
+                    <h6 class="mt-3 fw-bold">Flask/Django</h6>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 text-center">
+                <div class="tech-icon-card">
+                    <i class="bi bi-database-fill display-3 text-primary"></i>
+                    <h6 class="mt-3 fw-bold">PostgreSQL</h6>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 text-center">
+                <div class="tech-icon-card">
+                    <i class="bi bi-git display-3 text-primary"></i>
+                    <h6 class="mt-3 fw-bold">Git/GitHub</h6>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 text-center">
+                <div class="tech-icon-card">
+                    <i class="bi bi-filetype-html display-3 text-primary"></i>
+                    <h6 class="mt-3 fw-bold">HTML5/CSS3</h6>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 text-center">
+                <div class="tech-icon-card">
+                    <i class="bi bi-filetype-js display-3 text-primary"></i>
+                    <h6 class="mt-3 fw-bold">JavaScript</h6>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 text-center">
+                <div class="tech-icon-card">
+                    <i class="bi bi-cloud-fill display-3 text-primary"></i>
+                    <h6 class="mt-3 fw-bold">Heroku/Cloud</h6>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 text-center">
+                <div class="tech-icon-card">
+                    <i class="bi bi-code-square display-3 text-primary"></i>
+                    <h6 class="mt-3 fw-bold">REST APIs</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action -->
+<section class="cta-section py-5 bg-primary text-white">
+    <div class="container text-center" data-aos="zoom-in">
+        <h2 class="display-5 fw-bold mb-3">Vamos Trabalhar Juntos?</h2>
+        <p class="lead mb-4">Estou disponível para novos projetos e oportunidades de colaboração</p>
+        <a href="{{ url_for('contato') }}" class="btn btn-light btn-lg">
+            <i class="bi bi-envelope"></i> Entre em Contato
+        </a>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<!-- AOS Animation Library -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script>
+    AOS.init({
+        duration: 800,
+        once: true,
+        offset: 100
+    });
+</script>
+{% endblock %}

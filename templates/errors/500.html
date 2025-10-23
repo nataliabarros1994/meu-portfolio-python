@@ -1,0 +1,134 @@
+{% extends 'base.html' %}
+
+{% block title %}500 - Erro Interno do Servidor{% endblock %}
+
+{% block content %}
+<section class="error-page min-vh-100 d-flex align-items-center">
+    <div class="container">
+        <div class="row justify-content-center text-center">
+            <div class="col-lg-6">
+                <div class="error-content">
+                    <!-- Número do Erro -->
+                    <h1 class="error-number display-1 fw-bold text-danger mb-4" style="font-size: 10rem;">
+                        500
+                    </h1>
+
+                    <!-- Ícone -->
+                    <div class="error-icon mb-4">
+                        <i class="bi bi-exclamation-octagon display-1 text-danger"></i>
+                    </div>
+
+                    <!-- Mensagem -->
+                    <h2 class="error-title h1 fw-bold mb-3">
+                        Erro Interno do Servidor
+                    </h2>
+
+                    <p class="error-description lead text-muted mb-5">
+                        Ops! Algo deu errado no servidor. Nossa equipe já foi notificada e está trabalhando
+                        para resolver o problema. Por favor, tente novamente em alguns instantes.
+                    </p>
+
+                    <!-- Botões -->
+                    <div class="error-actions">
+                        <a href="{{ url_for('index') }}" class="btn btn-primary btn-lg me-3 mb-3">
+                            <i class="bi bi-house-door"></i> Voltar ao Início
+                        </a>
+                        <button onclick="location.reload()" class="btn btn-outline-primary btn-lg mb-3">
+                            <i class="bi bi-arrow-clockwise"></i> Tentar Novamente
+                        </button>
+                    </div>
+
+                    <!-- Informações Adicionais -->
+                    <div class="error-info mt-5 pt-4 border-top">
+                        <div class="card bg-light border-0">
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold mb-3">
+                                    <i class="bi bi-info-circle text-primary me-2"></i>
+                                    O que você pode fazer?
+                                </h5>
+                                <ul class="text-start list-unstyled mb-0">
+                                    <li class="mb-2">
+                                        <i class="bi bi-check-circle text-success me-2"></i>
+                                        Aguarde alguns minutos e tente novamente
+                                    </li>
+                                    <li class="mb-2">
+                                        <i class="bi bi-check-circle text-success me-2"></i>
+                                        Limpe o cache do seu navegador (Ctrl+Shift+Delete)
+                                    </li>
+                                    <li class="mb-2">
+                                        <i class="bi bi-check-circle text-success me-2"></i>
+                                        Tente acessar outra página do site
+                                    </li>
+                                    <li>
+                                        <i class="bi bi-check-circle text-success me-2"></i>
+                                        Se o problema persistir, <a href="{{ url_for('contato') }}">entre em contato</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Links Úteis -->
+                    <div class="useful-links mt-4">
+                        <p class="text-muted mb-3">Páginas disponíveis:</p>
+                        <div class="d-flex justify-content-center gap-4 flex-wrap">
+                            <a href="{{ url_for('index') }}" class="text-decoration-none">
+                                <i class="bi bi-house"></i> Início
+                            </a>
+                            <a href="{{ url_for('projetos') }}" class="text-decoration-none">
+                                <i class="bi bi-folder"></i> Projetos
+                            </a>
+                            <a href="{{ url_for('sobre') }}" class="text-decoration-none">
+                                <i class="bi bi-person"></i> Sobre
+                            </a>
+                            <a href="{{ url_for('contato') }}" class="text-decoration-none">
+                                <i class="bi bi-envelope"></i> Contato
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .error-page {
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    }
+
+    .error-number {
+        animation: shake 0.5s ease-in-out;
+    }
+
+    @keyframes shake {
+        0%, 100% { transform: translateX(0); }
+        25% { transform: translateX(-10px); }
+        75% { transform: translateX(10px); }
+    }
+
+    .error-icon i {
+        animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+        0%, 100% {
+            opacity: 1;
+            transform: scale(1);
+        }
+        50% {
+            opacity: 0.7;
+            transform: scale(0.95);
+        }
+    }
+
+    .useful-links a {
+        color: #6c757d;
+        transition: color 0.3s;
+    }
+
+    .useful-links a:hover {
+        color: #007bff;
+    }
+</style>
+{% endblock %}

@@ -1,0 +1,290 @@
+{% extends 'base.html' %}
+
+{% block title %}Contato - {{ nome_portfolio }}{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<section class="page-header bg-primary text-white">
+    <div class="container">
+        <div class="row align-items-center py-5">
+            <div class="col-lg-12 text-center">
+                <h1 class="display-4 fw-bold mb-3">Entre em Contato</h1>
+                <p class="lead mb-0">Vamos conversar sobre seu próximo projeto</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contato -->
+<section class="py-5">
+    <div class="container">
+        <div class="row g-5">
+            <!-- Formulário de Contato -->
+            <div class="col-lg-7" data-aos="fade-right">
+                <div class="contact-form-wrapper">
+                    <h2 class="fw-bold mb-4">Envie uma Mensagem</h2>
+                    <p class="text-muted mb-4">
+                        Preencha o formulário abaixo e entrarei em contato o mais breve possível.
+                        Geralmente respondo em até 24 horas.
+                    </p>
+
+                    <form method="POST" action="{{ url_for('contato') }}" id="contactForm" novalidate>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label for="nome" class="form-label fw-semibold">Nome Completo *</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="bi bi-person"></i></span>
+                                    <input type="text"
+                                           class="form-control"
+                                           id="nome"
+                                           name="nome"
+                                           placeholder="Seu nome"
+                                           required>
+                                </div>
+                                <div class="invalid-feedback">
+                                    Por favor, informe seu nome.
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label for="email" class="form-label fw-semibold">Email *</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+                                    <input type="email"
+                                           class="form-control"
+                                           id="email"
+                                           name="email"
+                                           placeholder="seu@email.com"
+                                           required>
+                                </div>
+                                <div class="invalid-feedback">
+                                    Por favor, informe um email válido.
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <label for="assunto" class="form-label fw-semibold">Assunto *</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="bi bi-tag"></i></span>
+                                    <input type="text"
+                                           class="form-control"
+                                           id="assunto"
+                                           name="assunto"
+                                           placeholder="Qual o assunto?"
+                                           required>
+                                </div>
+                                <div class="invalid-feedback">
+                                    Por favor, informe o assunto.
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <label for="mensagem" class="form-label fw-semibold">Mensagem *</label>
+                                <textarea class="form-control"
+                                          id="mensagem"
+                                          name="mensagem"
+                                          rows="6"
+                                          placeholder="Descreva seu projeto ou dúvida..."
+                                          required></textarea>
+                                <div class="invalid-feedback">
+                                    Por favor, escreva sua mensagem.
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-primary btn-lg">
+                                    <i class="bi bi-send"></i> Enviar Mensagem
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Informações de Contato -->
+            <div class="col-lg-5" data-aos="fade-left">
+                <div class="contact-info-wrapper">
+                    <h3 class="fw-bold mb-4">Informações de Contato</h3>
+                    <p class="text-muted mb-4">
+                        Você também pode entrar em contato através dos canais abaixo:
+                    </p>
+
+                    <!-- Info Cards -->
+                    <div class="contact-info-cards">
+                        <!-- Email -->
+                        <div class="info-card mb-3">
+                            <div class="card shadow-sm">
+                                <div class="card-body d-flex align-items-center">
+                                    <div class="info-icon me-3">
+                                        <i class="bi bi-envelope-fill display-6 text-primary"></i>
+                                    </div>
+                                    <div>
+                                        <h6 class="fw-bold mb-1">Email</h6>
+                                        <a href="mailto:{{ email_contato }}" class="text-decoration-none text-muted">
+                                            {{ email_contato }}
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- GitHub -->
+                        <div class="info-card mb-3">
+                            <div class="card shadow-sm">
+                                <div class="card-body d-flex align-items-center">
+                                    <div class="info-icon me-3">
+                                        <i class="bi bi-github display-6 text-dark"></i>
+                                    </div>
+                                    <div>
+                                        <h6 class="fw-bold mb-1">GitHub</h6>
+                                        <a href="{{ github_link }}" target="_blank" class="text-decoration-none text-muted">
+                                            github.com/nataliabarros1994
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- LinkedIn -->
+                        <div class="info-card mb-3">
+                            <div class="card shadow-sm">
+                                <div class="card-body d-flex align-items-center">
+                                    <div class="info-icon me-3">
+                                        <i class="bi bi-linkedin display-6 text-primary"></i>
+                                    </div>
+                                    <div>
+                                        <h6 class="fw-bold mb-1">LinkedIn</h6>
+                                        <a href="{{ linkedin_link }}" target="_blank" class="text-decoration-none text-muted">
+                                            linkedin.com/in/nataliabarros
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Disponibilidade -->
+                    <div class="availability-card mt-4">
+                        <div class="card bg-primary text-white">
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold mb-3">
+                                    <i class="bi bi-clock-fill me-2"></i>Disponibilidade
+                                </h5>
+                                <p class="mb-2">
+                                    <i class="bi bi-circle-fill text-success pulse me-2" style="font-size: 10px;"></i>
+                                    Disponível para novos projetos
+                                </p>
+                                <p class="mb-0 small">
+                                    Tempo de resposta: até 24 horas
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Rápido -->
+                    <div class="faq-quick mt-4">
+                        <h5 class="fw-bold mb-3">Perguntas Frequentes</h5>
+                        <div class="accordion accordion-flush" id="faqAccordion">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                        Quanto tempo leva para responder?
+                                    </button>
+                                </h2>
+                                <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        Geralmente respondo todas as mensagens em até 24 horas durante dias úteis.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                        Você aceita projetos freelance?
+                                    </button>
+                                </h2>
+                                <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        Sim! Estou sempre aberta a discutir novos projetos interessantes.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                        Qual o valor dos seus serviços?
+                                    </button>
+                                </h2>
+                                <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        Os valores variam de acordo com a complexidade e escopo do projeto. Entre em contato para discutirmos!
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Mapa/Ilustração (Opcional) -->
+<section class="py-5 bg-light">
+    <div class="container text-center">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <h3 class="fw-bold mb-3">Pronto para começar seu projeto?</h3>
+                <p class="text-muted mb-4">
+                    Seja um website, aplicação web ou automação, estou aqui para ajudar.
+                    Vamos transformar sua ideia em realidade!
+                </p>
+                <div class="benefits-list d-flex flex-wrap justify-content-center gap-4">
+                    <div class="benefit-item">
+                        <i class="bi bi-check-circle-fill text-success me-2"></i>
+                        Resposta rápida
+                    </div>
+                    <div class="benefit-item">
+                        <i class="bi bi-check-circle-fill text-success me-2"></i>
+                        Orçamento transparente
+                    </div>
+                    <div class="benefit-item">
+                        <i class="bi bi-check-circle-fill text-success me-2"></i>
+                        Código de qualidade
+                    </div>
+                    <div class="benefit-item">
+                        <i class="bi bi-check-circle-fill text-success me-2"></i>
+                        Suporte contínuo
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script>
+    // AOS Animation
+    AOS.init({
+        duration: 800,
+        once: true
+    });
+
+    // Form Validation
+    (function() {
+        'use strict';
+        const form = document.getElementById('contactForm');
+
+        form.addEventListener('submit', function(event) {
+            if (!form.checkValidity()) {
+                event.preventDefault();
+                event.stopPropagation();
+            }
+            form.classList.add('was-validated');
+        }, false);
+    })();
+</script>
+{% endblock %}

@@ -1,0 +1,229 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ projeto.titulo }} - {{ nome_portfolio }}{% endblock %}
+
+{% block meta_description %}{{ projeto.descricao_curta or projeto.descricao[:150] }}{% endblock %}
+
+{% block content %}
+<!-- Breadcrumb -->
+<section class="breadcrumb-section py-3 bg-light">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item"><a href="{{ url_for('index') }}">Início</a></li>
+                <li class="breadcrumb-item"><a href="{{ url_for('projetos') }}">Projetos</a></li>
+                <li class="breadcrumb-item active" aria-current="page">{{ projeto.titulo }}</li>
+            </ol>
+        </nav>
+    </div>
+</section>
+
+<!-- Projeto Detalhes -->
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+            <!-- Conteúdo Principal -->
+            <div class="col-lg-8">
+                <!-- Header do Projeto -->
+                <div class="project-detail-header mb-4">
+                    <div class="d-flex align-items-center mb-3">
+                        <span class="badge bg-primary-subtle text-primary me-2">{{ projeto.categoria }}</span>
+                        {% if projeto.destaque %}
+                        <span class="badge bg-warning">
+                            <i class="bi bi-star-fill"></i> Destaque
+                        </span>
+                        {% endif %}
+                    </div>
+                    <h1 class="display-5 fw-bold mb-3">{{ projeto.titulo }}</h1>
+                    <p class="text-muted">
+                        <i class="bi bi-calendar3"></i>
+                        Publicado em {{ projeto.data_criacao.strftime('%d de %B de %Y') }}
+                    </p>
+                </div>
+
+                <!-- Imagem Principal -->
+                <div class="project-detail-image mb-4">
+                    <img src="{{ url_for('static', filename='images/' + projeto.imagem) }}"
+                         alt="{{ projeto.titulo }}"
+                         class="img-fluid rounded shadow-sm"
+                         onerror="this.src='https://via.placeholder.com/800x450/007bff/ffffff?text={{ projeto.titulo }}'">
+                </div>
+
+                <!-- Descrição -->
+                <div class="project-detail-description mb-5">
+                    <h3 class="fw-bold mb-3">Sobre o Projeto</h3>
+                    <div class="content-text">
+                        {{ projeto.descricao|safe }}
+                    </div>
+                </div>
+
+                <!-- Tecnologias Utilizadas -->
+                <div class="project-detail-tech mb-5">
+                    <h3 class="fw-bold mb-3">Tecnologias Utilizadas</h3>
+                    <div class="tech-stack">
+                        {% for tech in projeto.tecnologias.split(',') %}
+                        <span class="tech-badge-large">
+                            <i class="bi bi-check-circle-fill text-success"></i>
+                            {{ tech.strip() }}
+                        </span>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <!-- Links do Projeto -->
+                <div class="project-detail-links mb-5">
+                    <h3 class="fw-bold mb-3">Links</h3>
+                    <div class="d-flex gap-3 flex-wrap">
+                        {% if projeto.github_url %}
+                        <a href="{{ projeto.github_url }}" target="_blank" class="btn btn-dark btn-lg">
+                            <i class="bi bi-github"></i> Ver Código no GitHub
+                        </a>
+                        {% endif %}
+                        {% if projeto.demo_url %}
+                        <a href="{{ projeto.demo_url }}" target="_blank" class="btn btn-primary btn-lg">
+                            <i class="bi bi-box-arrow-up-right"></i> Ver Demo Live
+                        </a>
+                        {% endif %}
+                        {% if not projeto.github_url and not projeto.demo_url %}
+                        <p class="text-muted">Links não disponíveis para este projeto.</p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="col-lg-4">
+                <!-- Informações do Projeto -->
+                <div class="card shadow-sm mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold mb-4">
+                            <i class="bi bi-info-circle text-primary"></i>
+                            Informações
+                        </h5>
+                        <ul class="list-unstyled project-info-list">
+                            <li class="mb-3">
+                                <strong><i class="bi bi-folder text-muted me-2"></i> Categoria:</strong>
+                                <br><span class="text-muted">{{ projeto.categoria }}</span>
+                            </li>
+                            <li class="mb-3">
+                                <strong><i class="bi bi-calendar text-muted me-2"></i> Data:</strong>
+                                <br><span class="text-muted">{{ projeto.data_criacao.strftime('%d/%m/%Y') }}</span>
+                            </li>
+                            <li class="mb-3">
+                                <strong><i class="bi bi-code-slash text-muted me-2"></i> Tecnologias:</strong>
+                                <br><span class="text-muted">{{ projeto.tecnologias.split(',')|length }} tecnologias</span>
+                            </li>
+                            {% if projeto.github_url %}
+                            <li class="mb-3">
+                                <strong><i class="bi bi-github text-muted me-2"></i> GitHub:</strong>
+                                <br>
+                                <a href="{{ projeto.github_url }}" target="_blank" class="text-decoration-none">
+                                    Ver repositório <i class="bi bi-box-arrow-up-right small"></i>
+                                </a>
+                            </li>
+                            {% endif %}
+                            {% if projeto.demo_url %}
+                            <li>
+                                <strong><i class="bi bi-globe text-muted me-2"></i> Demo:</strong>
+                                <br>
+                                <a href="{{ projeto.demo_url }}" target="_blank" class="text-decoration-none">
+                                    Acessar site <i class="bi bi-box-arrow-up-right small"></i>
+                                </a>
+                            </li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Compartilhar -->
+                <div class="card shadow-sm mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold mb-3">
+                            <i class="bi bi-share text-primary"></i>
+                            Compartilhar
+                        </h5>
+                        <div class="d-grid gap-2">
+                            <a href="https://twitter.com/intent/tweet?text={{ projeto.titulo }}&url={{ request.url }}"
+                               target="_blank"
+                               class="btn btn-outline-info btn-sm">
+                                <i class="bi bi-twitter"></i> Twitter
+                            </a>
+                            <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ request.url }}"
+                               target="_blank"
+                               class="btn btn-outline-primary btn-sm">
+                                <i class="bi bi-linkedin"></i> LinkedIn
+                            </a>
+                            <button onclick="copiarLink()" class="btn btn-outline-secondary btn-sm">
+                                <i class="bi bi-link-45deg"></i> Copiar Link
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Call to Action -->
+                <div class="card bg-primary text-white shadow-sm">
+                    <div class="card-body text-center">
+                        <h5 class="card-title fw-bold mb-3">Gostou do projeto?</h5>
+                        <p class="card-text mb-3">Entre em contato para discutir seu próximo projeto</p>
+                        <a href="{{ url_for('contato') }}" class="btn btn-light">
+                            <i class="bi bi-envelope"></i> Entrar em Contato
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Projetos Relacionados -->
+{% if projetos_relacionados %}
+<section class="py-5 bg-light">
+    <div class="container">
+        <h3 class="fw-bold mb-4 text-center">Projetos Relacionados</h3>
+        <div class="row g-4">
+            {% for projeto_rel in projetos_relacionados %}
+            <div class="col-md-4">
+                <div class="project-card h-100">
+                    <div class="project-image">
+                        <img src="{{ url_for('static', filename='images/' + projeto_rel.imagem) }}"
+                             alt="{{ projeto_rel.titulo }}"
+                             onerror="this.src='https://via.placeholder.com/400x250/007bff/ffffff?text={{ projeto_rel.titulo }}'">
+                        <div class="project-overlay">
+                            <a href="{{ url_for('projeto_detalhe', id=projeto_rel.id) }}" class="btn btn-light">
+                                <i class="bi bi-eye"></i> Ver Detalhes
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <span class="badge bg-primary-subtle text-primary mb-2">{{ projeto_rel.categoria }}</span>
+                        <h5 class="project-title">{{ projeto_rel.titulo }}</h5>
+                        <p class="project-description small">
+                            {{ projeto_rel.descricao_curta or projeto_rel.descricao[:80] + '...' }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="text-center mt-4">
+            <a href="{{ url_for('projetos') }}" class="btn btn-primary">
+                Ver Todos os Projetos <i class="bi bi-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+</section>
+{% endif %}
+{% endblock %}
+
+{% block extra_js %}
+<script>
+function copiarLink() {
+    const url = window.location.href;
+    navigator.clipboard.writeText(url).then(function() {
+        alert('Link copiado para a área de transferência!');
+    }, function() {
+        alert('Erro ao copiar link');
+    });
+}
+</script>
+{% endblock %}

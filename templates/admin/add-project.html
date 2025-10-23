@@ -1,0 +1,234 @@
+{% extends 'base.html' %}
+
+{% block title %}Adicionar Projeto - Admin{% endblock %}
+
+{% block content %}
+<section class="page-header bg-primary text-white">
+    <div class="container">
+        <div class="row align-items-center py-4">
+            <div class="col-lg-12 text-center">
+                <h1 class="display-5 fw-bold mb-2">Adicionar Novo Projeto</h1>
+                <p class="lead mb-0">Preencha o formulário abaixo para adicionar um projeto ao portfólio</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="card shadow-sm">
+                    <div class="card-body p-4">
+                        <form method="POST" action="{{ url_for('add_project') }}" id="addProjectForm" novalidate>
+                            <!-- Título -->
+                            <div class="mb-4">
+                                <label for="titulo" class="form-label fw-semibold">
+                                    Título do Projeto *
+                                </label>
+                                <input type="text"
+                                       class="form-control form-control-lg"
+                                       id="titulo"
+                                       name="titulo"
+                                       placeholder="Ex: Sistema de Gestão de Tarefas"
+                                       required>
+                                <div class="invalid-feedback">
+                                    Por favor, informe o título do projeto.
+                                </div>
+                            </div>
+
+                            <!-- Descrição Curta -->
+                            <div class="mb-4">
+                                <label for="descricao_curta" class="form-label fw-semibold">
+                                    Descrição Curta
+                                </label>
+                                <input type="text"
+                                       class="form-control"
+                                       id="descricao_curta"
+                                       name="descricao_curta"
+                                       placeholder="Resumo breve do projeto (máx. 200 caracteres)"
+                                       maxlength="200">
+                                <small class="text-muted">Aparecerá nos cards de projeto</small>
+                            </div>
+
+                            <!-- Descrição Completa -->
+                            <div class="mb-4">
+                                <label for="descricao" class="form-label fw-semibold">
+                                    Descrição Completa *
+                                </label>
+                                <textarea class="form-control"
+                                          id="descricao"
+                                          name="descricao"
+                                          rows="8"
+                                          placeholder="Descrição detalhada do projeto. Pode incluir HTML básico (<p>, <h5>, <ul>, <li>, etc.)"
+                                          required></textarea>
+                                <div class="invalid-feedback">
+                                    Por favor, adicione uma descrição do projeto.
+                                </div>
+                                <small class="text-muted">
+                                    Suporta HTML básico para formatação
+                                </small>
+                            </div>
+
+                            <!-- Tecnologias -->
+                            <div class="mb-4">
+                                <label for="tecnologias" class="form-label fw-semibold">
+                                    Tecnologias *
+                                </label>
+                                <input type="text"
+                                       class="form-control"
+                                       id="tecnologias"
+                                       name="tecnologias"
+                                       placeholder="Python, Flask, PostgreSQL, Bootstrap"
+                                       required>
+                                <small class="text-muted">
+                                    Separe por vírgula (ex: Python, Flask, PostgreSQL)
+                                </small>
+                                <div class="invalid-feedback">
+                                    Por favor, informe as tecnologias utilizadas.
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <!-- URL do GitHub -->
+                                <div class="col-md-6 mb-4">
+                                    <label for="github_url" class="form-label fw-semibold">
+                                        URL do GitHub
+                                    </label>
+                                    <div class="input-group">
+                                        <span class="input-group-text">
+                                            <i class="bi bi-github"></i>
+                                        </span>
+                                        <input type="url"
+                                               class="form-control"
+                                               id="github_url"
+                                               name="github_url"
+                                               placeholder="https://github.com/user/repo">
+                                    </div>
+                                </div>
+
+                                <!-- URL de Demo -->
+                                <div class="col-md-6 mb-4">
+                                    <label for="demo_url" class="form-label fw-semibold">
+                                        URL de Demonstração
+                                    </label>
+                                    <div class="input-group">
+                                        <span class="input-group-text">
+                                            <i class="bi bi-globe"></i>
+                                        </span>
+                                        <input type="url"
+                                               class="form-control"
+                                               id="demo_url"
+                                               name="demo_url"
+                                               placeholder="https://demo.herokuapp.com">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Categoria -->
+                            <div class="mb-4">
+                                <label for="categoria" class="form-label fw-semibold">
+                                    Categoria
+                                </label>
+                                <select class="form-select" id="categoria" name="categoria">
+                                    <option value="Web App">Web App</option>
+                                    <option value="API">API</option>
+                                    <option value="Data Science">Data Science</option>
+                                    <option value="Machine Learning">Machine Learning</option>
+                                    <option value="Automação">Automação</option>
+                                    <option value="Backend">Backend</option>
+                                    <option value="Frontend">Frontend</option>
+                                    <option value="Mobile">Mobile</option>
+                                    <option value="Outros">Outros</option>
+                                </select>
+                            </div>
+
+                            <!-- Destaque -->
+                            <div class="mb-4">
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input"
+                                           type="checkbox"
+                                           id="destaque"
+                                           name="destaque">
+                                    <label class="form-check-label fw-semibold" for="destaque">
+                                        <i class="bi bi-star-fill text-warning me-1"></i>
+                                        Marcar como projeto em destaque
+                                    </label>
+                                </div>
+                                <small class="text-muted d-block mt-2">
+                                    Projetos em destaque aparecem na homepage
+                                </small>
+                            </div>
+
+                            <!-- Botões -->
+                            <div class="d-flex gap-3 justify-content-end mt-5">
+                                <a href="{{ url_for('projetos') }}" class="btn btn-outline-secondary btn-lg">
+                                    <i class="bi bi-x-circle"></i> Cancelar
+                                </a>
+                                <button type="submit" class="btn btn-primary btn-lg">
+                                    <i class="bi bi-plus-circle"></i> Adicionar Projeto
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Dicas -->
+                <div class="card mt-4 bg-light border-0">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold mb-3">
+                            <i class="bi bi-lightbulb text-warning me-2"></i>
+                            Dicas para um bom projeto
+                        </h5>
+                        <ul class="mb-0">
+                            <li>Use um título claro e descritivo</li>
+                            <li>Adicione uma descrição detalhada explicando o propósito e funcionalidades</li>
+                            <li>Liste todas as tecnologias principais utilizadas</li>
+                            <li>Forneça links para o código (GitHub) e demonstração (se disponível)</li>
+                            <li>Use formatação HTML na descrição para melhor apresentação</li>
+                            <li>Marque como destaque apenas seus melhores projetos (máximo 6)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    // Form Validation
+    (function() {
+        'use strict';
+        const form = document.getElementById('addProjectForm');
+
+        form.addEventListener('submit', function(event) {
+            if (!form.checkValidity()) {
+                event.preventDefault();
+                event.stopPropagation();
+            }
+            form.classList.add('was-validated');
+        }, false);
+
+        // Character counter for descricao_curta
+        const descricaoCurta = document.getElementById('descricao_curta');
+        if (descricaoCurta) {
+            const counter = document.createElement('small');
+            counter.className = 'text-muted float-end';
+            descricaoCurta.parentElement.appendChild(counter);
+
+            descricaoCurta.addEventListener('input', function() {
+                const length = this.value.length;
+                counter.textContent = `${length}/200 caracteres`;
+
+                if (length > 180) {
+                    counter.classList.add('text-warning');
+                } else {
+                    counter.classList.remove('text-warning');
+                }
+            });
+        }
+    })();
+</script>
+{% endblock %}

@@ -1,0 +1,272 @@
+{
+  "projects": [
+    {
+      "id": 1077598997,
+      "name": "sistema-de-detec-o-de-fraudes-em-tempo-real",
+      "title": "Sistema De Detec O De Fraudes Em Tempo Real",
+      "description": "sistema de detecção de fraudes em tempo real com IA",
+      "language": "Python",
+      "languages": [
+        "Python",
+        "Cython",
+        "C",
+        "C++",
+        "HTML",
+        "JavaScript",
+        "CSS",
+        "Fortran",
+        "Meson",
+        "Shell",
+        "PowerShell",
+        "Smarty",
+        "Roff",
+        "Assembly",
+        "Batchfile",
+        "Lua"
+      ],
+      "technologies": [
+        "C",
+        "Flask",
+        "Python"
+      ],
+      "github_url": "https://github.com/nataliabarros1994/sistema-de-detec-o-de-fraudes-em-tempo-real",
+      "demo_url": null,
+      "stars": 0,
+      "forks": 0,
+      "watchers": 0,
+      "created_at": "2025-10-16",
+      "updated_at": "2025-10-20",
+      "topics": [],
+      "has_wiki": true,
+      "has_pages": false,
+      "is_recent": true,
+      "size": 180309
+    },
+    {
+      "id": 1072598498,
+      "name": "athena-robotic-framework",
+      "title": "Athena Robotic Framework",
+      "description": null,
+      "language": "Shell",
+      "languages": [
+        "Shell",
+        "C++",
+        "Python",
+        "CMake"
+      ],
+      "technologies": [
+        "C++",
+        "Flask",
+        "Python"
+      ],
+      "github_url": "https://github.com/nataliabarros1994/athena-robotic-framework",
+      "demo_url": null,
+      "stars": 0,
+      "forks": 0,
+      "watchers": 0,
+      "created_at": "2025-10-09",
+      "updated_at": "2025-10-09",
+      "topics": [],
+      "has_wiki": true,
+      "has_pages": false,
+      "is_recent": true,
+      "size": 97
+    },
+    {
+      "id": 1071098324,
+      "name": "ecommerce-de-loja",
+      "title": "Ecommerce De Loja",
+      "description": "ecommerce de loja com micro serviços",
+      "language": "Shell",
+      "languages": [
+        "Shell",
+        "Python",
+        "TypeScript",
+        "Dockerfile",
+        "CSS",
+        "JavaScript",
+        "HTML"
+      ],
+      "technologies": [
+        "Angular",
+        "Flask",
+        "Python",
+        "TypeScript"
+      ],
+      "github_url": "https://github.com/nataliabarros1994/ecommerce-de-loja",
+      "demo_url": null,
+      "stars": 0,
+      "forks": 0,
+      "watchers": 0,
+      "created_at": "2025-10-06",
+      "updated_at": "2025-10-06",
+      "topics": [],
+      "has_wiki": true,
+      "has_pages": false,
+      "is_recent": true,
+      "size": 381
+    },
+    {
+      "id": 1066498886,
+      "name": "ecommerce-api",
+      "title": "Ecommerce Api",
+      "description": "Professional REST API with PostgreSQL for E-Commerce",
+      "language": "Python",
+      "languages": [
+        "Python",
+        "Dockerfile"
+      ],
+      "technologies": [
+        "Flask",
+        "Python"
+      ],
+      "github_url": "https://github.com/nataliabarros1994/ecommerce-api",
+      "demo_url": null,
+      "stars": 0,
+      "forks": 0,
+      "watchers": 0,
+      "created_at": "2025-09-29",
+      "updated_at": "2025-09-29",
+      "topics": [],
+      "has_wiki": true,
+      "has_pages": false,
+      "is_recent": true,
+      "size": 147
+    },
+    {
+      "id": 1062633896,
+      "name": "mega-controle-estoque",
+      "title": "Mega Controle Estoque",
+      "description": "Meu primeiro projeto em Python — Sistema de Estoque Completo",
+      "language": "Python",
+      "languages": [
+        "Python"
+      ],
+      "technologies": [
+        "Flask",
+        "Python"
+      ],
+      "github_url": "https://github.com/nataliabarros1994/mega-controle-estoque",
+      "demo_url": null,
+      "stars": 0,
+      "forks": 0,
+      "watchers": 0,
+      "created_at": "2025-09-23",
+      "updated_at": "2025-09-23",
+      "topics": [],
+      "has_wiki": true,
+      "has_pages": false,
+      "is_recent": true,
+      "size": 17
+    },
+    {
+      "id": 282574847,
+      "name": "netflixclone",
+      "title": "Netflixclone",
+      "description": null,
+      "language": "HTML",
+      "languages": [
+        "HTML",
+        "CSS"
+      ],
+      "technologies": [
+        "CSS",
+        "CSS3",
+        "HTML",
+        "Sass"
+      ],
+      "github_url": "https://github.com/nataliabarros1994/netflixclone",
+      "demo_url": null,
+      "stars": 1,
+      "forks": 0,
+      "watchers": 1,
+      "created_at": "2020-07-26",
+      "updated_at": "2020-08-02",
+      "topics": [],
+      "has_wiki": true,
+      "has_pages": false,
+      "is_recent": false,
+      "size": 235
+    }
+  ],
+  "stats": {
+    "total_projects": 6,
+    "total_stars": 1,
+    "total_forks": 0,
+    "top_languages": [
+      {
+        "name": "Python",
+        "count": 5
+      },
+      {
+        "name": "HTML",
+        "count": 3
+      },
+      {
+        "name": "CSS",
+        "count": 3
+      },
+      {
+        "name": "Shell",
+        "count": 3
+      },
+      {
+        "name": "C++",
+        "count": 2
+      }
+    ],
+    "top_technologies": [
+      {
+        "name": "Flask",
+        "count": 5
+      },
+      {
+        "name": "Python",
+        "count": 5
+      },
+      {
+        "name": "C",
+        "count": 1
+      },
+      {
+        "name": "C++",
+        "count": 1
+      },
+      {
+        "name": "Angular",
+        "count": 1
+      },
+      {
+        "name": "TypeScript",
+        "count": 1
+      },
+      {
+        "name": "CSS",
+        "count": 1
+      },
+      {
+        "name": "CSS3",
+        "count": 1
+      },
+      {
+        "name": "HTML",
+        "count": 1
+      },
+      {
+        "name": "Sass",
+        "count": 1
+      }
+    ],
+    "featured_projects": [
+      282574847,
+      1077598997,
+      1072598498,
+      1071098324,
+      1066498886,
+      1062633896
+    ],
+    "recent_projects": 5,
+    "last_updated": "2025-10-23 11:53:12"
+  },
+  "generated_at": "2025-10-23T11:53:12.082994"
+}

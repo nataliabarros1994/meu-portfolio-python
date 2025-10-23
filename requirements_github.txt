@@ -1,0 +1,14 @@
+# Flask e Frozen-Flask para site estático
+Flask==3.0.0
+Frozen-Flask==1.0.0
+Werkzeug==3.0.1
+
+# Requests para GitHub API
+requests==2.31.0
+
+# Utilities
+python-dotenv==1.0.0
+python-dateutil==2.8.2
+
+# Production (opcional)
+gunicorn==21.2.0

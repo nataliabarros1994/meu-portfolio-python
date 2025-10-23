@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{% block meta_description %}Portfólio profissional de {{ nome_portfolio }} - {{ titulo_portfolio }}{% endblock %}">
+    <meta name="keywords" content="python, flask, desenvolvedor, portfolio, web development">
+    <meta name="author" content="{{ nome_portfolio }}">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="{% block og_title %}{{ nome_portfolio }} - Portfolio{% endblock %}">
+    <meta property="og:description" content="{% block og_description %}Portfolio profissional de desenvolvimento Python{% endblock %}">
+    <meta property="og:type" content="website">
+
+    <title>{% block title %}{{ nome_portfolio }} - Portfolio{% endblock %}</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS Customizado -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="{{ url_for('index') }}">
+                <i class="bi bi-code-slash"></i> {{ nome_portfolio }}
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.endpoint == 'index' %}active{% endif %}" href="{{ url_for('index') }}">
+                            <i class="bi bi-house-door"></i> Início
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.endpoint == 'projetos' or request.endpoint == 'projeto_detalhe' %}active{% endif %}" href="{{ url_for('projetos') }}">
+                            <i class="bi bi-folder"></i> Projetos
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.endpoint == 'sobre' %}active{% endif %}" href="{{ url_for('sobre') }}">
+                            <i class="bi bi-person"></i> Sobre
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.endpoint == 'contato' %}active{% endif %}" href="{{ url_for('contato') }}">
+                            <i class="bi bi-envelope"></i> Contato
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Flash Messages -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <div class="container" style="margin-top: 80px;">
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ 'success' if category == 'success' else 'danger' }} alert-dismissible fade show" role="alert">
+                        <i class="bi bi-{{ 'check-circle' if category == 'success' else 'exclamation-triangle' }}"></i>
+                        {{ message }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+
+    <!-- Conteúdo Principal -->
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h5 class="fw-bold mb-3">{{ nome_portfolio }}</h5>
+                    <p class="text-muted">{{ titulo_portfolio }}</p>
+                    <p class="text-muted small">Desenvolvendo soluções inovadoras com Python e tecnologias modernas.</p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h6 class="fw-bold mb-3">Links Rápidos</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="{{ url_for('index') }}" class="text-decoration-none text-muted hover-primary">Início</a></li>
+                        <li class="mb-2"><a href="{{ url_for('projetos') }}" class="text-decoration-none text-muted hover-primary">Projetos</a></li>
+                        <li class="mb-2"><a href="{{ url_for('sobre') }}" class="text-decoration-none text-muted hover-primary">Sobre Mim</a></li>
+                        <li class="mb-2"><a href="{{ url_for('contato') }}" class="text-decoration-none text-muted hover-primary">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h6 class="fw-bold mb-3">Conecte-se</h6>
+                    <div class="social-links">
+                        <a href="{{ github_link }}" target="_blank" class="btn btn-outline-light btn-sm me-2 mb-2">
+                            <i class="bi bi-github"></i> GitHub
+                        </a>
+                        <a href="{{ linkedin_link }}" target="_blank" class="btn btn-outline-light btn-sm me-2 mb-2">
+                            <i class="bi bi-linkedin"></i> LinkedIn
+                        </a>
+                        <a href="mailto:{{ email_contato }}" class="btn btn-outline-light btn-sm mb-2">
+                            <i class="bi bi-envelope"></i> Email
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <hr class="border-secondary my-4">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0 text-muted small">
+                        &copy; {{ ano_atual }} {{ nome_portfolio }}. Todos os direitos reservados.
+                    </p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="mb-0 text-muted small">
+                        Feito com <i class="bi bi-heart-fill text-danger"></i> usando Flask e Bootstrap
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botão Voltar ao Topo -->
+    <button id="backToTop" class="btn btn-primary btn-floating" title="Voltar ao topo">
+        <i class="bi bi-arrow-up"></i>
+    </button>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- JavaScript Customizado -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+    {% block extra_js %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,410 @@
+{% extends 'base.html' %}
+
+{% block title %}Projetos do GitHub - {{ nome_portfolio }}{% endblock %}
+
+{% block extra_css %}
+<style>
+.project-filters {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+}
+
+.filter-tag {
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    border: 2px solid #e0e0e0;
+    background: white;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin: 0.25rem;
+    display: inline-block;
+}
+
+.filter-tag:hover {
+    border-color: #007bff;
+    background: #f0f8ff;
+}
+
+.filter-tag.active {
+    background: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+
+.project-card.hidden {
+    display: none !important;
+}
+</style>
+{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<section class="page-header bg-primary text-white">
+    <div class="container">
+        <div class="row align-items-center py-5">
+            <div class="col-lg-8">
+                <h1 class="display-4 fw-bold mb-3">
+                    <i class="bi bi-github"></i> Repositórios do GitHub
+                </h1>
+                <p class="lead mb-0">
+                    Todos os meus projetos públicos, sincronizados automaticamente
+                </p>
+            </div>
+            <div class="col-lg-4 text-lg-end">
+                <div class="stats-badge">
+                    <h3 class="fw-bold mb-0" id="total-visible">{{ projetos|length }}</h3>
+                    <p class="mb-0">Projetos exibidos</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Estatísticas Rápidas -->
+<section class="py-3 bg-light border-bottom">
+    <div class="container">
+        <div class="row text-center g-3">
+            <div class="col-6 col-md-3">
+                <h4 class="fw-bold text-primary mb-0">{{ stats.total_projects }}</h4>
+                <small class="text-muted">Total de Projetos</small>
+            </div>
+            <div class="col-6 col-md-3">
+                <h4 class="fw-bold text-warning mb-0">{{ stats.total_stars }}</h4>
+                <small class="text-muted">Total de Stars</small>
+            </div>
+            <div class="col-6 col-md-3">
+                <h4 class="fw-bold text-info mb-0">{{ stats.total_forks }}</h4>
+                <small class="text-muted">Total de Forks</small>
+            </div>
+            <div class="col-6 col-md-3">
+                <h4 class="fw-bold text-success mb-0">{{ stats.recent_projects }}</h4>
+                <small class="text-muted">Atualizados Recentemente</small>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Filtros e Ordenação -->
+<section class="py-4 bg-light">
+    <div class="container">
+        <div class="project-filters">
+            <div class="row g-3">
+                <!-- Busca -->
+                <div class="col-md-6">
+                    <label class="form-label fw-semibold">
+                        <i class="bi bi-search"></i> Buscar
+                    </label>
+                    <input type="text"
+                           id="searchInput"
+                           class="form-control"
+                           placeholder="Buscar por nome ou descrição...">
+                </div>
+
+                <!-- Ordenação -->
+                <div class="col-md-3">
+                    <label class="form-label fw-semibold">
+                        <i class="bi bi-sort-down"></i> Ordenar por
+                    </label>
+                    <select id="sortSelect" class="form-select">
+                        <option value="stars">Mais Stars</option>
+                        <option value="updated">Mais Recentes</option>
+                        <option value="name">Nome (A-Z)</option>
+                        <option value="forks">Mais Forks</option>
+                    </select>
+                </div>
+
+                <!-- Mostrar recentes -->
+                <div class="col-md-3 d-flex align-items-end">
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="recentOnly">
+                        <label class="form-check-label" for="recentOnly">
+                            Apenas recentes
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Filtro por Linguagem -->
+            {% if linguagens %}
+            <div class="mt-3">
+                <label class="form-label fw-semibold">
+                    <i class="bi bi-code-slash"></i> Linguagens
+                </label>
+                <div class="filter-tags">
+                    <span class="filter-tag active" data-filter="all">
+                        Todas
+                    </span>
+                    {% for lang in linguagens %}
+                    <span class="filter-tag" data-filter="language" data-value="{{ lang }}">
+                        {{ lang }}
+                    </span>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+
+            <!-- Limpar filtros -->
+            <div class="mt-3 text-end">
+                <button id="clearFilters" class="btn btn-sm btn-outline-secondary">
+                    <i class="bi bi-x-circle"></i> Limpar Filtros
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Lista de Projetos -->
+<section class="py-5">
+    <div class="container">
+        {% if projetos %}
+        <div class="row g-4" id="projectsGrid">
+            {% for projeto in projetos %}
+            <div class="col-md-6 col-lg-4 project-item"
+                 data-name="{{ projeto.title|lower }}"
+                 data-description="{{ projeto.description|lower }}"
+                 data-language="{{ projeto.language }}"
+                 data-stars="{{ projeto.stars }}"
+                 data-forks="{{ projeto.forks }}"
+                 data-updated="{{ projeto.updated_at }}"
+                 data-recent="{{ 'true' if projeto.is_recent else 'false' }}">
+
+                <div class="project-card h-100" data-aos="fade-up">
+                    <div class="project-header p-3">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <h5 class="project-name mb-0">
+                                <i class="bi bi-folder-fill text-primary me-2"></i>
+                                {{ projeto.title }}
+                            </h5>
+                            {% if projeto.is_recent %}
+                            <span class="badge bg-success" title="Atualizado nos últimos 30 dias">
+                                <i class="bi bi-lightning-fill"></i> Novo
+                            </span>
+                            {% endif %}
+                        </div>
+                        <p class="project-description text-muted small mb-0">
+                            {{ projeto.description }}
+                        </p>
+                    </div>
+
+                    <div class="project-body p-3">
+                        <!-- Tecnologias -->
+                        <div class="project-tech mb-3">
+                            {% if projeto.language %}
+                            <span class="tech-badge-main me-2">
+                                <i class="bi bi-circle-fill" style="font-size: 10px;"></i>
+                                {{ projeto.language }}
+                            </span>
+                            {% endif %}
+                            {% for tech in projeto.technologies[:3] %}
+                            <span class="tech-badge">{{ tech }}</span>
+                            {% endfor %}
+                        </div>
+
+                        <!-- Topics -->
+                        {% if projeto.topics %}
+                        <div class="project-topics mb-3">
+                            {% for topic in projeto.topics[:3] %}
+                            <span class="badge bg-light text-dark me-1">#{{ topic }}</span>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+
+                        <!-- Stats -->
+                        <div class="project-stats mb-3">
+                            <span class="stat-item me-3" title="Stars">
+                                <i class="bi bi-star-fill text-warning"></i>
+                                {{ projeto.stars }}
+                            </span>
+                            <span class="stat-item me-3" title="Forks">
+                                <i class="bi bi-diagram-3-fill text-info"></i>
+                                {{ projeto.forks }}
+                            </span>
+                            <span class="stat-item text-muted small" title="Última atualização">
+                                <i class="bi bi-calendar3"></i>
+                                {{ projeto.updated_at }}
+                            </span>
+                        </div>
+
+                        <!-- Links -->
+                        <div class="project-links">
+                            <a href="{{ projeto.github_url }}" target="_blank"
+                               class="btn btn-sm btn-outline-dark me-2">
+                                <i class="bi bi-github"></i> Código
+                            </a>
+                            {% if projeto.demo_url %}
+                            <a href="{{ projeto.demo_url }}" target="_blank"
+                               class="btn btn-sm btn-outline-primary">
+                                <i class="bi bi-box-arrow-up-right"></i> Demo
+                            </a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <!-- Empty State quando filtrado -->
+        <div id="emptyState" class="text-center py-5" style="display: none;">
+            <i class="bi bi-search display-1 text-muted"></i>
+            <h3 class="mt-4 mb-3">Nenhum projeto encontrado</h3>
+            <p class="text-muted">Tente ajustar seus filtros de busca</p>
+            <button id="clearFiltersBtn" class="btn btn-primary">
+                Limpar Filtros
+            </button>
+        </div>
+
+        {% else %}
+        <div class="text-center py-5">
+            <i class="bi bi-folder2-open display-1 text-muted"></i>
+            <h3 class="mt-4 mb-3">Nenhum projeto encontrado</h3>
+            <p class="text-muted mb-4">Execute o build primeiro para buscar projetos do GitHub</p>
+            <code>python build_portfolio.py</code>
+        </div>
+        {% endif %}
+    </div>
+</section>
+
+<!-- Última Atualização -->
+{% if stats.last_updated %}
+<section class="py-3 bg-light">
+    <div class="container text-center">
+        <p class="text-muted mb-0">
+            <i class="bi bi-clock"></i>
+            Projetos sincronizados em: <strong>{{ stats.last_updated }}</strong>
+            <br>
+            <small>Atualização automática diária via GitHub Actions</small>
+        </p>
+    </div>
+</section>
+{% endif %}
+{% endblock %}
+
+{% block extra_js %}
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script>
+AOS.init({ duration: 600, once: true });
+
+// ============================================
+// FILTROS E BUSCA
+// ============================================
+
+const searchInput = document.getElementById('searchInput');
+const sortSelect = document.getElementById('sortSelect');
+const recentOnlyCheckbox = document.getElementById('recentOnly');
+const filterTags = document.querySelectorAll('.filter-tag');
+const projectItems = document.querySelectorAll('.project-item');
+const emptyState = document.getElementById('emptyState');
+const totalVisible = document.getElementById('total-visible');
+const clearFiltersBtn = document.getElementById('clearFilters');
+const clearFiltersBtnEmpty = document.getElementById('clearFiltersBtn');
+
+let activeLanguage = 'all';
+
+// Busca em tempo real
+searchInput.addEventListener('input', filterProjects);
+sortSelect.addEventListener('change', sortProjects);
+recentOnlyCheckbox.addEventListener('change', filterProjects);
+
+// Filtros de linguagem
+filterTags.forEach(tag => {
+    tag.addEventListener('click', function() {
+        filterTags.forEach(t => t.classList.remove('active'));
+        this.classList.add('active');
+
+        activeLanguage = this.dataset.value || 'all';
+        filterProjects();
+    });
+});
+
+// Limpar filtros
+[clearFiltersBtn, clearFiltersBtnEmpty].forEach(btn => {
+    if (btn) {
+        btn.addEventListener('click', () => {
+            searchInput.value = '';
+            recentOnlyCheckbox.checked = false;
+            sortSelect.value = 'stars';
+            filterTags.forEach(t => t.classList.remove('active'));
+            filterTags[0].classList.add('active');
+            activeLanguage = 'all';
+            filterProjects();
+            sortProjects();
+        });
+    }
+});
+
+function filterProjects() {
+    const searchTerm = searchInput.value.toLowerCase();
+    const recentOnly = recentOnlyCheckbox.checked;
+    let visibleCount = 0;
+
+    projectItems.forEach(item => {
+        const name = item.dataset.name;
+        const description = item.dataset.description;
+        const language = item.dataset.language;
+        const isRecent = item.dataset.recent === 'true';
+
+        // Filtro de busca
+        const matchesSearch = !searchTerm ||
+            name.includes(searchTerm) ||
+            description.includes(searchTerm);
+
+        // Filtro de linguagem
+        const matchesLanguage = activeLanguage === 'all' ||
+            language === activeLanguage;
+
+        // Filtro de recentes
+        const matchesRecent = !recentOnly || isRecent;
+
+        if (matchesSearch && matchesLanguage && matchesRecent) {
+            item.classList.remove('hidden');
+            item.style.display = 'block';
+            visibleCount++;
+        } else {
+            item.classList.add('hidden');
+            item.style.display = 'none';
+        }
+    });
+
+    // Atualizar contador
+    totalVisible.textContent = visibleCount;
+
+    // Mostrar empty state
+    if (visibleCount === 0) {
+        emptyState.style.display = 'block';
+    } else {
+        emptyState.style.display = 'none';
+    }
+}
+
+function sortProjects() {
+    const grid = document.getElementById('projectsGrid');
+    const items = Array.from(projectItems);
+    const sortBy = sortSelect.value;
+
+    items.sort((a, b) => {
+        switch (sortBy) {
+            case 'stars':
+                return parseInt(b.dataset.stars) - parseInt(a.dataset.stars);
+            case 'forks':
+                return parseInt(b.dataset.forks) - parseInt(a.dataset.forks);
+            case 'updated':
+                return b.dataset.updated.localeCompare(a.dataset.updated);
+            case 'name':
+                return a.dataset.name.localeCompare(b.dataset.name);
+            default:
+                return 0;
+        }
+    });
+
+    items.forEach(item => grid.appendChild(item));
+}
+
+// Ordenação inicial
+sortProjects();
+</script>
+{% endblock %}

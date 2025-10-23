@@ -1,0 +1,243 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ nome_portfolio }} - Portfólio Automático GitHub{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="container">
+        <div class="row align-items-center min-vh-100">
+            <div class="col-lg-6 text-center text-lg-start">
+                <div class="hero-content" data-aos="fade-right">
+                    <span class="badge bg-success-subtle text-success mb-3 px-3 py-2">
+                        <i class="bi bi-github me-2"></i>
+                        Sincronizado com GitHub
+                    </span>
+                    <h1 class="display-3 fw-bold mb-3">
+                        Olá, eu sou<br>
+                        <span class="text-primary">{{ nome_portfolio }}</span>
+                    </h1>
+                    <h2 class="h3 text-muted mb-4">{{ titulo_portfolio }}</h2>
+                    <p class="lead mb-4 text-muted">
+                        Portfólio automaticamente sincronizado com meus repositórios do GitHub.
+                        Todos os projetos são atualizados diariamente via GitHub Actions.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="{{ url_for('projetos') }}" class="btn btn-primary btn-lg me-3 mb-3">
+                            <i class="bi bi-folder-check"></i> Ver Todos os Projetos
+                        </a>
+                        <a href="{{ github_link }}" target="_blank" class="btn btn-outline-dark btn-lg mb-3">
+                            <i class="bi bi-github"></i> GitHub
+                        </a>
+                    </div>
+
+                    <!-- Estatísticas -->
+                    <div class="hero-stats mt-5">
+                        <div class="row text-center">
+                            <div class="col-4">
+                                <h3 class="fw-bold text-primary mb-0">{{ stats.total_projects or 0 }}</h3>
+                                <p class="text-muted small mb-0">Repositórios</p>
+                            </div>
+                            <div class="col-4">
+                                <h3 class="fw-bold text-primary mb-0">{{ stats.total_stars or 0 }}</h3>
+                                <p class="text-muted small mb-0">Stars</p>
+                            </div>
+                            <div class="col-4">
+                                <h3 class="fw-bold text-primary mb-0">{{ stats.total_forks or 0 }}</h3>
+                                <p class="text-muted small mb-0">Forks</p>
+                            </div>
+                        </div>
+                        {% if stats.last_updated %}
+                        <p class="text-muted small mt-3 mb-0">
+                            <i class="bi bi-clock"></i>
+                            Última atualização: {{ stats.last_updated }}
+                        </p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 text-center" data-aos="fade-left">
+                <div class="hero-image">
+                    <div class="code-window">
+                        <div class="code-window-header">
+                            <span class="dot dot-red"></span>
+                            <span class="dot dot-yellow"></span>
+                            <span class="dot dot-green"></span>
+                            <span class="code-title">github_api.py</span>
+                        </div>
+                        <div class="code-window-body">
+                            <pre><code><span class="code-keyword">import</span> requests
+
+<span class="code-keyword">class</span> <span class="code-class">GitHubPortfolio</span>:
+    <span class="code-keyword">def</span> <span class="code-function">__init__</span>(<span class="code-param">self</span>):
+        <span class="code-param">self</span>.user = <span class="code-string">"{{ github_username }}"</span>
+        <span class="code-param">self</span>.auto_sync = <span class="code-string">True</span>
+
+    <span class="code-keyword">def</span> <span class="code-function">fetch_projects</span>(<span class="code-param">self</span>):
+        <span class="code-keyword">return</span> requests.get(
+            <span class="code-string">f"api.github.com/users/{self.user}/repos"</span>
+        ).json()</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="hero-scroll">
+        <a href="#projetos-destaque" class="scroll-down">
+            <i class="bi bi-chevron-down"></i>
+        </a>
+    </div>
+</section>
+
+<!-- Projetos em Destaque -->
+<section id="projetos-destaque" class="py-5 bg-light">
+    <div class="container">
+        <div class="section-header text-center mb-5" data-aos="fade-up">
+            <span class="badge bg-primary-subtle text-primary mb-3">
+                <i class="bi bi-github"></i> Do GitHub
+            </span>
+            <h2 class="display-5 fw-bold mb-3">Projetos em Destaque</h2>
+            <p class="lead text-muted">Repositórios com mais estrelas e atividade recente</p>
+        </div>
+
+        {% if projetos %}
+        <div class="row g-4">
+            {% for projeto in projetos %}
+            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="{{ loop.index * 100 }}">
+                <div class="project-card h-100">
+                    <div class="project-header p-3">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <h5 class="project-name mb-0">
+                                <i class="bi bi-folder-fill text-primary me-2"></i>
+                                {{ projeto.title }}
+                            </h5>
+                            {% if projeto.is_recent %}
+                            <span class="badge bg-success" title="Atualizado recentemente">
+                                <i class="bi bi-lightning-fill"></i>
+                            </span>
+                            {% endif %}
+                        </div>
+                        <p class="project-description text-muted small mb-0">
+                            {{ (projeto.description or 'Projeto desenvolvido com dedicação')[:100] }}{% if (projeto.description or '')|length > 100 %}...{% endif %}
+                        </p>
+                    </div>
+
+                    <div class="project-body p-3">
+                        <!-- Tecnologias -->
+                        <div class="project-tech mb-3">
+                            {% if projeto.language %}
+                            <span class="tech-badge-main me-2">
+                                <i class="bi bi-circle-fill" style="font-size: 10px;"></i>
+                                {{ projeto.language }}
+                            </span>
+                            {% endif %}
+                            {% for tech in projeto.technologies[:2] %}
+                            <span class="tech-badge">{{ tech }}</span>
+                            {% endfor %}
+                        </div>
+
+                        <!-- Stats -->
+                        <div class="project-stats mb-3">
+                            <span class="stat-item me-3">
+                                <i class="bi bi-star-fill text-warning"></i>
+                                {{ projeto.stars }}
+                            </span>
+                            <span class="stat-item me-3">
+                                <i class="bi bi-diagram-3-fill text-info"></i>
+                                {{ projeto.forks }}
+                            </span>
+                            <span class="stat-item text-muted small">
+                                <i class="bi bi-calendar3"></i>
+                                {{ projeto.updated_at }}
+                            </span>
+                        </div>
+
+                        <!-- Links -->
+                        <div class="project-links">
+                            <a href="{{ projeto.github_url }}" target="_blank"
+                               class="btn btn-sm btn-outline-dark me-2">
+                                <i class="bi bi-github"></i> Código
+                            </a>
+                            {% if projeto.demo_url %}
+                            <a href="{{ projeto.demo_url }}" target="_blank"
+                               class="btn btn-sm btn-outline-primary">
+                                <i class="bi bi-box-arrow-up-right"></i> Demo
+                            </a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="text-center mt-5" data-aos="fade-up">
+            <a href="{{ url_for('projetos') }}" class="btn btn-primary btn-lg">
+                Ver Todos os {{ stats.total_projects }} Projetos <i class="bi bi-arrow-right ms-2"></i>
+            </a>
+        </div>
+        {% else %}
+        <div class="text-center py-5">
+            <i class="bi bi-folder2-open display-1 text-muted"></i>
+            <p class="lead text-muted mt-3">Nenhum projeto encontrado. Execute o build primeiro.</p>
+            <code class="d-block mt-3">python build_portfolio.py</code>
+        </div>
+        {% endif %}
+    </div>
+</section>
+
+<!-- Tecnologias -->
+{% if stats.top_technologies %}
+<section class="py-5">
+    <div class="container">
+        <div class="section-header text-center mb-5" data-aos="fade-up">
+            <span class="badge bg-primary-subtle text-primary mb-3">Skills</span>
+            <h2 class="display-5 fw-bold mb-3">Principais Tecnologias</h2>
+            <p class="lead text-muted">Baseado nos repositórios do GitHub</p>
+        </div>
+
+        <div class="row g-3" data-aos="fade-up">
+            {% for tech in stats.top_technologies %}
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="tech-badge-large text-center p-3">
+                    <h6 class="mb-1">{{ tech.name }}</h6>
+                    <small class="text-muted">{{ tech.count }} projetos</small>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endif %}
+
+<!-- Call to Action -->
+<section class="cta-section py-5 bg-primary text-white">
+    <div class="container text-center" data-aos="zoom-in">
+        <h2 class="display-5 fw-bold mb-3">Veja Todos os Meus Projetos</h2>
+        <p class="lead mb-4">
+            {{ stats.total_projects }} repositórios públicos no GitHub
+        </p>
+        <div class="cta-buttons">
+            <a href="{{ url_for('projetos') }}" class="btn btn-light btn-lg me-3">
+                <i class="bi bi-folder"></i> Ver Projetos
+            </a>
+            <a href="{{ github_link }}" target="_blank" class="btn btn-outline-light btn-lg">
+                <i class="bi bi-github"></i> GitHub
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script>
+    AOS.init({
+        duration: 800,
+        once: true,
+        offset: 100
+    });
+</script>
+{% endblock %}
