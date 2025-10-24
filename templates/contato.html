@@ -28,7 +28,7 @@
                         Geralmente respondo em até 24 horas.
                     </p>
 
-                    <form method="POST" action="{{ url_for('contato') }}" id="contactForm" novalidate>
+                    <form id="contactForm" novalidate>
                         <div class="row g-3">
                             <div class="col-md-6">
                                 <label for="nome" class="form-label fw-semibold">Nome Completo *</label>
@@ -290,17 +290,44 @@
         once: true
     });
 
-    // Form Validation
+    // Form Handling for Static Site
     (function() {
         'use strict';
         const form = document.getElementById('contactForm');
 
         form.addEventListener('submit', function(event) {
-            if (!form.checkValidity()) {
-                event.preventDefault();
-                event.stopPropagation();
+            event.preventDefault();
+            event.stopPropagation();
+
+            if (form.checkValidity()) {
+                // Get form data
+                const nome = document.getElementById('nome').value;
+                const email = document.getElementById('email').value;
+                const assunto = document.getElementById('assunto').value;
+                const mensagem = document.getElementById('mensagem').value;
+
+                // Create mailto link
+                const mailtoSubject = encodeURIComponent(`${assunto} - de ${nome}`);
+                const mailtoBody = encodeURIComponent(
+                    `Nome: ${nome}\n` +
+                    `Email: ${email}\n\n` +
+                    `Mensagem:\n${mensagem}`
+                );
+
+                const mailtoLink = `mailto:natalia.goldenglowitsolutions@gmail.com?subject=${mailtoSubject}&body=${mailtoBody}`;
+
+                // Open email client
+                window.location.href = mailtoLink;
+
+                // Show success message
+                alert('✅ Seu cliente de email será aberto! Por favor, envie a mensagem.');
+
+                // Reset form
+                form.reset();
+                form.classList.remove('was-validated');
+            } else {
+                form.classList.add('was-validated');
             }
-            form.classList.add('was-validated');
         }, false);
     })();
 </script>
