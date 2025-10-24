@@ -13,7 +13,7 @@ from app_static import app
 # Configurar Freezer
 app.config['FREEZER_DESTINATION'] = 'docs'
 app.config['FREEZER_RELATIVE_URLS'] = True
-app.config['FREEZER_BASE_URL'] = 'https://nataliabarros1994.github.io/portfolio-python/'
+# Não definir FREEZER_BASE_URL para usar URLs relativas que funcionam localmente e no GitHub Pages
 
 freezer = Freezer(app)
 
