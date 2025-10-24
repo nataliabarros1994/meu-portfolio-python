@@ -90,217 +90,125 @@
 <!-- Contato -->
 <section class="py-5">
     <div class="container">
-        <div class="row g-5">
-            <!-- Formulário de Contato -->
-            <div class="col-lg-7" data-aos="fade-right">
-                <div class="contact-form-wrapper">
-                    <h2 class="fw-bold mb-4">Envie uma Mensagem</h2>
-                    <p class="text-muted mb-4">
-                        Preencha o formulário abaixo e entrarei em contato o mais breve possível.
-                        Geralmente respondo em até 24 horas.
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <!-- Introdução -->
+                <div class="text-center mb-5" data-aos="fade-up">
+                    <h2 class="fw-bold mb-3">Como Entrar em Contato</h2>
+                    <p class="lead text-muted">
+                        Escolha o canal de sua preferência para iniciar uma conversa.<br>
+                        Estou disponível para novos projetos e parcerias!
                     </p>
-
-                    <!-- Success Message -->
-                    <div id="success-message" class="alert alert-success" style="display: none;">
-                        <h4><i class="bi bi-check-circle"></i> Mensagem Enviada com Sucesso!</h4>
-                        <p><strong>Obrigada pelo seu contato!</strong></p>
-                        <p>Recebi sua mensagem e entrarei em contato em até 24 horas.</p>
-                        <p><small>Você receberá uma cópia no seu email em instantes.</small></p>
-                    </div>
-
-                    <!-- Error Message -->
-                    <div id="error-message" class="alert alert-danger" style="display: none;">
-                        <h4><i class="bi bi-x-circle"></i> Erro ao Enviar</h4>
-                        <p>Houve um problema ao enviar sua mensagem. Por favor, tente novamente ou entre em contato diretamente por:</p>
-                        <ul>
-                            <li>📧 Email: <a href="mailto:natalia.goldenglowitsolutions@gmail.com">natalia.goldenglowitsolutions@gmail.com</a></li>
-                            <li>💼 LinkedIn: <a href="https://www.linkedin.com/in/nataliachagas1994/" target="_blank">nataliachagas1994</a></li>
-                        </ul>
-                    </div>
-
-                    <form action="https://formsubmit.co/natalia.goldenglowitsolutions@gmail.com" method="POST" id="contactForm" novalidate>
-                        <!-- Hidden fields for FormSubmit -->
-                        <input type="hidden" name="_subject" value="📧 NOVO CONTATO - Portfólio Natália Barros">
-                        <input type="hidden" name="_captcha" value="false">
-                        <input type="hidden" name="_template" value="table">
-
-                        <div class="row g-3">
-                            <div class="col-md-6">
-                                <label for="nome" class="form-label fw-semibold">Nome Completo *</label>
-                                <div class="input-group">
-                                    <span class="input-group-text"><i class="bi bi-person"></i></span>
-                                    <input type="text"
-                                           class="form-control"
-                                           id="nome"
-                                           name="name"
-                                           placeholder="Seu nome"
-                                           required>
-                                </div>
-                                <div class="invalid-feedback">
-                                    Por favor, informe seu nome.
-                                </div>
-                            </div>
-
-                            <div class="col-md-6">
-                                <label for="email" class="form-label fw-semibold">Email *</label>
-                                <div class="input-group">
-                                    <span class="input-group-text"><i class="bi bi-envelope"></i></span>
-                                    <input type="email"
-                                           class="form-control"
-                                           id="email"
-                                           name="email"
-                                           placeholder="seu@email.com"
-                                           required>
-                                </div>
-                                <div class="invalid-feedback">
-                                    Por favor, informe um email válido.
-                                </div>
-                            </div>
-
-                            <div class="col-12">
-                                <label for="assunto" class="form-label fw-semibold">Assunto *</label>
-                                <div class="input-group">
-                                    <span class="input-group-text"><i class="bi bi-tag"></i></span>
-                                    <input type="text"
-                                           class="form-control"
-                                           id="assunto"
-                                           name="assunto"
-                                           placeholder="Qual o assunto?"
-                                           required>
-                                </div>
-                                <div class="invalid-feedback">
-                                    Por favor, informe o assunto.
-                                </div>
-                            </div>
-
-                            <div class="col-12">
-                                <label for="mensagem" class="form-label fw-semibold">Mensagem *</label>
-                                <textarea class="form-control"
-                                          id="mensagem"
-                                          name="message"
-                                          rows="6"
-                                          placeholder="Descreva seu projeto ou dúvida..."
-                                          required></textarea>
-                                <div class="invalid-feedback">
-                                    Por favor, escreva sua mensagem.
-                                </div>
-                            </div>
-
-                            <div class="col-12">
-                                <button type="submit" class="btn btn-primary btn-lg" id="submit-btn">
-                                    <span class="submit-text"><i class="bi bi-send"></i> Enviar Mensagem</span>
-                                    <span class="loading-text" style="display: none;">
-                                        <span class="spinner-border spinner-border-sm" role="status"></span>
-                                        Enviando...
-                                    </span>
-                                </button>
-                            </div>
-                        </div>
-                    </form>
                 </div>
-            </div>
 
-            <!-- Informações de Contato -->
-            <div class="col-lg-5" data-aos="fade-left">
-                <div class="contact-info-wrapper">
-                    <h3 class="fw-bold mb-4">Informações de Contato</h3>
-                    <p class="text-muted mb-4">
-                        Você também pode entrar em contato através dos canais abaixo:
-                    </p>
-
-                    <!-- Info Cards -->
-                    <div class="contact-info-cards">
-                        <!-- Email -->
-                        <div class="info-card mb-3">
-                            <div class="card shadow-sm">
-                                <div class="card-body d-flex align-items-center">
-                                    <div class="info-icon me-3">
-                                        <i class="bi bi-envelope-fill display-6 text-primary"></i>
+                <!-- Cards de Contato -->
+                <div class="row g-4 mb-5">
+                    <!-- Email -->
+                    <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+                        <a href="mailto:natalia.goldenglowitsolutions@gmail.com" class="text-decoration-none">
+                            <div class="card h-100 shadow-sm border-0 contact-card">
+                                <div class="card-body text-center p-4">
+                                    <div class="contact-icon mb-3">
+                                        <i class="bi bi-envelope-fill display-3 text-primary"></i>
                                     </div>
-                                    <div>
-                                        <h6 class="fw-bold mb-1">Email</h6>
-                                        <a href="mailto:natalia.goldenglowitsolutions@gmail.com" class="text-decoration-none text-muted">
-                                            natalia.goldenglowitsolutions@gmail.com
-                                        </a>
-                                    </div>
+                                    <h5 class="fw-bold mb-2">Email</h5>
+                                    <p class="text-muted mb-0">natalia.goldenglowitsolutions@gmail.com</p>
+                                    <small class="text-muted d-block mt-2">Clique para enviar email</small>
                                 </div>
                             </div>
-                        </div>
-
-                        <!-- GitHub -->
-                        <div class="info-card mb-3">
-                            <div class="card shadow-sm">
-                                <div class="card-body d-flex align-items-center">
-                                    <div class="info-icon me-3">
-                                        <i class="bi bi-github display-6 text-dark"></i>
-                                    </div>
-                                    <div>
-                                        <h6 class="fw-bold mb-1">GitHub</h6>
-                                        <a href="https://github.com/nataliabarros1994" target="_blank" class="text-decoration-none text-muted">
-                                            github.com/nataliabarros1994
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- LinkedIn -->
-                        <div class="info-card mb-3">
-                            <div class="card shadow-sm">
-                                <div class="card-body d-flex align-items-center">
-                                    <div class="info-icon me-3">
-                                        <i class="bi bi-linkedin display-6 text-primary"></i>
-                                    </div>
-                                    <div>
-                                        <h6 class="fw-bold mb-1">LinkedIn</h6>
-                                        <a href="https://www.linkedin.com/in/nataliachagas1994/" target="_blank" class="text-decoration-none text-muted">
-                                            linkedin.com/in/nataliachagas1994
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Telefone -->
-                        <div class="info-card mb-3">
-                            <div class="card shadow-sm">
-                                <div class="card-body d-flex align-items-center">
-                                    <div class="info-icon me-3">
-                                        <i class="bi bi-telephone-fill display-6 text-success"></i>
-                                    </div>
-                                    <div>
-                                        <h6 class="fw-bold mb-1">Telefone/WhatsApp</h6>
-                                        <a href="tel:+55 22 98150-7669" class="text-decoration-none text-muted">
-                                            +55 (22) 98150-7669
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        </a>
                     </div>
 
-                    <!-- Disponibilidade -->
-                    <div class="availability-card mt-4">
+                    <!-- LinkedIn -->
+                    <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+                        <a href="https://www.linkedin.com/in/nataliachagas1994/" target="_blank" class="text-decoration-none">
+                            <div class="card h-100 shadow-sm border-0 contact-card">
+                                <div class="card-body text-center p-4">
+                                    <div class="contact-icon mb-3">
+                                        <i class="bi bi-linkedin display-3 text-primary"></i>
+                                    </div>
+                                    <h5 class="fw-bold mb-2">LinkedIn</h5>
+                                    <p class="text-muted mb-0">linkedin.com/in/nataliachagas1994</p>
+                                    <small class="text-muted d-block mt-2">Conecte-se comigo</small>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- WhatsApp -->
+                    <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
+                        <a href="https://wa.me/5522981507669" target="_blank" class="text-decoration-none">
+                            <div class="card h-100 shadow-sm border-0 contact-card">
+                                <div class="card-body text-center p-4">
+                                    <div class="contact-icon mb-3">
+                                        <i class="bi bi-whatsapp display-3 text-success"></i>
+                                    </div>
+                                    <h5 class="fw-bold mb-2">WhatsApp</h5>
+                                    <p class="text-muted mb-0">+55 (22) 98150-7669</p>
+                                    <small class="text-muted d-block mt-2">Iniciar conversa</small>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- GitHub -->
+                    <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
+                        <a href="https://github.com/nataliabarros1994" target="_blank" class="text-decoration-none">
+                            <div class="card h-100 shadow-sm border-0 contact-card">
+                                <div class="card-body text-center p-4">
+                                    <div class="contact-icon mb-3">
+                                        <i class="bi bi-github display-3 text-dark"></i>
+                                    </div>
+                                    <h5 class="fw-bold mb-2">GitHub</h5>
+                                    <p class="text-muted mb-0">github.com/nataliabarros1994</p>
+                                    <small class="text-muted d-block mt-2">Veja meus projetos</small>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Telefone -->
+                    <div class="col-md-6 mx-auto" data-aos="fade-up" data-aos-delay="500">
+                        <a href="tel:+55 22 98150-7669" class="text-decoration-none">
+                            <div class="card h-100 shadow-sm border-0 contact-card">
+                                <div class="card-body text-center p-4">
+                                    <div class="contact-icon mb-3">
+                                        <i class="bi bi-telephone-fill display-3 text-success"></i>
+                                    </div>
+                                    <h5 class="fw-bold mb-2">Telefone</h5>
+                                    <p class="text-muted mb-0">+55 (22) 98150-7669</p>
+                                    <small class="text-muted d-block mt-2">Clique para ligar</small>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Disponibilidade -->
+                <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="600">
+                    <div class="col-lg-8">
                         <div class="card bg-primary text-white">
-                            <div class="card-body">
+                            <div class="card-body text-center p-4">
                                 <h5 class="card-title fw-bold mb-3">
                                     <i class="bi bi-clock-fill me-2"></i>Disponibilidade
                                 </h5>
                                 <p class="mb-2">
                                     <i class="bi bi-circle-fill text-success pulse me-2" style="font-size: 10px;"></i>
-                                    Disponível para novos projetos
+                                    <strong>Disponível para novos projetos</strong>
                                 </p>
-                                <p class="mb-0 small">
+                                <p class="mb-0">
                                     Tempo de resposta: até 24 horas
                                 </p>
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <!-- FAQ Rápido -->
-                    <div class="faq-quick mt-4">
-                        <h5 class="fw-bold mb-3">Perguntas Frequentes</h5>
-                        <div class="accordion accordion-flush" id="faqAccordion">
+                <!-- FAQ -->
+                <div class="row justify-content-center mt-5" data-aos="fade-up" data-aos-delay="700">
+                    <div class="col-lg-10">
+                        <h4 class="fw-bold mb-4 text-center">Perguntas Frequentes</h4>
+                        <div class="accordion" id="faqAccordion">
                             <div class="accordion-item">
                                 <h2 class="accordion-header">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
@@ -310,6 +218,7 @@
                                 <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                                     <div class="accordion-body">
                                         Geralmente respondo todas as mensagens em até 24 horas durante dias úteis.
+                                        Para urgências, recomendo contato via WhatsApp.
                                     </div>
                                 </div>
                             </div>
@@ -322,6 +231,7 @@
                                 <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                                     <div class="accordion-body">
                                         Sim! Estou sempre aberta a discutir novos projetos interessantes.
+                                        Entre em contato para conversarmos sobre suas necessidades.
                                     </div>
                                 </div>
                             </div>
@@ -333,7 +243,8 @@
                                 </h2>
                                 <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                                     <div class="accordion-body">
-                                        Os valores variam de acordo com a complexidade e escopo do projeto. Entre em contato para discutirmos!
+                                        Os valores variam de acordo com a complexidade e escopo do projeto.
+                                        Entre em contato para discutirmos os detalhes e eu prepararei um orçamento personalizado.
                                     </div>
                                 </div>
                             </div>
@@ -449,73 +360,44 @@
         duration: 800,
         once: true
     });
-
-    // Form Handling with Formspree
-    (function() {
-        'use strict';
-        const form = document.getElementById('contactForm');
-        const submitBtn = document.getElementById('submit-btn');
-        const submitText = submitBtn.querySelector('.submit-text');
-        const loadingText = submitBtn.querySelector('.loading-text');
-        const successMessage = document.getElementById('success-message');
-        const errorMessage = document.getElementById('error-message');
-
-        form.addEventListener('submit', function(event) {
-            event.preventDefault();
-            event.stopPropagation();
-
-            if (!form.checkValidity()) {
-                form.classList.add('was-validated');
-                return;
-            }
-
-            // Show loading state
-            submitText.style.display = 'none';
-            loadingText.style.display = 'inline';
-            submitBtn.disabled = true;
-
-            // Hide previous messages
-            successMessage.style.display = 'none';
-            errorMessage.style.display = 'none';
-
-            // Send to Formspree
-            fetch(form.action, {
-                method: 'POST',
-                body: new FormData(form),
-                headers: {
-                    'Accept': 'application/json'
-                }
-            })
-            .then(response => {
-                if (response.ok) {
-                    // SUCCESS - Show success message
-                    successMessage.style.display = 'block';
-                    form.reset();
-                    form.classList.remove('was-validated');
-
-                    // Scroll to success message
-                    successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
-
-                    console.log('✅ Form submitted successfully!');
-                } else {
-                    throw new Error('Server error');
-                }
-            })
-            .catch(error => {
-                // ERROR - Show error message
-                console.error('❌ Form submission error:', error);
-                errorMessage.style.display = 'block';
-                errorMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            })
-            .finally(() => {
-                // Restore button
-                submitText.style.display = 'inline';
-                loadingText.style.display = 'none';
-                submitBtn.disabled = false;
-            });
-        }, false);
-    })();
 </script>
+
+<style>
+    /* Hover effects for contact cards */
+    .contact-card {
+        transition: all 0.3s ease;
+    }
+
+    .contact-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+    }
+
+    .contact-card .contact-icon {
+        transition: transform 0.3s ease;
+    }
+
+    .contact-card:hover .contact-icon {
+        transform: scale(1.1);
+    }
+
+    /* Pulse animation for availability indicator */
+    @keyframes pulse {
+        0% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0.5;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
+    .pulse {
+        animation: pulse 2s ease-in-out infinite;
+    }
+</style>
 
 </body>
 </html>
