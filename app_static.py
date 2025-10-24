@@ -50,8 +50,10 @@ def inject_portfolio_info():
         'titulo_portfolio': 'Desenvolvedora Python Full Stack',
         'github_username': 'nataliabarros1994',
         'github_link': 'https://github.com/nataliabarros1994',
-        'linkedin_link': 'https://linkedin.com/in/nataliabarros',
-        'email_contato': 'natalia@exemplo.com',
+        'linkedin_link': 'https://www.linkedin.com/in/nataliachagas1994/',
+        'email_contato': 'natalia.goldenglowitsolutions@gmail.com',
+        'telefone_contato': '+55 22 98150-7669',
+        'telefone_formatado': '+55 (22) 98150-7669',
         'ano_atual': datetime.now().year
     }
 
