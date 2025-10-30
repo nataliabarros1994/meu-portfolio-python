@@ -770,6 +770,12 @@
                 padding: 0 1.25rem;
             }
 
+            /* Ensure all projects are visible on tablet/mobile landscape */
+            .project-card.reveal {
+                opacity: 1 !important;
+                transform: translateY(0) !important;
+            }
+
             .nav-links {
                 position: fixed;
                 top: 70px;
@@ -862,6 +868,12 @@
                 --spacing-md: 1.5rem;
                 --spacing-lg: 3rem;
                 --spacing-xl: 4rem;
+            }
+
+            /* Ensure all projects are visible on mobile */
+            .project-card.reveal {
+                opacity: 1 !important;
+                transform: translateY(0) !important;
             }
 
             .container {
@@ -1569,18 +1581,26 @@
         const revealElements = document.querySelectorAll('.reveal');
 
         const revealOnScroll = () => {
+            const isMobile = window.innerWidth <= 768;
+            const threshold = isMobile ? 50 : 100; // More sensitive on mobile
+
             revealElements.forEach(element => {
                 const elementTop = element.getBoundingClientRect().top;
                 const windowHeight = window.innerHeight;
 
-                if (elementTop < windowHeight - 100) {
+                if (elementTop < windowHeight - threshold) {
                     element.classList.add('active');
                 }
             });
         };
 
         window.addEventListener('scroll', revealOnScroll);
-        revealOnScroll(); // Initial check
+        window.addEventListener('resize', revealOnScroll); // Re-check on orientation change
+
+        // Initial check - run immediately and after a short delay
+        revealOnScroll();
+        setTimeout(revealOnScroll, 100);
+        setTimeout(revealOnScroll, 500);
 
         // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
