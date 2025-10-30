@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="0; url=./portfolio-minimalista.html">
+    <meta name="description" content="Natália Barros - Desenvolvedora Python Full Stack. Portfolio profissional com projetos de microserviços, IA, robótica e e-commerce.">
+    <meta name="keywords" content="Natália Barros, Python, Full Stack, Portfolio, MicroStack, Microserviços">
+    <title>Natália Barros | Full Stack Developer - Portfolio</title>
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Natália Barros | Full Stack Developer">
+    <meta property="og:description" content="Portfolio profissional - Desenvolvedora Python especializada em microserviços, IA e soluções escaláveis">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://nataliabarros1994.github.io/meu-portfolio-python/">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .loader-container {
+            text-align: center;
+            max-width: 600px;
+        }
+
+        .logo {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #fff 0%, #888 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: #888;
+            margin-bottom: 2rem;
+        }
+
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid rgba(255, 255, 255, 0.1);
+            border-top-color: white;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 2rem auto;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .redirect-link {
+            color: white;
+            text-decoration: none;
+            padding: 12px 24px;
+            border: 2px solid white;
+            border-radius: 50px;
+            display: inline-block;
+            margin-top: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .redirect-link:hover {
+            background: white;
+            color: #0a0a0a;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .logo { font-size: 3rem; }
+            h1 { font-size: 1.5rem; }
+            p { font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="loader-container">
+        <div class="logo">NB</div>
+        <h1>Natália Barros</h1>
+        <p>Desenvolvedora Python Full Stack</p>
+        <div class="spinner"></div>
+        <p>Carregando portfolio...</p>
+        <a href="./portfolio-minimalista.html" class="redirect-link">
+            Clique aqui se não for redirecionado automaticamente
+        </a>
+    </div>
+
+    <script>
+        // Fallback redirect after 2 seconds
+        setTimeout(function() {
+            window.location.href = './portfolio-minimalista.html';
+        }, 2000);
+    </script>
+</body>
+</html>
