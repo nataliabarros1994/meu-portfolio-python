@@ -23,12 +23,13 @@ Portfólio profissional minimalista e moderno, desenvolvido como single-page app
 
 ## 🚀 Projetos em Destaque
 
-1. **[MicroStack](https://github.com/nataliabarros1994/microstack)** - Plataforma SaaS com microserviços, pagamentos integrados (cartão, PayPal, Payoneer) e dashboard em tempo real
-2. **Sistema de Detecção de Fraudes** - ML/IA em tempo real
-3. **Athena Robotic Framework** - ROS2 + Python
-4. **GlowShop E-commerce** - Microserviços + Django
-5. **E-commerce REST API** - PostgreSQL + JWT
-6. **Mega Controle de Estoque** - Sistema completo
+1. **[Discord SaaS Platform](https://github.com/nataliabarros1994/DISCOR-SAAS)** - Plataforma SaaS completa com Next.js 15, Clerk Auth, Stripe, notificações Discord em tempo real e dashboard responsivo
+2. **[MicroStack](https://github.com/nataliabarros1994/microstack)** - Plataforma SaaS com microserviços, pagamentos integrados (cartão, PayPal, Payoneer) e dashboard em tempo real
+3. **Sistema de Detecção de Fraudes** - ML/IA em tempo real
+4. **Athena Robotic Framework** - ROS2 + Python
+5. **GlowShop E-commerce** - Microserviços + Django
+6. **E-commerce REST API** - PostgreSQL + JWT
+7. **Mega Controle de Estoque** - Sistema completo
 
 ## 📱 Contato
 
