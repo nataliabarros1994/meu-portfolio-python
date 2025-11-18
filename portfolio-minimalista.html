@@ -248,6 +248,31 @@
             color: var(--color-text);
         }
 
+        .lang-toggle {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background-color: var(--color-gray-light);
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.875rem;
+            transition: all var(--transition-base);
+            color: var(--color-text);
+        }
+
+        .lang-toggle:hover {
+            background-color: var(--color-text);
+            color: white;
+            transform: scale(1.05);
+        }
+
+        .lang-icon {
+            font-size: 1.1rem;
+        }
+
         /* ==================== HERO SECTION ==================== */
         #hero {
             padding-top: 100px;
@@ -1120,10 +1145,16 @@
         <div class="container">
             <a href="#hero" class="logo">NB.</a>
             <ul class="nav-links" id="navLinks">
-                <li><a href="#hero">Início</a></li>
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#projetos">Projetos</a></li>
-                <li><a href="#contato">Contato</a></li>
+                <li><a href="#hero" data-i18n="nav.home">Início</a></li>
+                <li><a href="#sobre" data-i18n="nav.about">Sobre</a></li>
+                <li><a href="#projetos" data-i18n="nav.projects">Projetos</a></li>
+                <li><a href="#contato" data-i18n="nav.contact">Contato</a></li>
+                <li>
+                    <button id="langToggle" class="lang-toggle" aria-label="Change language">
+                        <span class="lang-icon">🌐</span>
+                        <span id="currentLang">PT</span>
+                    </button>
+                </li>
             </ul>
             <button class="mobile-menu-toggle" id="mobileMenuToggle">
                 <i class="fas fa-bars"></i>
@@ -1135,21 +1166,21 @@
     <section id="hero" class="section">
         <div class="container">
             <div class="hero-content">
-                <span class="hero-tag">👋 Olá, eu sou Natália</span>
+                <span class="hero-tag" data-i18n="hero.greeting">👋 Olá, eu sou Natália</span>
                 <h1 class="hero-title">
-                    Desenvolvedora<br>
-                    <span class="text-gradient">Python Full Stack</span>
+                    <span data-i18n="hero.title">Desenvolvedora</span><br>
+                    <span class="text-gradient" data-i18n="hero.titleGradient">Python Full Stack</span>
                 </h1>
-                <p class="hero-subtitle">
+                <p class="hero-subtitle" data-i18n-html="hero.subtitle">
                     Transformo ideias em soluções digitais através de código limpo,<br>
                     design inteligente e tecnologias modernas.
                 </p>
                 <div class="hero-cta">
                     <a href="#projetos" class="btn btn-primary">
-                        Ver Projetos <i class="fas fa-arrow-right"></i>
+                        <span data-i18n="hero.btnProjects">Ver Projetos</span> <i class="fas fa-arrow-right"></i>
                     </a>
                     <a href="#contato" class="btn btn-secondary">
-                        Entrar em Contato <i class="fas fa-envelope"></i>
+                        <span data-i18n="hero.btnContact">Entrar em Contato</span> <i class="fas fa-envelope"></i>
                     </a>
                 </div>
                 <div class="social-links">
@@ -1175,13 +1206,13 @@
         <div class="container">
             <div class="about-grid">
                 <div class="about-content reveal">
-                    <h2>Sobre Mim</h2>
-                    <p>
+                    <h2 data-i18n="about.title">Sobre Mim</h2>
+                    <p data-i18n="about.p1">
                         Sou desenvolvedora Python Full Stack apaixonada por criar soluções digitais
                         que fazem a diferença. Com experiência em desenvolvimento web, automação e
                         integração de sistemas, transformo desafios complexos em aplicações elegantes e eficientes.
                     </p>
-                    <p>
+                    <p data-i18n="about.p2">
                         Meu foco está em escrever código limpo, escalável e de fácil manutenção,
                         sempre buscando as melhores práticas e tecnologias mais modernas para
                         entregar valor aos usuários.
@@ -1200,19 +1231,19 @@
                 <div class="about-stats reveal">
                     <div class="stat-card">
                         <span class="stat-number">3+</span>
-                        <span class="stat-label">Anos de Experiência</span>
+                        <span class="stat-label" data-i18n="about.stats.experience">Anos de Experiência</span>
                     </div>
                     <div class="stat-card">
                         <span class="stat-number">20+</span>
-                        <span class="stat-label">Projetos Concluídos</span>
+                        <span class="stat-label" data-i18n="about.stats.projects">Projetos Concluídos</span>
                     </div>
                     <div class="stat-card">
                         <span class="stat-number">100%</span>
-                        <span class="stat-label">Satisfação de Clientes</span>
+                        <span class="stat-label" data-i18n="about.stats.satisfaction">Satisfação de Clientes</span>
                     </div>
                     <div class="stat-card">
                         <span class="stat-number">24h</span>
-                        <span class="stat-label">Tempo de Resposta</span>
+                        <span class="stat-label" data-i18n="about.stats.response">Tempo de Resposta</span>
                     </div>
                 </div>
             </div>
@@ -1223,8 +1254,8 @@
     <section id="projetos" class="section">
         <div class="container">
             <div class="section-header reveal">
-                <h2>Projetos em Destaque</h2>
-                <p>Alguns dos meus trabalhos mais recentes e relevantes</p>
+                <h2 data-i18n="projects.title">Projetos em Destaque</h2>
+                <p data-i18n="projects.subtitle">Alguns dos meus trabalhos mais recentes e relevantes</p>
             </div>
             <div class="projects-grid">
                 <!-- Project 1: Discord SaaS Platform -->
@@ -1233,8 +1264,8 @@
                         <i class="fab fa-discord"></i>
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">Discord SaaS Platform</h3>
-                        <p class="project-description">
+                        <h3 class="project-title" data-i18n="projects.discord.title">Discord SaaS Platform</h3>
+                        <p class="project-description" data-i18n="projects.discord.description">
                             Plataforma SaaS completa com Next.js 15, autenticação via Clerk, pagamentos Stripe (PRO/FREE), notificações Discord em tempo real,
                             e dashboard responsivo com gerenciamento de categorias, eventos e quotas. Arquitetura production-ready com TypeScript e Prisma ORM.
                         </p>
@@ -1249,7 +1280,7 @@
                         </div>
                         <div class="project-links">
                             <a href="https://github.com/nataliabarros1994/DISCOR-SAAS" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i> Ver no GitHub
+                                <i class="fab fa-github"></i> <span data-i18n="projects.viewCode">Ver no GitHub</span>
                             </a>
                         </div>
                     </div>
@@ -1261,8 +1292,8 @@
                         <i class="fas fa-layer-group"></i>
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">MicroStack - Plataforma SaaS</h3>
-                        <p class="project-description">
+                        <h3 class="project-title" data-i18n="projects.microstack.title">MicroStack - Plataforma SaaS</h3>
+                        <p class="project-description" data-i18n="projects.microstack.description">
                             Plataforma SaaS completa com arquitetura de microserviços, design responsivo para web e mobile,
                             integração de pagamentos (cartão, débito, PayPal, Payoneer), notificações automáticas e dashboard administrativo em tempo real.
                         </p>
@@ -1288,8 +1319,8 @@
                         <i class="fas fa-shield-alt"></i>
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">Sistema de Detecção de Fraudes</h3>
-                        <p class="project-description">
+                        <h3 class="project-title" data-i18n="projects.fraud.title">Sistema de Detecção de Fraudes</h3>
+                        <p class="project-description" data-i18n="projects.fraud.description">
                             Sistema de detecção de fraudes em tempo real com Inteligência Artificial,
                             utilizando machine learning para identificar padrões suspeitos e prevenir transações fraudulentas.
                         </p>
@@ -1301,7 +1332,7 @@
                         </div>
                         <div class="project-links">
                             <a href="https://github.com/nataliabarros1994/sistema-de-detec-o-de-fraudes-em-tempo-real" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i> Ver Código
+                                <i class="fab fa-github"></i> <span data-i18n="projects.viewCodeAlt">Ver Código</span>
                             </a>
                         </div>
                     </div>
@@ -1313,8 +1344,8 @@
                         <i class="fas fa-robot"></i>
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">Athena Robotic Framework</h3>
-                        <p class="project-description">
+                        <h3 class="project-title" data-i18n="projects.athena.title">Athena Robotic Framework</h3>
+                        <p class="project-description" data-i18n="projects.athena.description">
                             Projeto completo de robótica usando ROS2 Jazzy Jalisco, desenvolvido para Ubuntu 24.04 LTS.
                             Framework modular para controle e simulação de sistemas robóticos avançados.
                         </p>
@@ -1326,7 +1357,7 @@
                         </div>
                         <div class="project-links">
                             <a href="https://github.com/nataliabarros1994/athena-robotic-framework" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i> Ver Código
+                                <i class="fab fa-github"></i> <span data-i18n="projects.viewCodeAlt">Ver Código</span>
                             </a>
                         </div>
                     </div>
@@ -1338,8 +1369,8 @@
                         <i class="fas fa-shopping-cart"></i>
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">GlowShop - E-commerce Inteligente</h3>
-                        <p class="project-description">
+                        <h3 class="project-title" data-i18n="projects.glowshop.title">GlowShop - E-commerce Inteligente</h3>
+                        <p class="project-description" data-i18n="projects.glowshop.description">
                             Plataforma moderna de e-commerce construída com arquitetura de microserviços,
                             incluindo carrinho de compras, processamento de pagamentos e gestão de inventário.
                         </p>
@@ -1351,7 +1382,7 @@
                         </div>
                         <div class="project-links">
                             <a href="https://github.com/nataliabarros1994/ecommerce-de-loja" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i> Ver Código
+                                <i class="fab fa-github"></i> <span data-i18n="projects.viewCodeAlt">Ver Código</span>
                             </a>
                         </div>
                     </div>
@@ -1363,8 +1394,8 @@
                         <i class="fas fa-server"></i>
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">E-commerce REST API</h3>
-                        <p class="project-description">
+                        <h3 class="project-title" data-i18n="projects.ecommerceApi.title">E-commerce REST API</h3>
+                        <p class="project-description" data-i18n="projects.ecommerceApi.description">
                             API RESTful profissional para e-commerce com PostgreSQL, incluindo autenticação,
                             gestão de produtos, pedidos e integração com sistemas de pagamento.
                         </p>
@@ -1376,7 +1407,7 @@
                         </div>
                         <div class="project-links">
                             <a href="https://github.com/nataliabarros1994/ecommerce-api" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i> Ver Código
+                                <i class="fab fa-github"></i> <span data-i18n="projects.viewCodeAlt">Ver Código</span>
                             </a>
                         </div>
                     </div>
@@ -1388,8 +1419,8 @@
                         <i class="fas fa-warehouse"></i>
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">Mega Controle de Estoque</h3>
-                        <p class="project-description">
+                        <h3 class="project-title" data-i18n="projects.inventory.title">Mega Controle de Estoque</h3>
+                        <p class="project-description" data-i18n="projects.inventory.description">
                             Sistema completo de gestão de estoque com controle de entrada/saída,
                             relatórios detalhados, alertas de estoque mínimo e dashboard analítico.
                         </p>
@@ -1401,7 +1432,7 @@
                         </div>
                         <div class="project-links">
                             <a href="https://github.com/nataliabarros1994/mega-controle-estoque" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i> Ver Código
+                                <i class="fab fa-github"></i> <span data-i18n="projects.viewCodeAlt">Ver Código</span>
                             </a>
                         </div>
                     </div>
@@ -1414,12 +1445,12 @@
     <section id="contato" class="section">
         <div class="container">
             <div class="section-header reveal">
-                <h2>Vamos Trabalhar Juntos?</h2>
-                <p>Estou sempre aberta a novos projetos e oportunidades</p>
+                <h2 data-i18n="contact.title">Vamos Trabalhar Juntos?</h2>
+                <p data-i18n="contact.subtitle">Estou sempre aberta a novos projetos e oportunidades</p>
             </div>
             <div class="contact-grid">
                 <div class="contact-info reveal">
-                    <h3>Entre em Contato</h3>
+                    <h3 data-i18n="contact.getInTouch">Entre em Contato</h3>
                     <div class="contact-methods">
                         <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox" target="_blank" class="contact-method">
                             <div class="contact-icon">
@@ -1464,13 +1495,13 @@
                 </div>
 
                 <div class="contact-cta reveal">
-                    <h3>Disponível para Projetos</h3>
-                    <p>
+                    <h3 data-i18n="contact.available">Disponível para Projetos</h3>
+                    <p data-i18n="contact.availableText">
                         Estou disponível para projetos freelance, consultorias e oportunidades de trabalho.
                         Respondo todas as mensagens em até 24 horas.
                     </p>
                     <a href="https://wa.me/message/VKWXMICWUXT5K1" target="_blank" class="btn btn-primary" style="background: white; color: #0a0a0a;">
-                        <i class="fab fa-whatsapp"></i> Fale Comigo Agora
+                        <i class="fab fa-whatsapp"></i> <span data-i18n="contact.talkNow">Fale Comigo Agora</span>
                     </a>
                 </div>
             </div>
@@ -1489,14 +1520,14 @@
                     </p>
                 </div>
                 <div class="footer-section">
-                    <h4>Links Rápidos</h4>
+                    <h4 data-i18n="footer.quickLinks">Links Rápidos</h4>
                     <a href="#hero">Início</a>
                     <a href="#sobre">Sobre</a>
                     <a href="#projetos">Projetos</a>
                     <a href="#contato">Contato</a>
                 </div>
                 <div class="footer-section">
-                    <h4>Redes Sociais</h4>
+                    <h4 data-i18n="footer.social">Redes Sociais</h4>
                     <a href="https://github.com/nataliabarros1994?tab=repositories" target="_blank">
                         <i class="fab fa-github"></i> GitHub
                     </a>
@@ -1509,13 +1540,225 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Natália Barros. Todos os direitos reservados.</p>
+                <p>&copy; 2025 Natália Barros. <span data-i18n="footer.rights">Todos os direitos reservados.</span></p>
             </div>
         </div>
     </footer>
 
     <!-- JavaScript -->
     <script>
+        // ==================== TRANSLATIONS ====================
+        const translations = {
+            pt: {
+                nav: {
+                    home: 'Início',
+                    about: 'Sobre',
+                    projects: 'Projetos',
+                    contact: 'Contato'
+                },
+                hero: {
+                    greeting: '👋 Olá, eu sou Natália',
+                    title: 'Desenvolvedora',
+                    titleGradient: 'Python Full Stack',
+                    subtitle: 'Transformo ideias em soluções digitais através de código limpo,<br>design inteligente e tecnologias modernas.',
+                    btnProjects: 'Ver Projetos',
+                    btnContact: 'Entrar em Contato'
+                },
+                about: {
+                    title: 'Sobre Mim',
+                    p1: 'Sou desenvolvedora Python Full Stack apaixonada por criar soluções digitais que fazem a diferença. Com experiência em desenvolvimento web, automação e integração de sistemas, transformo desafios complexos em aplicações elegantes e eficientes.',
+                    p2: 'Meu foco está em escrever código limpo, escalável e de fácil manutenção, sempre buscando as melhores práticas e tecnologias mais modernas para entregar valor aos usuários.',
+                    stats: {
+                        experience: 'Anos de Experiência',
+                        projects: 'Projetos Concluídos',
+                        satisfaction: 'Satisfação de Clientes',
+                        response: 'Tempo de Resposta'
+                    }
+                },
+                projects: {
+                    title: 'Projetos em Destaque',
+                    subtitle: 'Alguns dos meus trabalhos mais recentes e relevantes',
+                    viewCode: 'Ver no GitHub',
+                    viewCodeAlt: '<span data-i18n="projects.viewCodeAlt">Ver Código</span>',
+                    discord: {
+                        title: 'Discord SaaS Platform',
+                        description: 'Plataforma SaaS completa com Next.js 15, autenticação via Clerk, pagamentos Stripe (PRO/FREE), notificações Discord em tempo real, e dashboard responsivo com gerenciamento de categorias, eventos e quotas. Arquitetura production-ready com TypeScript e Prisma ORM.'
+                    },
+                    microstack: {
+                        title: 'MicroStack - Plataforma SaaS',
+                        description: 'Plataforma SaaS completa com arquitetura de microserviços, design responsivo para web e mobile, integração de pagamentos (cartão, débito, PayPal, Payoneer), notificações automáticas e dashboard administrativo em tempo real.'
+                    },
+                    fraud: {
+                        title: 'Sistema de Detecção de Fraudes',
+                        description: 'Sistema de detecção de fraudes em tempo real com Inteligência Artificial, utilizando machine learning para identificar padrões suspeitos e prevenir transações fraudulentas.'
+                    },
+                    athena: {
+                        title: 'Athena Robotic Framework',
+                        description: 'Projeto completo de robótica usando ROS2 Jazzy Jalisco, desenvolvido para Ubuntu 24.04 LTS. Framework modular para controle e simulação de sistemas robóticos avançados.'
+                    },
+                    glowshop: {
+                        title: 'GlowShop - E-commerce Inteligente',
+                        description: 'Plataforma moderna de e-commerce construída com arquitetura de microserviços, incluindo carrinho de compras, processamento de pagamentos e gestão de inventário.'
+                    },
+                    ecommerceApi: {
+                        title: 'E-commerce REST API',
+                        description: 'API RESTful profissional para e-commerce com PostgreSQL, incluindo autenticação, gestão de produtos, pedidos e integração com sistemas de pagamento.'
+                    },
+                    inventory: {
+                        title: 'Mega Controle de Estoque',
+                        description: 'Sistema completo de gestão de estoque com controle de entrada/saída, relatórios detalhados, alertas de estoque mínimo e dashboard analítico.'
+                    }
+                },
+                contact: {
+                    title: 'Vamos Trabalhar Juntos?',
+                    subtitle: 'Estou sempre aberta a novos projetos e oportunidades',
+                    getInTouch: 'Entre em Contato',
+                    available: 'Disponível para Projetos',
+                    availableText: 'Estou disponível para projetos freelance, consultorias e oportunidades de trabalho. Respondo todas as mensagens em até 24 horas.',
+                    talkNow: 'Fale Comigo Agora',
+                    linkedin: 'LinkedIn',
+                    whatsapp: 'WhatsApp',
+                    github: 'GitHub',
+                    startConversation: 'Iniciar conversa'
+                },
+                footer: {
+                    description: 'Desenvolvedora Python Full Stack dedicada a criar soluções digitais inovadoras e de alto impacto.',
+                    quickLinks: 'Links Rápidos',
+                    social: 'Redes Sociais',
+                    rights: 'Todos os direitos reservados.'
+                }
+            },
+            en: {
+                nav: {
+                    home: 'Home',
+                    about: 'About',
+                    projects: 'Projects',
+                    contact: 'Contact'
+                },
+                hero: {
+                    greeting: '👋 Hi, I\'m Natália',
+                    title: 'Python Full Stack',
+                    titleGradient: 'Developer',
+                    subtitle: 'I transform ideas into digital solutions through clean code,<br>smart design, and modern technologies.',
+                    btnProjects: 'View Projects',
+                    btnContact: 'Get in Touch'
+                },
+                about: {
+                    title: 'About Me',
+                    p1: 'I\'m a Python Full Stack developer passionate about creating digital solutions that make a difference. With experience in web development, automation, and system integration, I transform complex challenges into elegant and efficient applications.',
+                    p2: 'My focus is on writing clean, scalable, and maintainable code, always seeking best practices and the most modern technologies to deliver value to users.',
+                    stats: {
+                        experience: 'Years of Experience',
+                        projects: 'Completed Projects',
+                        satisfaction: 'Client Satisfaction',
+                        response: 'Response Time'
+                    }
+                },
+                projects: {
+                    title: 'Featured Projects',
+                    subtitle: 'Some of my most recent and relevant work',
+                    viewCode: 'View on GitHub',
+                    viewCodeAlt: 'View Code',
+                    discord: {
+                        title: 'Discord SaaS Platform',
+                        description: 'Full-featured SaaS platform built with Next.js 15, Clerk authentication, Stripe payments (PRO/FREE), real-time Discord notifications, and responsive dashboard with category, event, and quota management. Production-ready architecture with TypeScript and Prisma ORM.'
+                    },
+                    microstack: {
+                        title: 'MicroStack - SaaS Platform',
+                        description: 'Complete SaaS platform with microservices architecture, responsive design for web and mobile, integrated payments (card, debit, PayPal, Payoneer), automatic notifications, and real-time administrative dashboard.'
+                    },
+                    fraud: {
+                        title: 'Fraud Detection System',
+                        description: 'Real-time fraud detection system with Artificial Intelligence, using machine learning to identify suspicious patterns and prevent fraudulent transactions.'
+                    },
+                    athena: {
+                        title: 'Athena Robotic Framework',
+                        description: 'Complete robotics project using ROS2 Jazzy Jalisco, developed for Ubuntu 24.04 LTS. Modular framework for control and simulation of advanced robotic systems.'
+                    },
+                    glowshop: {
+                        title: 'GlowShop - Smart E-commerce',
+                        description: 'Modern e-commerce platform built with microservices architecture, including shopping cart, payment processing, and inventory management.'
+                    },
+                    ecommerceApi: {
+                        title: 'E-commerce REST API',
+                        description: 'Professional RESTful API for e-commerce with PostgreSQL, including authentication, product management, orders, and payment system integration.'
+                    },
+                    inventory: {
+                        title: 'Mega Inventory Control',
+                        description: 'Complete inventory management system with entry/exit control, detailed reports, minimum stock alerts, and analytical dashboard.'
+                    }
+                },
+                contact: {
+                    title: 'Let\'s Work Together?',
+                    subtitle: 'I\'m always open to new projects and opportunities',
+                    getInTouch: 'Get in Touch',
+                    available: 'Available for Projects',
+                    availableText: 'I\'m available for freelance projects, consulting, and job opportunities. I respond to all messages within 24 hours.',
+                    talkNow: 'Talk to Me Now',
+                    linkedin: 'LinkedIn',
+                    whatsapp: 'WhatsApp',
+                    github: 'GitHub',
+                    startConversation: 'Start conversation'
+                },
+                footer: {
+                    description: 'Python Full Stack Developer dedicated to creating innovative and high-impact digital solutions.',
+                    quickLinks: 'Quick Links',
+                    social: 'Social Media',
+                    rights: 'All rights reserved.'
+                }
+            }
+        };
+
+        // Language switching functionality
+        let currentLang = localStorage.getItem('preferredLanguage') || 'pt';
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            localStorage.setItem('preferredLanguage', lang);
+            document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en';
+            updateContent();
+            updateLangButton();
+        }
+
+        function updateLangButton() {
+            const langBtn = document.getElementById('currentLang');
+            if (langBtn) {
+                langBtn.textContent = currentLang.toUpperCase();
+            }
+        }
+
+        function updateContent() {
+            const t = translations[currentLang];
+
+            // Update all elements with data-i18n attribute
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const keys = element.getAttribute('data-i18n').split('.');
+                let value = t;
+                keys.forEach(key => value = value[key]);
+                if (value) element.textContent = value;
+            });
+
+            // Update all elements with data-i18n-html attribute (for HTML content)
+            document.querySelectorAll('[data-i18n-html]').forEach(element => {
+                const keys = element.getAttribute('data-i18n-html').split('.');
+                let value = t;
+                keys.forEach(key => value = value[key]);
+                if (value) element.innerHTML = value;
+            });
+        }
+
+        // Initialize language on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            setLanguage(currentLang);
+
+            const langToggle = document.getElementById('langToggle');
+            if (langToggle) {
+                langToggle.addEventListener('click', () => {
+                    setLanguage(currentLang === 'pt' ? 'en' : 'pt');
+                });
+            }
+        });
+
         // Polyfill for smooth scroll in older browsers
         (function() {
             'use strict';
