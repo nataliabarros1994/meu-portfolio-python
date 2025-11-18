@@ -1752,6 +1752,10 @@
 
         // Initialize language on page load
         document.addEventListener('DOMContentLoaded', () => {
+            // Force update content immediately
+            updateContent();
+            updateLangButton();
+
             setLanguage(currentLang);
 
             const langToggle = document.getElementById('langToggle');
