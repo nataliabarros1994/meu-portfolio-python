@@ -249,6 +249,34 @@
             border: none;
             cursor: pointer;
             color: var(--color-text);
+            padding: 15px;
+            margin: -15px;
+            position: relative;
+            z-index: 10000;
+            touch-action: manipulation;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+            min-width: 44px;
+            min-height: 44px;
+        }
+
+        .mobile-menu-toggle:active {
+            transform: scale(0.9);
+            opacity: 0.7;
+        }
+            margin: -12px;
+            position: relative;
+            z-index: 10000;
+            touch-action: manipulation;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+        }
+
+        .mobile-menu-toggle:active {
+            display: none;
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--color-text);
         }
 
         .lang-toggle {
