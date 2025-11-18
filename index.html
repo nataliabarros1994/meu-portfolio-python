@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+    <!-- Updated: 2025-11-18 - Discord SaaS Platform added -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -160,10 +161,6 @@
             min-height: 100vh;
             display: flex;
             align-items: center;
-        }
-
-        .section#projetos {
-            min-height: auto;
         }
 
         .text-gradient {
@@ -435,8 +432,6 @@
         /* ==================== PROJECTS SECTION ==================== */
         #projetos {
             background-color: var(--color-gray-light);
-            min-height: auto !important;
-            overflow: visible !important;
         }
 
         .section-header {
@@ -458,8 +453,6 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: var(--spacing-md);
-            width: 100%;
-            overflow: visible;
         }
 
         .project-card {
@@ -770,12 +763,6 @@
                 padding: 0 1.25rem;
             }
 
-            /* Ensure all projects are visible on tablet/mobile landscape */
-            .project-card.reveal {
-                opacity: 1 !important;
-                transform: translateY(0) !important;
-            }
-
             .nav-links {
                 position: fixed;
                 top: 70px;
@@ -817,8 +804,6 @@
             .projects-grid {
                 grid-template-columns: 1fr;
                 gap: 1.5rem;
-                width: 100%;
-                overflow: visible;
             }
 
             .project-image {
@@ -868,12 +853,6 @@
                 --spacing-md: 1.5rem;
                 --spacing-lg: 3rem;
                 --spacing-xl: 4rem;
-            }
-
-            /* Ensure all projects are visible on mobile */
-            .project-card.reveal {
-                opacity: 1 !important;
-                transform: translateY(0) !important;
             }
 
             .container {
@@ -940,8 +919,6 @@
             .projects-grid {
                 grid-template-columns: 1fr;
                 gap: 1.25rem;
-                width: 100%;
-                overflow: visible;
             }
 
             .project-image {
@@ -1250,32 +1227,62 @@
                 <p>Alguns dos meus trabalhos mais recentes e relevantes</p>
             </div>
             <div class="projects-grid">
-                <!-- Project 1: MicroStack -->
+                <!-- Project 1: Discord SaaS Platform -->
                 <div class="project-card reveal">
                     <div class="project-image">
-                        <i class="fas fa-cloud"></i>
+                        <i class="fab fa-discord"></i>
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">MicroStack</h3>
+                        <h3 class="project-title">Discord SaaS Platform</h3>
                         <p class="project-description">
-                            Plataforma SaaS completa com arquitetura de microserviços, sistema de pagamentos integrados
-                            (cartão de crédito, PayPal, Payoneer), dashboard em tempo real e gestão de usuários multi-tenant.
+                            Plataforma SaaS completa com Next.js 15, autenticação via Clerk, pagamentos Stripe (PRO/FREE), notificações Discord em tempo real,
+                            e dashboard responsivo com gerenciamento de categorias, eventos e quotas. Arquitetura production-ready com TypeScript e Prisma ORM.
                         </p>
                         <div class="project-tags">
-                            <span class="tag">Microserviços</span>
-                            <span class="tag">SaaS</span>
-                            <span class="tag">Python</span>
-                            <span class="tag">Pagamentos</span>
+                            <span class="tag">Next.js 15</span>
+                            <span class="tag">TypeScript</span>
+                            <span class="tag">Stripe</span>
+                            <span class="tag">Clerk Auth</span>
+                            <span class="tag">Prisma</span>
+                            <span class="tag">Neon DB</span>
+                            <span class="tag">Discord API</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://github.com/nataliabarros1994/microstack" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i> Ver Código
+                            <a href="https://github.com/nataliabarros1994/DISCOR-SAAS" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i> Ver no GitHub
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Project 2: Sistema de Detecção de Fraudes -->
+                <!-- Project 2: MicroStack SaaS Platform -->
+                <div class="project-card reveal">
+                    <div class="project-image">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">MicroStack - Plataforma SaaS</h3>
+                        <p class="project-description">
+                            Plataforma SaaS completa com arquitetura de microserviços, design responsivo para web e mobile,
+                            integração de pagamentos (cartão, débito, PayPal, Payoneer), notificações automáticas e dashboard administrativo em tempo real.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Microserviços</span>
+                            <span class="tag">FastAPI</span>
+                            <span class="tag">PostgreSQL</span>
+                            <span class="tag">Redis</span>
+                            <span class="tag">Celery</span>
+                            <span class="tag">Docker</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/nataliabarros1994/microstack" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i> Ver no GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: Sistema de Detecção de Fraudes -->
                 <div class="project-card reveal">
                     <div class="project-image">
                         <i class="fas fa-shield-alt"></i>
@@ -1300,7 +1307,7 @@
                     </div>
                 </div>
 
-                <!-- Project 3: Athena Robotic Framework -->
+                <!-- Project 4: Athena Robotic Framework -->
                 <div class="project-card reveal">
                     <div class="project-image">
                         <i class="fas fa-robot"></i>
@@ -1325,7 +1332,7 @@
                     </div>
                 </div>
 
-                <!-- Project 4: GlowShop E-commerce -->
+                <!-- Project 5: GlowShop E-commerce -->
                 <div class="project-card reveal">
                     <div class="project-image">
                         <i class="fas fa-shopping-cart"></i>
@@ -1350,7 +1357,7 @@
                     </div>
                 </div>
 
-                <!-- Project 5: E-commerce API -->
+                <!-- Project 6: E-commerce API -->
                 <div class="project-card reveal">
                     <div class="project-image">
                         <i class="fas fa-server"></i>
@@ -1375,7 +1382,7 @@
                     </div>
                 </div>
 
-                <!-- Project 6: Sistema de Controle de Estoque -->
+                <!-- Project 7: Sistema de Controle de Estoque -->
                 <div class="project-card reveal">
                     <div class="project-image">
                         <i class="fas fa-warehouse"></i>
@@ -1581,26 +1588,18 @@
         const revealElements = document.querySelectorAll('.reveal');
 
         const revealOnScroll = () => {
-            const isMobile = window.innerWidth <= 768;
-            const threshold = isMobile ? 50 : 100; // More sensitive on mobile
-
             revealElements.forEach(element => {
                 const elementTop = element.getBoundingClientRect().top;
                 const windowHeight = window.innerHeight;
 
-                if (elementTop < windowHeight - threshold) {
+                if (elementTop < windowHeight - 100) {
                     element.classList.add('active');
                 }
             });
         };
 
         window.addEventListener('scroll', revealOnScroll);
-        window.addEventListener('resize', revealOnScroll); // Re-check on orientation change
-
-        // Initial check - run immediately and after a short delay
-        revealOnScroll();
-        setTimeout(revealOnScroll, 100);
-        setTimeout(revealOnScroll, 500);
+        revealOnScroll(); // Initial check
 
         // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
