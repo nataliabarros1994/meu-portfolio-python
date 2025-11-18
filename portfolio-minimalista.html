@@ -1148,10 +1148,10 @@
         <div class="container">
             <a href="#hero" class="logo">NB.</a>
             <ul class="nav-links" id="navLinks">
-                <li><a href="#hero" data-i18n="nav.home">Início</a></li>
-                <li><a href="#sobre" data-i18n="nav.about">Sobre</a></li>
-                <li><a href="#projetos" data-i18n="nav.projects">Projetos</a></li>
-                <li><a href="#contato" data-i18n="nav.contact">Contato</a></li>
+                <li><a href="#hero" data-i18n="nav.home" onclick="closeMobileMenu()">Início</a></li>
+                <li><a href="#sobre" data-i18n="nav.about" onclick="closeMobileMenu()">Sobre</a></li>
+                <li><a href="#projetos" data-i18n="nav.projects" onclick="closeMobileMenu()">Projetos</a></li>
+                <li><a href="#contato" data-i18n="nav.contact" onclick="closeMobileMenu()">Contato</a></li>
                 <li>
                     <button id="langToggle" class="lang-toggle" aria-label="Change language">
                         <span class="lang-icon">🌐</span>
@@ -1159,7 +1159,7 @@
                     </button>
                 </li>
             </ul>
-            <button class="mobile-menu-toggle" id="mobileMenuToggle">
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" onclick="toggleMobileMenu()">
                 <i class="fas fa-bars"></i>
             </button>
         </div>
@@ -1550,6 +1550,38 @@
 
     <!-- JavaScript -->
     <script>
+        // ==================== MOBILE MENU TOGGLE (Global Function) ====================
+        function toggleMobileMenu() {
+            console.log('toggleMobileMenu called!');
+            const navLinks = document.getElementById('navLinks');
+            const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+
+            if (navLinks && mobileMenuToggle) {
+                navLinks.classList.toggle('active');
+                const icon = mobileMenuToggle.querySelector('i');
+                if (icon) {
+                    icon.classList.toggle('fa-bars');
+                    icon.classList.toggle('fa-times');
+                    console.log('Menu toggled, active:', navLinks.classList.contains('active'));
+                }
+            } else {
+                console.error('Menu elements not found!', {navLinks, mobileMenuToggle});
+            }
+        }
+        // Close mobile menu
+        function closeMobileMenu() {
+            const navLinks = document.getElementById('navLinks');
+            const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+            if (navLinks && mobileMenuToggle) {
+                navLinks.classList.remove('active');
+                const icon = mobileMenuToggle.querySelector('i');
+                if (icon) {
+                    icon.classList.add('fa-bars');
+                    icon.classList.remove('fa-times');
+                }
+            }
+        }
+
         // ==================== TRANSLATIONS ====================
         const translations = {
             pt: {
@@ -1766,37 +1798,6 @@
                 });
             }
 
-            // Mobile Menu Toggle
-            const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-            console.log('Mobile elements:', mobileMenuToggle, navLinks);
-            const navLinks = document.getElementById('navLinks');
-
-            if (mobileMenuToggle && navLinks) {
-                mobileMenuToggle.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    console.log('Mobile menu clicked!');
-                    navLinks.classList.toggle('active');
-                    const icon = mobileMenuToggle.querySelector('i');
-                    if (icon) {
-                        icon.classList.toggle('fa-bars');
-                        icon.classList.toggle('fa-times');
-                        console.log('Icon toggled');
-                    }
-                });
-
-                // Close mobile menu when clicking on a link
-                navLinks.querySelectorAll('a').forEach(link => {
-                    link.addEventListener('click', () => {
-                        navLinks.classList.remove('active');
-                        const icon = mobileMenuToggle.querySelector('i');
-                        if (icon) {
-                            icon.classList.add('fa-bars');
-                            icon.classList.remove('fa-times');
-                        }
-                    });
-                });
-            }
         });
 
         // Polyfill for smooth scroll in older browsers
