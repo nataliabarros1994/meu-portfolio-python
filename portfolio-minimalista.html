@@ -1752,6 +1752,7 @@
 
         // Initialize language on page load
         document.addEventListener('DOMContentLoaded', () => {
+            console.log('Portfolio: DOMContentLoaded event fired');
             // Force update content immediately
             updateContent();
             updateLangButton();
@@ -1767,15 +1768,20 @@
 
             // Mobile Menu Toggle
             const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+            console.log('Mobile elements:', mobileMenuToggle, navLinks);
             const navLinks = document.getElementById('navLinks');
 
             if (mobileMenuToggle && navLinks) {
-                mobileMenuToggle.addEventListener('click', () => {
+                mobileMenuToggle.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    console.log('Mobile menu clicked!');
                     navLinks.classList.toggle('active');
                     const icon = mobileMenuToggle.querySelector('i');
                     if (icon) {
                         icon.classList.toggle('fa-bars');
                         icon.classList.toggle('fa-times');
+                        console.log('Icon toggled');
                     }
                 });
 
