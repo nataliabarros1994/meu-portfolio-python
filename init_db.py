@@ -218,6 +218,46 @@ def criar_projetos_exemplo():
                 'demo_url': 'https://chat-demo.herokuapp.com',
                 'categoria': 'Web App',
                 'destaque': False
+            },
+            {
+                'titulo': 'EstiMate MVP',
+                'descricao': '''
+                    <p>Aplicação de visão computacional que estima materiais de construção a partir de fotos,
+                    usando objetos de referência para detecção de escala.</p>
+
+                    <h5>Como Funciona:</h5>
+                    <ol>
+                        <li><strong>Upload:</strong> Tire ou faça upload de uma foto contendo um objeto de referência (cartão de crédito ou porta padrão)</li>
+                        <li><strong>Detecção de Escala:</strong> O backend usa visão computacional para detectar a referência e calcular a escala</li>
+                        <li><strong>Marcar Área:</strong> Desenhe um retângulo sobre a superfície que deseja medir</li>
+                        <li><strong>Obter Estimativa:</strong> O app calcula dimensões reais e estima materiais necessários</li>
+                    </ol>
+
+                    <h5>Funcionalidades:</h5>
+                    <ul>
+                        <li>Detecção automática de escala com OpenCV</li>
+                        <li>Seleção interativa de área por desenho de retângulos</li>
+                        <li>Cálculo de dimensões em tempo real (pixels para metros)</li>
+                        <li>Estimativa de materiais (litros de tinta, quantidade de azulejos)</li>
+                        <li>Design responsivo mobile-first</li>
+                        <li>Suporte completo a touch para dispositivos móveis</li>
+                    </ul>
+
+                    <h5>Objetos de Referência Suportados:</h5>
+                    <ul>
+                        <li><strong>Cartão de Crédito (ISO/IEC 7810 ID-1):</strong> 85.6mm x 53.98mm</li>
+                        <li><strong>Porta Padrão:</strong> 80cm x 200cm</li>
+                    </ul>
+
+                    <h5>Arquitetura:</h5>
+                    <p>Backend desenvolvido com FastAPI e OpenCV para processamento de imagens.
+                    Frontend React com Vite para uma experiência de usuário fluida e responsiva.</p>
+                ''',
+                'descricao_curta': 'App de visão computacional que estima materiais de construção a partir de fotos usando detecção de escala',
+                'tecnologias': 'Python, FastAPI, OpenCV, NumPy, React, Vite, CSS3',
+                'github_url': 'https://github.com/nataliabarros1994/EstiMate-MVP',
+                'categoria': 'Machine Learning',
+                'destaque': True
             }
         ]
 
