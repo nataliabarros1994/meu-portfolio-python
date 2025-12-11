@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <!-- Updated: 2025-11-24 16:15 - Added CleanTrack project -->
+    <!-- Updated: 2025-12-11 15:25 - EstiMate MVP as featured project -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -242,13 +242,57 @@
             width: 100%;
         }
 
+        /* Mobile Menu Toggle Button */
         .mobile-menu-toggle {
             display: none;
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             background: none;
             border: none;
             cursor: pointer;
             color: var(--color-text);
+            padding: 12px;
+            position: relative;
+            z-index: 10001;
+            touch-action: manipulation;
+            -webkit-tap-highlight-color: transparent;
+            min-width: 48px;
+            min-height: 48px;
+            transition: all 0.2s ease;
+        }
+
+        .mobile-menu-toggle:active {
+            transform: scale(0.85);
+            opacity: 0.6;
+        }
+
+        .mobile-menu-toggle:focus {
+            outline: 2px solid var(--color-accent);
+            outline-offset: 2px;
+        }
+
+        .mobile-menu-toggle:focus:not(:focus-visible) {
+            outline: none;
+        }
+
+        /* Mobile Menu Backdrop */
+        .mobile-menu-backdrop {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 9999;
+            opacity: 0;
+            transition: opacity var(--transition-base);
+            will-change: opacity;
+            backface-visibility: hidden;
+        }
+
+        .mobile-menu-backdrop.active {
+            display: block;
+            opacity: 1;
         }
 
         .lang-toggle {
@@ -712,6 +756,25 @@
             animation: fadeInUp 0.6s ease forwards;
         }
 
+        /* ==================== ACCESSIBILITY ==================== */
+        /* Respect user's motion preferences */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+
+            .nav-links,
+            .mobile-menu-backdrop,
+            .mobile-menu-toggle {
+                transition: none !important;
+                animation: none !important;
+            }
+        }
+
         /* ==================== RESPONSIVE ==================== */
 
         /* Extra Large Screens (1920px+) */
@@ -802,13 +865,21 @@
                 box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
                 transform: translateY(-100%);
                 opacity: 0;
+                visibility: hidden;
                 transition: all var(--transition-base);
-                z-index: 999;
+                z-index: 10000;
+                pointer-events: none;
+                will-change: transform, opacity;
+                backface-visibility: hidden;
+                -webkit-backface-visibility: hidden;
             }
 
             .nav-links.active {
                 transform: translateY(0);
                 opacity: 1;
+                visibility: visible;
+                pointer-events: auto;
+                will-change: auto;
             }
 
             .mobile-menu-toggle {
@@ -898,13 +969,21 @@
                 box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
                 transform: translateY(-100%);
                 opacity: 0;
+                visibility: hidden;
                 transition: all var(--transition-base);
-                z-index: 999;
+                z-index: 10000;
+                pointer-events: none;
+                will-change: transform, opacity;
+                backface-visibility: hidden;
+                -webkit-backface-visibility: hidden;
             }
 
             .nav-links.active {
                 transform: translateY(0);
                 opacity: 1;
+                visibility: visible;
+                pointer-events: auto;
+                will-change: auto;
             }
 
             .mobile-menu-toggle {
@@ -1159,11 +1238,20 @@
                     </button>
                 </li>
             </ul>
-            <button class="mobile-menu-toggle" id="mobileMenuToggle" onclick="toggleMobileMenu()">
-                <i class="fas fa-bars"></i>
+            <button
+                class="mobile-menu-toggle"
+                id="mobileMenuToggle"
+                onclick="toggleMobileMenu()"
+                aria-label="Toggle navigation menu"
+                aria-expanded="false"
+                aria-controls="navLinks">
+                <i class="fas fa-bars" aria-hidden="true"></i>
             </button>
         </div>
     </nav>
+
+    <!-- Mobile Menu Backdrop -->
+    <div class="mobile-menu-backdrop" id="mobileMenuBackdrop" onclick="closeMobileMenu()" aria-hidden="true"></div>
 
     <!-- Hero Section -->
     <section id="hero" class="section">
@@ -1261,7 +1349,35 @@
                 <p data-i18n="projects.subtitle">Alguns dos meus trabalhos mais recentes e relevantes</p>
             </div>
             <div class="projects-grid">
-                <!-- Project 1: CleanTrack -->
+                <!-- Project 1: EstiMate MVP (DESTAQUE) -->
+                <div class="project-card reveal">
+                    <div class="project-image">
+                        <i class="fas fa-ruler-combined"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title" data-i18n="projects.estimate.title">EstiMate MVP - Estimador de Materiais</h3>
+                        <p class="project-description" data-i18n="projects.estimate.description">
+                            Aplicação de visão computacional que estima materiais de construção a partir de fotos usando objetos de referência para detecção de escala.
+                            Upload de foto com cartão de crédito ou porta como referência, detecção automática de escala com OpenCV, seleção interativa de área e cálculo de materiais (tinta, azulejos).
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">FastAPI</span>
+                            <span class="tag">OpenCV</span>
+                            <span class="tag">NumPy</span>
+                            <span class="tag">React</span>
+                            <span class="tag">Vite</span>
+                            <span class="tag">Computer Vision</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/nataliabarros1994/EstiMate-MVP" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i> <span data-i18n="projects.viewCode">Ver no GitHub</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: CleanTrack -->
                 <div class="project-card reveal">
                     <div class="project-image">
                         <i class="fas fa-clipboard-check"></i>
@@ -1288,7 +1404,7 @@
                     </div>
                 </div>
 
-                <!-- Project 2: Discord SaaS Platform -->
+                <!-- Project 3: Discord SaaS Platform -->
                 <div class="project-card reveal">
                     <div class="project-image">
                         <i class="fab fa-discord"></i>
@@ -1316,7 +1432,7 @@
                     </div>
                 </div>
 
-                <!-- Project 2: MicroStack SaaS Platform -->
+                <!-- Project 3: MicroStack SaaS Platform -->
                 <div class="project-card reveal">
                     <div class="project-image">
                         <i class="fas fa-layer-group"></i>
@@ -1343,7 +1459,7 @@
                     </div>
                 </div>
 
-                <!-- Project 3: Sistema de Detecção de Fraudes -->
+                <!-- Project 4: Sistema de Detecção de Fraudes -->
                 <div class="project-card reveal">
                     <div class="project-image">
                         <i class="fas fa-shield-alt"></i>
@@ -1368,7 +1484,7 @@
                     </div>
                 </div>
 
-                <!-- Project 4: Athena Robotic Framework -->
+                <!-- Project 5: Athena Robotic Framework -->
                 <div class="project-card reveal">
                     <div class="project-image">
                         <i class="fas fa-robot"></i>
@@ -1393,7 +1509,7 @@
                     </div>
                 </div>
 
-                <!-- Project 5: GlowShop E-commerce -->
+                <!-- Project 6: GlowShop E-commerce -->
                 <div class="project-card reveal">
                     <div class="project-image">
                         <i class="fas fa-shopping-cart"></i>
@@ -1418,7 +1534,7 @@
                     </div>
                 </div>
 
-                <!-- Project 6: E-commerce API -->
+                <!-- Project 7: E-commerce API -->
                 <div class="project-card reveal">
                     <div class="project-image">
                         <i class="fas fa-server"></i>
@@ -1443,7 +1559,7 @@
                     </div>
                 </div>
 
-                <!-- Project 7: Sistema de Controle de Estoque -->
+                <!-- Project 8: Sistema de Controle de Estoque -->
                 <div class="project-card reveal">
                     <div class="project-image">
                         <i class="fas fa-warehouse"></i>
@@ -1463,36 +1579,6 @@
                         <div class="project-links">
                             <a href="https://github.com/nataliabarros1994/mega-controle-estoque" target="_blank" class="project-link">
                                 <i class="fab fa-github"></i> <span data-i18n="projects.viewCode">Ver no GitHub</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 8: PhishGuardian -->
-                <div class="project-card reveal">
-                    <div class="project-image">
-                        <i class="fas fa-fish-fins"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">PhishGuardian – AI-Driven Phishing Simulation</h3>
-                        <p class="project-description">
-                            Plataforma MVP de cibersegurança em Python que gera simulações de phishing realistas e personalizadas
-                            com IA para pequenas empresas. Cria cenários de ataque baseados no comportamento, cargo e erros anteriores
-                            dos funcionários. Inclui campanhas de simulação, feedback instantâneo, dashboards e analytics.
-                        </p>
-                        <div class="project-tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">FastAPI</span>
-                            <span class="tag">AI/LLM</span>
-                            <span class="tag">Email Engine</span>
-                            <span class="tag">Cybersecurity</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/nataliabarros1994/Phishguardian" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i> <span data-i18n="projects.viewCode">Ver no GitHub</span>
-                            </a>
-                            <a href="https://github.com/nataliabarros1994/Phishguardian#readme" target="_blank" class="project-link secondary">
-                                <i class="fas fa-book-open"></i> Saiba Mais
                             </a>
                         </div>
                     </div>
@@ -1607,36 +1693,117 @@
 
     <!-- JavaScript -->
     <script>
-        // ==================== MOBILE MENU TOGGLE (Global Function) ====================
-        function toggleMobileMenu() {
-            console.log('toggleMobileMenu called!');
-            const navLinks = document.getElementById('navLinks');
-            const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        // ==================== MOBILE MENU MODULE ====================
+        const MobileMenu = (function() {
+            // Private variables
+            let navLinks, toggleButton, backdrop, icon;
+            let scrollPosition = 0;
 
-            if (navLinks && mobileMenuToggle) {
-                navLinks.classList.toggle('active');
-                const icon = mobileMenuToggle.querySelector('i');
-                if (icon) {
-                    icon.classList.toggle('fa-bars');
-                    icon.classList.toggle('fa-times');
-                    console.log('Menu toggled, active:', navLinks.classList.contains('active'));
-                }
-            } else {
-                console.error('Menu elements not found!', {navLinks, mobileMenuToggle});
+            // Cache DOM elements
+            function cacheDom() {
+                navLinks = document.getElementById('navLinks');
+                toggleButton = document.getElementById('mobileMenuToggle');
+                backdrop = document.getElementById('mobileMenuBackdrop');
+                icon = toggleButton?.querySelector('i');
             }
-        }
-        // Close mobile menu
-        function closeMobileMenu() {
-            const navLinks = document.getElementById('navLinks');
-            const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-            if (navLinks && mobileMenuToggle) {
-                navLinks.classList.remove('active');
-                const icon = mobileMenuToggle.querySelector('i');
-                if (icon) {
-                    icon.classList.add('fa-bars');
+
+            // Lock body scroll (iOS-safe method)
+            function lockScroll() {
+                scrollPosition = window.scrollY;
+                document.body.style.overflow = 'hidden';
+                document.body.style.position = 'fixed';
+                document.body.style.width = '100%';
+                document.body.style.top = `-${scrollPosition}px`;
+            }
+
+            // Unlock body scroll and restore position
+            function unlockScroll() {
+                document.body.style.overflow = '';
+                document.body.style.position = '';
+                document.body.style.width = '';
+                document.body.style.top = '';
+                window.scrollTo(0, scrollPosition);
+            }
+
+            // Update icon state
+            function updateIcon(isOpen) {
+                if (!icon) return;
+
+                if (isOpen) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                } else {
                     icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
                 }
             }
+
+            // Update ARIA attributes
+            function updateAria(isOpen) {
+                if (toggleButton) {
+                    toggleButton.setAttribute('aria-expanded', isOpen);
+                }
+            }
+
+            // Open menu
+            function open() {
+                if (!navLinks) return;
+
+                navLinks.classList.add('active');
+                backdrop?.classList.add('active');
+                updateIcon(true);
+                updateAria(true);
+                lockScroll();
+            }
+
+            // Close menu
+            function close() {
+                if (!navLinks) return;
+
+                navLinks.classList.remove('active');
+                backdrop?.classList.remove('active');
+                updateIcon(false);
+                updateAria(false);
+                unlockScroll();
+            }
+
+            // Toggle menu
+            function toggle() {
+                if (!navLinks) return;
+
+                const isActive = navLinks.classList.contains('active');
+                isActive ? close() : open();
+            }
+
+            // Initialize module
+            function init() {
+                cacheDom();
+
+                // Add keyboard support (Escape key closes menu)
+                document.addEventListener('keydown', function(e) {
+                    if ((e.key === 'Escape' || e.keyCode === 27) &&
+                        navLinks?.classList.contains('active')) {
+                        close();
+                    }
+                });
+            }
+
+            // Public API
+            return {
+                init: init,
+                toggle: toggle,
+                close: close,
+                open: open
+            };
+        })();
+
+        // Global functions for inline onclick handlers (backwards compatibility)
+        function toggleMobileMenu() {
+            MobileMenu.toggle();
+        }
+
+        function closeMobileMenu() {
+            MobileMenu.close();
         }
 
         // ==================== TRANSLATIONS ====================
@@ -1672,6 +1839,14 @@
                     subtitle: 'Alguns dos meus trabalhos mais recentes e relevantes',
                     viewCode: 'Ver no GitHub',
                     viewCodeAlt: 'Ver Código',
+                    cleantrack: {
+                        title: 'CleanTrack – Plataforma de Conformidade Médica',
+                        description: 'Plataforma SaaS em Python/Django que automatiza o rastreamento de limpeza de equipamentos médicos em hospitais e clínicas, eliminando multas regulatórias de até $500k. Inclui registro via QR code, integração com Stripe e Resend, dashboard em tempo real, relatórios auditáveis e suporte a impressoras térmicas (Brother, Zebra, DYMO). Arquitetura multi-tenant, segura (HIPAA-safe) e pronta para produção.'
+                    },
+                    estimate: {
+                        title: 'EstiMate MVP - Estimador de Materiais',
+                        description: 'Aplicação de visão computacional que estima materiais de construção a partir de fotos usando objetos de referência para detecção de escala. Upload de foto com cartão de crédito ou porta como referência, detecção automática de escala com OpenCV, seleção interativa de área e cálculo de materiais (tinta, azulejos).'
+                    },
                     discord: {
                         title: 'Discord SaaS Platform',
                         description: 'Plataforma SaaS completa com Next.js 15, autenticação via Clerk, pagamentos Stripe (PRO/FREE), notificações Discord em tempo real, e dashboard responsivo com gerenciamento de categorias, eventos e quotas. Arquitetura production-ready com TypeScript e Prisma ORM.'
@@ -1751,6 +1926,14 @@
                     subtitle: 'Some of my most recent and relevant work',
                     viewCode: 'View on GitHub',
                     viewCodeAlt: 'View Code',
+                    cleantrack: {
+                        title: 'CleanTrack – Medical Compliance Platform',
+                        description: 'Python/Django SaaS platform that automates medical equipment cleaning tracking in hospitals and clinics, eliminating regulatory fines of up to $500k. Includes QR code registration, Stripe and Resend integration, real-time dashboard, auditable reports, and thermal printer support (Brother, Zebra, DYMO). Multi-tenant, HIPAA-safe architecture ready for production.'
+                    },
+                    estimate: {
+                        title: 'EstiMate MVP - Materials Estimator',
+                        description: 'Computer vision application that estimates construction materials from photos using reference objects for scale detection. Upload a photo with a credit card or door as reference, automatic scale detection with OpenCV, interactive area selection, and material calculation (paint, tiles).'
+                    },
                     discord: {
                         title: 'Discord SaaS Platform',
                         description: 'Full-featured SaaS platform built with Next.js 15, Clerk authentication, Stripe payments (PRO/FREE), real-time Discord notifications, and responsive dashboard with category, event, and quota management. Production-ready architecture with TypeScript and Prisma ORM.'
@@ -1842,6 +2025,10 @@
         // Initialize language on page load
         document.addEventListener('DOMContentLoaded', () => {
             console.log('Portfolio: DOMContentLoaded event fired');
+
+            // Initialize Mobile Menu Module
+            MobileMenu.init();
+
             // Force update content immediately
             updateContent();
             updateLangButton();
