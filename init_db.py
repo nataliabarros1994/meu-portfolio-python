@@ -255,7 +255,7 @@ def criar_projetos_exemplo():
                 ''',
                 'descricao_curta': 'App de visão computacional que estima materiais de construção a partir de fotos usando detecção de escala',
                 'tecnologias': 'Python, FastAPI, OpenCV, NumPy, React, Vite, CSS3',
-                'github_url': 'https://github.com/nataliabarros1994/Guided-MVP',
+                'github_url': 'https://github.com/nataliabarros1994/Guiado-MVP',
                 'categoria': 'Machine Learning',
                 'destaque': True
             }
