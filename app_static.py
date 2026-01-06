@@ -76,13 +76,16 @@ def index():
     # IDs vindos do JSON (mais estrelas / definidos manualmente)
     featured_ids = stats.get('featured_projects', [])
 
-    # IDs que DEVEM aparecer em destaque (forçados)
-    required_featured_ids = [
-        1119999999  # NPX-PDF-BRASIL (ID REAL)
-    ]
+    # Whitelist de projetos que devem SEMPRE aparecer como destaque
+    # independentemente de estrelas ou outras métricas
+    forced_featured_names = {"NPX-PDF-BRASIL"}
 
-    # Combinar e remover duplicados
-    all_featured_ids = list(dict.fromkeys(featured_ids + required_featured_ids))
+    # Encontrar projetos forçados por nome
+    forced_featured = [p for p in projects if p.get('name') in forced_featured_names]
+    forced_featured_ids = [p['id'] for p in forced_featured]
+
+    # Combinar IDs de projetos com mais estrelas com IDs forçados
+    all_featured_ids = list(dict.fromkeys(featured_ids + forced_featured_ids))
 
     # Mapear projetos por ID
     projects_by_id = {p['id']: p for p in projects}
