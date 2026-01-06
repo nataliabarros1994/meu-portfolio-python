@@ -1,6 +1,41 @@
 {
   "projects": [
     {
+      "id": 1129151570,
+      "name": "NPX-PDF-BRASIL",
+      "title": "NPX PDF Brasil",
+      "description": "PDF Brasil is a free online SaaS platform for PDF manipulation. Features include merge, split, compress, rotate, and convert PDFs. Built with Next.js 14, TypeScript, Tailwind CSS, and Go backend.",
+      "language": "TypeScript",
+      "languages": [
+        "TypeScript",
+        "Go",
+        "Python",
+        "CSS",
+        "JavaScript",
+        "Dockerfile"
+      ],
+      "technologies": [
+        "Next.js",
+        "TypeScript",
+        "Tailwind CSS",
+        "Go",
+        "PostgreSQL",
+        "Docker"
+      ],
+      "github_url": "https://github.com/nataliabarros1994/NPX-PDF-BRASIL",
+      "demo_url": null,
+      "stars": 0,
+      "forks": 0,
+      "watchers": 0,
+      "created_at": "2026-01-06",
+      "updated_at": "2026-01-06",
+      "topics": [],
+      "has_wiki": true,
+      "has_pages": false,
+      "is_recent": true,
+      "size": 0
+    },
+    {
       "id": 1081985172,
       "name": "meu-portfolio-python",
       "title": "Meu Portfolio Python",
@@ -27,12 +62,171 @@
       "forks": 0,
       "watchers": 0,
       "created_at": "2025-10-23",
-      "updated_at": "2025-10-23",
+      "updated_at": "2025-12-11",
       "topics": [],
       "has_wiki": true,
       "has_pages": true,
       "is_recent": true,
-      "size": 87
+      "size": 184
+    },
+    {
+      "id": 1114643188,
+      "name": "Guided-MVP",
+      "title": "Guided Mvp",
+      "description": "O que: scaffold completo para MVP Guiado: backend FastAPI (detect-scale, estimativa, auth, projetos), cliente React (Vite) com fluxo Upload → Mark → Review, scripts de teste e geração de imagens, Docker + docker-compose dev. Por que: permitir validação rápida do fluxo pixels→metros, geração de estimativas e salvamento de projetos.",
+      "language": null,
+      "languages": [],
+      "technologies": [],
+      "github_url": "https://github.com/nataliabarros1994/Guided-MVP",
+      "demo_url": null,
+      "stars": 0,
+      "forks": 0,
+      "watchers": 0,
+      "created_at": "2025-12-11",
+      "updated_at": "2025-12-11",
+      "topics": [],
+      "has_wiki": true,
+      "has_pages": false,
+      "is_recent": true,
+      "size": 3
+    },
+    {
+      "id": 1110632778,
+      "name": "Phishguardian",
+      "title": "Phishguardian",
+      "description": "PhishGuardian is a phishing simulation platform for corporate security training. It allows you to create campaigns, manage targets, send simulated emails, and monitor click and submission metrics. It includes 10 phishing templates, real-time notifications, and a dashboard with detailed reports.",
+      "language": "Python",
+      "languages": [
+        "Python",
+        "HTML",
+        "TypeScript",
+        "JavaScript",
+        "Shell",
+        "CSS",
+        "Makefile",
+        "Dockerfile",
+        "Mako"
+      ],
+      "technologies": [
+        "Angular",
+        "CSS3",
+        "Flask",
+        "HTML",
+        "Python",
+        "TypeScript"
+      ],
+      "github_url": "https://github.com/nataliabarros1994/Phishguardian",
+      "demo_url": null,
+      "stars": 0,
+      "forks": 0,
+      "watchers": 0,
+      "created_at": "2025-12-05",
+      "updated_at": "2025-12-05",
+      "topics": [],
+      "has_wiki": true,
+      "has_pages": false,
+      "is_recent": false,
+      "size": 1048
+    },
+    {
+      "id": 1102830411,
+      "name": "CLEANTRACK",
+      "title": "Cleantrack",
+      "description": "CleanTrack is a lightweight compliance SaaS for healthcare facilities. Staff log cleanings by scanning a QR code—no login required. Managers track compliance in real time and generate audit-ready reports in one click. Secure, fast to deploy, and designed to prevent costly regulatory fines.",
+      "language": "Python",
+      "languages": [
+        "Python",
+        "HTML",
+        "Shell",
+        "Dockerfile"
+      ],
+      "technologies": [
+        "CSS3",
+        "Flask",
+        "HTML",
+        "Python"
+      ],
+      "github_url": "https://github.com/nataliabarros1994/CLEANTRACK",
+      "demo_url": null,
+      "stars": 0,
+      "forks": 0,
+      "watchers": 0,
+      "created_at": "2025-11-24",
+      "updated_at": "2025-11-24",
+      "topics": [],
+      "has_wiki": true,
+      "has_pages": false,
+      "is_recent": false,
+      "size": 788
+    },
+    {
+      "id": 1099200734,
+      "name": "DISCOR-SAAS",
+      "title": "Discor Saas",
+      "description": "A full-featured SaaS platform with Stripe subscriptions, real-time Discord notifications, and CRUD event management—built with Next.js, Clerk, and Neon PostgreSQL.",
+      "language": "TypeScript",
+      "languages": [
+        "TypeScript",
+        "CSS",
+        "JavaScript"
+      ],
+      "technologies": [
+        "Angular",
+        "CSS",
+        "JavaScript",
+        "Node.js",
+        "Sass",
+        "TypeScript"
+      ],
+      "github_url": "https://github.com/nataliabarros1994/DISCOR-SAAS",
+      "demo_url": null,
+      "stars": 0,
+      "forks": 0,
+      "watchers": 0,
+      "created_at": "2025-11-18",
+      "updated_at": "2025-11-18",
+      "topics": [],
+      "has_wiki": true,
+      "has_pages": false,
+      "is_recent": false,
+      "size": 164
+    },
+    {
+      "id": 1086151321,
+      "name": "microstack",
+      "title": "Microstack",
+      "description": "\"MicroStack is a modern and responsive SaaS platform built with microservices architecture. It features smart pricing plans, secure multi-payment integration (credit, debit, PayPal, Payoneer), and automated email notifications for seamless user experience.\"",
+      "language": "HTML",
+      "languages": [
+        "HTML",
+        "TypeScript",
+        "Python",
+        "Shell",
+        "CSS",
+        "JavaScript",
+        "Makefile",
+        "Procfile"
+      ],
+      "technologies": [
+        "Angular",
+        "CSS3",
+        "Flask",
+        "HTML",
+        "Python",
+        "TypeScript"
+      ],
+      "github_url": "https://github.com/nataliabarros1994/microstack",
+      "demo_url": null,
+      "stars": 0,
+      "forks": 0,
+      "watchers": 0,
+      "created_at": "2025-10-30",
+      "updated_at": "2025-10-30",
+      "topics": [],
+      "has_wiki": true,
+      "has_pages": false,
+      "is_recent": false,
+      "size": 17816
     },
     {
       "id": 1077598997,
@@ -73,7 +267,7 @@
       "topics": [],
       "has_wiki": true,
       "has_pages": false,
-      "is_recent": true,
+      "is_recent": false,
       "size": 180309
     },
     {
@@ -103,7 +297,7 @@
       "topics": [],
       "has_wiki": true,
       "has_pages": false,
-      "is_recent": true,
+      "is_recent": false,
       "size": 97
     },
     {
@@ -137,7 +331,7 @@
       "topics": [],
       "has_wiki": true,
       "has_pages": false,
-      "is_recent": true,
+      "is_recent": false,
       "size": 381
     },
     {
@@ -164,7 +358,7 @@
       "topics": [],
       "has_wiki": true,
       "has_pages": false,
-      "is_recent": true,
+      "is_recent": false,
       "size": 147
     },
     {
@@ -190,7 +384,7 @@
       "topics": [],
       "has_wiki": true,
       "has_pages": false,
-      "is_recent": true,
+      "is_recent": false,
       "size": 17
     },
     {
@@ -224,83 +418,83 @@
     }
   ],
   "stats": {
-    "total_projects": 7,
+    "total_projects": 12,
     "total_stars": 1,
     "total_forks": 0,
     "top_languages": [
       {
         "name": "Python",
-        "count": 6
+        "count": 9
       },
       {
         "name": "HTML",
-        "count": 4
+        "count": 7
       },
       {
         "name": "CSS",
-        "count": 4
+        "count": 7
       },
       {
         "name": "JavaScript",
-        "count": 3
+        "count": 6
       },
       {
         "name": "Shell",
-        "count": 3
+        "count": 6
       }
     ],
     "top_technologies": [
       {
         "name": "Flask",
-        "count": 6
+        "count": 9
       },
       {
         "name": "Python",
-        "count": 6
-      },
-      {
-        "name": "CSS",
-        "count": 2
+        "count": 9
       },
       {
         "name": "CSS3",
-        "count": 2
+        "count": 5
       },
       {
         "name": "HTML",
-        "count": 2
-      },
-      {
-        "name": "Sass",
-        "count": 2
-      },
-      {
-        "name": "C",
-        "count": 1
-      },
-      {
-        "name": "C++",
-        "count": 1
+        "count": 5
       },
       {
         "name": "Angular",
-        "count": 1
+        "count": 4
       },
       {
         "name": "TypeScript",
+        "count": 4
+      },
+      {
+        "name": "CSS",
+        "count": 3
+      },
+      {
+        "name": "Sass",
+        "count": 3
+      },
+      {
+        "name": "JavaScript",
+        "count": 1
+      },
+      {
+        "name": "Node.js",
         "count": 1
       }
     ],
     "featured_projects": [
       282574847,
       1081985172,
-      1077598997,
-      1072598498,
-      1071098324,
-      1066498886
+      1114643188,
+      1110632778,
+      1102830411,
+      1099200734
     ],
-    "recent_projects": 6,
-    "last_updated": "2025-10-24 11:47:46"
+    "recent_projects": 2,
+    "last_updated": "2026-01-06 14:44:08"
   },
-  "generated_at": "2025-10-24T11:47:46.580800"
+  "generated_at": "2026-01-06T14:44:08.533076"
 }
