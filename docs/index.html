@@ -1,1621 +1,790 @@
-<!-- GitHub Pages Cache Bust: 1733407200 -->
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-    <!-- Primary Meta Tags -->
-    <title>Natália Barros | Desenvolvedora Python Full Stack</title>
-    <meta name="title" content="Natália Barros | Desenvolvedora Python Full Stack">
-    <meta name="description" content="Desenvolvedora Python Full Stack especializada em desenvolvimento web, automação, machine learning e soluções tecnológicas inovadoras. Projetos com Django, Flask, ROS2 e muito mais.">
-    <meta name="keywords" content="Natália Barros, Desenvolvedor Python, Full Stack, Django, Flask, Machine Learning, Robótica, ROS2, E-commerce, API REST, Web Development, Automação">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfólio profissional de Natália Barros - Desenvolvedora Python Full Stack">
+    <meta name="keywords" content="python, flask, desenvolvedor, portfolio, web development">
     <meta name="author" content="Natália Barros">
-    <meta name="robots" content="index, follow">
-    <meta name="language" content="Portuguese">
 
-    <!-- Open Graph / Facebook -->
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Natália Barros - Portfolio">
+    <meta property="og:description" content="Portfolio profissional de desenvolvimento Python">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://nataliabarros1994.github.io/">
-    <meta property="og:title" content="Natália Barros | Desenvolvedora Python Full Stack">
-    <meta property="og:description" content="Desenvolvedora Python Full Stack especializada em desenvolvimento web, automação, machine learning e soluções tecnológicas inovadoras.">
-    <meta property="og:image" content="https://nataliabarros1994.github.io/assets/og-image.jpg">
-    <meta property="og:site_name" content="Natália Barros Portfolio">
-    <meta property="og:locale" content="pt_BR">
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://nataliabarros1994.github.io/">
-    <meta property="twitter:title" content="Natália Barros | Desenvolvedora Python Full Stack">
-    <meta property="twitter:description" content="Desenvolvedora Python Full Stack especializada em desenvolvimento web, automação, machine learning e soluções tecnológicas inovadoras.">
-    <meta property="twitter:image" content="https://nataliabarros1994.github.io/assets/og-image.jpg">
+    <title>Natália Barros - Portfólio Automático GitHub</title>
 
-    <!-- Apple Mobile Web App -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="Natália Barros">
-    <link rel="apple-touch-icon" sizes="180x180" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><rect width='180' height='180' fill='%230a0a0a'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='80' font-weight='bold' fill='white'>NB</text></svg>">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Theme Color -->
-    <meta name="theme-color" content="#0a0a0a">
-    <meta name="msapplication-navbutton-color" content="#0a0a0a">
-    <meta name="msapplication-TileColor" content="#0a0a0a">
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%230a0a0a'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='45' font-weight='bold' fill='white'>NB</text></svg>">
-    <link rel="shortcut icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%230a0a0a'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='45' font-weight='bold' fill='white'>NB</text></svg>">
-
-    <!-- Manifest for PWA -->
-    <link rel="manifest" href="data:application/json;base64,ewogICJuYW1lIjogIk5hdMOhbGlhIEJhcnJvcyBQb3J0Zm9saW8iLAogICJzaG9ydF9uYW1lIjogIk5hdMOhbGlhIEJhcnJvcyIsCiAgImRlc2NyaXB0aW9uIjogIkRlc2Vudm9sdmVkb3JhIFB5dGhvbiBGdWxsIFN0YWNrIiwKICAic3RhcnRfdXJsIjogIi8iLAogICJkaXNwbGF5IjogInN0YW5kYWxvbmUiLAogICJiYWNrZ3JvdW5kX2NvbG9yIjogIiNmZmZmZmYiLAogICJ0aGVtZV9jb2xvciI6ICIjMGEwYTBhIiwKICAiaWNvbnMiOiBbCiAgICB7CiAgICAgICJzcmMiOiAiZGF0YTppbWFnZS9zdmcreG1sLDxzdmcgeG1sbnM9J2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJyB2aWV3Qm94PScwIDAgMTgwIDE4MCc+PHJlY3Qgd2lkdGg9JzE4MCcgaGVpZ2h0PScxODAnIGZpbGw9JyUyMzBhMGEwYScvPjx0ZXh0IHg9JzUwJScgeT0nNTAlJyBkb21pbmFudC1iYXNlbGluZT0nbWlkZGxlJyB0ZXh0LWFuY2hvcj0nbWlkZGxlJyBmb250LWZhbWlseT0nQXJpYWwnIGZvbnQtc2l6ZT0nODAnIGZvbnQtd2VpZ2h0PSdib2xkJyBmaWxsPSd3aGl0ZSc+TkI8L3RleHQ+PC9zdmc+IiwKICAgICAgInNpemVzIjogIjE4MHgxODAiLAogICAgICAidHlwZSI6ICJpbWFnZS9zdmcreG1sIiwKICAgICAgInB1cnBvc2UiOiAiYW55IG1hc2thYmxlIgogICAgfQogIF0KfQ==">
-
-    <!-- Preconnect for Performance -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-
-    <!-- DNS Prefetch -->
-    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
-    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous">
+    <!-- CSS Customizado -->
+    <link rel="stylesheet" href="static/css/style.css">
 
-    <style>
-        /* ==================== RESET & BASE ==================== */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --color-bg: #ffffff;
-            --color-text: #0a0a0a;
-            --color-gray-light: #f5f5f5;
-            --color-gray-mid: #e0e0e0;
-            --color-gray-dark: #666666;
-            --color-accent: #0a0a0a;
-
-            /* Typography */
-            --font-heading: 'Space Grotesk', sans-serif;
-            --font-body: 'Inter', sans-serif;
-
-            /* Spacing */
-            --spacing-xs: 0.5rem;
-            --spacing-sm: 1rem;
-            --spacing-md: 2rem;
-            --spacing-lg: 4rem;
-            --spacing-xl: 6rem;
-
-            /* Transitions */
-            --transition-fast: 0.2s ease;
-            --transition-base: 0.3s ease;
-        }
-
-        html {
-            scroll-behavior: smooth;
-            -webkit-scroll-behavior: smooth; /* Safari */
-            overflow-x: hidden;
-            -webkit-text-size-adjust: 100%; /* Prevent font scaling in landscape on iOS */
-            -ms-text-size-adjust: 100%;
-        }
-
-        body {
-            font-family: var(--font-body);
-            color: var(--color-text);
-            background-color: var(--color-bg);
-            line-height: 1.6;
-            overflow-x: hidden;
-            -webkit-font-smoothing: antialiased; /* Better font rendering on Mac/iOS */
-            -moz-osx-font-smoothing: grayscale;
-            text-rendering: optimizeLegibility;
-        }
-
-        /* ==================== TYPOGRAPHY ==================== */
-        h1, h2, h3, h4, h5, h6 {
-            font-family: var(--font-heading);
-            font-weight: 700;
-            line-height: 1.2;
-        }
-
-        h1 {
-            font-size: clamp(2.5rem, 8vw, 5rem);
-            letter-spacing: -0.02em;
-        }
-
-        h2 {
-            font-size: clamp(2rem, 5vw, 3.5rem);
-            letter-spacing: -0.01em;
-        }
-
-        h3 {
-            font-size: clamp(1.5rem, 3vw, 2rem);
-        }
-
-        p {
-            font-size: clamp(1rem, 2vw, 1.125rem);
-            color: var(--color-gray-dark);
-        }
-
-        /* ==================== UTILITIES ==================== */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 var(--spacing-md);
-        }
-
-        /* Touch-friendly interactions for mobile */
-        @media (hover: none) and (pointer: coarse) {
-            a, button, .btn, .social-link, .project-card, .contact-method {
-                -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
-                tap-highlight-color: rgba(0, 0, 0, 0.1);
-            }
-        }
-
-        .section {
-            padding: var(--spacing-xl) 0;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-        }
-
-        .text-gradient {
-            background: linear-gradient(135deg, #0a0a0a 0%, #4a4a4a 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        /* ==================== NAVIGATION ==================== */
-        nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--color-gray-mid);
-            transition: all var(--transition-base);
-        }
-
-        nav.scrolled {
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
-        }
-
-        nav .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-top: var(--spacing-sm);
-            padding-bottom: var(--spacing-sm);
-        }
-
-        .logo {
-            font-family: var(--font-heading);
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--color-text);
-            text-decoration: none;
-            transition: transform var(--transition-fast);
-        }
-
-        .logo:hover {
-            transform: scale(1.05);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: var(--spacing-md);
-            list-style: none;
-            align-items: center;
-        }
-
-        .nav-links a {
-            color: var(--color-text);
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.95rem;
-            position: relative;
-            transition: color var(--transition-fast);
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: var(--color-text);
-            transition: width var(--transition-base);
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        .mobile-menu-toggle {
-            display: none;
-            font-size: 1.5rem;
-            background: none;
-            border: none;
-            cursor: pointer;
-            color: var(--color-text);
-        }
-
-        /* ==================== HERO SECTION ==================== */
-        #hero {
-            padding-top: 100px;
-            background: linear-gradient(180deg, #ffffff 0%, #f9f9f9 100%);
-        }
-
-        .hero-content {
-            text-align: center;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .hero-tag {
-            display: inline-block;
-            padding: var(--spacing-xs) var(--spacing-sm);
-            background-color: var(--color-gray-light);
-            border-radius: 50px;
-            font-size: 0.875rem;
-            font-weight: 600;
-            margin-bottom: var(--spacing-md);
-            animation: fadeInUp 0.6s ease;
-        }
-
-        .hero-title {
-            margin-bottom: var(--spacing-sm);
-            animation: fadeInUp 0.6s ease 0.1s both;
-        }
-
-        .hero-subtitle {
-            font-size: clamp(1.125rem, 2.5vw, 1.5rem);
-            color: var(--color-gray-dark);
-            margin-bottom: var(--spacing-lg);
-            animation: fadeInUp 0.6s ease 0.2s both;
-        }
-
-        .hero-cta {
-            display: flex;
-            gap: var(--spacing-sm);
-            justify-content: center;
-            flex-wrap: wrap;
-            animation: fadeInUp 0.6s ease 0.3s both;
-        }
-
-        .btn {
-            padding: 1rem 2rem;
-            font-family: var(--font-heading);
-            font-weight: 600;
-            font-size: 1rem;
-            text-decoration: none;
-            border-radius: 50px;
-            transition: all var(--transition-base);
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            cursor: pointer;
-            border: none;
-        }
-
-        .btn-primary {
-            background-color: var(--color-text);
-            color: white;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        }
-
-        .btn-secondary {
-            background-color: transparent;
-            color: var(--color-text);
-            border: 2px solid var(--color-text);
-        }
-
-        .btn-secondary:hover {
-            background-color: var(--color-text);
-            color: white;
-        }
-
-        .social-links {
-            display: flex;
-            gap: var(--spacing-sm);
-            justify-content: center;
-            margin-top: var(--spacing-lg);
-            animation: fadeInUp 0.6s ease 0.4s both;
-        }
-
-        .social-link {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background-color: var(--color-gray-light);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--color-text);
-            text-decoration: none;
-            transition: all var(--transition-base);
-            font-size: 1.25rem;
-        }
-
-        .social-link:hover {
-            background-color: var(--color-text);
-            color: white;
-            transform: translateY(-3px);
-        }
-
-        /* ==================== ABOUT SECTION ==================== */
-        #sobre {
-            background-color: white;
-        }
-
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: var(--spacing-lg);
-            align-items: center;
-        }
-
-        .about-content h2 {
-            margin-bottom: var(--spacing-md);
-        }
-
-        .about-content p {
-            margin-bottom: var(--spacing-sm);
-        }
-
-        .skills-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: var(--spacing-sm);
-            margin-top: var(--spacing-md);
-        }
-
-        .skill-item {
-            padding: var(--spacing-sm);
-            background-color: var(--color-gray-light);
-            border-radius: 10px;
-            text-align: center;
-            font-weight: 600;
-            transition: all var(--transition-base);
-        }
-
-        .skill-item:hover {
-            background-color: var(--color-text);
-            color: white;
-            transform: translateY(-3px);
-        }
-
-        .about-stats {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: var(--spacing-md);
-        }
-
-        .stat-card {
-            padding: var(--spacing-md);
-            background-color: var(--color-gray-light);
-            border-radius: 15px;
-            text-align: center;
-            transition: all var(--transition-base);
-        }
-
-        .stat-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .stat-number {
-            font-size: 3rem;
-            font-weight: 700;
-            font-family: var(--font-heading);
-            color: var(--color-text);
-            display: block;
-        }
-
-        .stat-label {
-            color: var(--color-gray-dark);
-            font-size: 1rem;
-        }
-
-        /* ==================== PROJECTS SECTION ==================== */
-        #projetos {
-            background-color: var(--color-gray-light);
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: var(--spacing-lg);
-        }
-
-        .section-header h2 {
-            margin-bottom: var(--spacing-sm);
-        }
-
-        .section-header p {
-            font-size: 1.125rem;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: var(--spacing-md);
-        }
-
-        .project-card {
-            background-color: white;
-            border-radius: 15px;
-            overflow: hidden;
-            transition: all var(--transition-base);
-            border: 1px solid var(--color-gray-mid);
-        }
-
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-        }
-
-        .project-image {
-            width: 100%;
-            height: 250px;
-            background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 4rem;
-            color: var(--color-gray-dark);
-        }
-
-        .project-content {
-            padding: var(--spacing-md);
-        }
-
-        .project-title {
-            font-size: 1.5rem;
-            margin-bottom: var(--spacing-sm);
-        }
-
-        .project-description {
-            margin-bottom: var(--spacing-sm);
-        }
-
-        .project-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: var(--spacing-xs);
-            margin-bottom: var(--spacing-sm);
-        }
-
-        .tag {
-            padding: 0.25rem 0.75rem;
-            background-color: var(--color-gray-light);
-            border-radius: 50px;
-            font-size: 0.875rem;
-            font-weight: 500;
-        }
-
-        .project-links {
-            display: flex;
-            gap: var(--spacing-sm);
-        }
-
-        .project-link {
-            padding: 0.5rem 1rem;
-            background-color: var(--color-text);
-            color: white;
-            text-decoration: none;
-            border-radius: 50px;
-            font-size: 0.875rem;
-            font-weight: 600;
-            transition: all var(--transition-fast);
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .project-link:hover {
-            transform: scale(1.05);
-        }
-
-        .project-link.secondary {
-            background-color: transparent;
-            color: var(--color-text);
-            border: 2px solid var(--color-text);
-        }
-
-        /* ==================== CONTACT SECTION ==================== */
-        #contato {
-            background-color: white;
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: var(--spacing-lg);
-            margin-top: var(--spacing-lg);
-        }
-
-        .contact-info h3 {
-            margin-bottom: var(--spacing-md);
-        }
-
-        .contact-methods {
-            display: flex;
-            flex-direction: column;
-            gap: var(--spacing-md);
-        }
-
-        .contact-method {
-            display: flex;
-            align-items: center;
-            gap: var(--spacing-sm);
-            padding: var(--spacing-md);
-            background-color: var(--color-gray-light);
-            border-radius: 15px;
-            text-decoration: none;
-            color: var(--color-text);
-            transition: all var(--transition-base);
-        }
-
-        .contact-method:hover {
-            background-color: var(--color-text);
-            color: white;
-            transform: translateX(10px);
-        }
-
-        .contact-icon {
-            width: 50px;
-            height: 50px;
-            background-color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            flex-shrink: 0;
-        }
-
-        .contact-method:hover .contact-icon {
-            background-color: var(--color-gray-light);
-        }
-
-        .contact-details {
-            flex: 1;
-        }
-
-        .contact-label {
-            font-weight: 600;
-            margin-bottom: 0.25rem;
-        }
-
-        .contact-value {
-            font-size: 0.95rem;
-            color: var(--color-gray-dark);
-        }
-
-        .contact-method:hover .contact-value {
-            color: rgba(255, 255, 255, 0.9);
-        }
-
-        .contact-cta {
-            background: linear-gradient(135deg, #0a0a0a 0%, #2a2a2a 100%);
-            color: white;
-            padding: var(--spacing-lg);
-            border-radius: 20px;
-            text-align: center;
-        }
-
-        .contact-cta h3 {
-            color: white;
-            margin-bottom: var(--spacing-sm);
-        }
-
-        .contact-cta p {
-            color: rgba(255, 255, 255, 0.8);
-            margin-bottom: var(--spacing-md);
-        }
-
-        /* ==================== FOOTER ==================== */
-        footer {
-            background-color: var(--color-text);
-            color: white;
-            padding: var(--spacing-lg) 0 var(--spacing-md);
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: var(--spacing-lg);
-            margin-bottom: var(--spacing-md);
-        }
-
-        .footer-section h4 {
-            margin-bottom: var(--spacing-sm);
-            color: white;
-        }
-
-        .footer-section p,
-        .footer-section a {
-            color: rgba(255, 255, 255, 0.7);
-            text-decoration: none;
-            display: block;
-            margin-bottom: 0.5rem;
-            transition: color var(--transition-fast);
-        }
-
-        .footer-section a:hover {
-            color: white;
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: var(--spacing-md);
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: rgba(255, 255, 255, 0.5);
-        }
-
-        /* ==================== ANIMATIONS ==================== */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .fade-in {
-            opacity: 0;
-            animation: fadeInUp 0.6s ease forwards;
-        }
-
-        /* ==================== RESPONSIVE ==================== */
-
-        /* Extra Large Screens (1920px+) */
-        @media (min-width: 1920px) {
-            .container {
-                max-width: 1400px;
-            }
-
-            h1 {
-                font-size: 6rem;
-            }
-
-            h2 {
-                font-size: 4rem;
-            }
-        }
-
-        /* Large Desktop (1200px - 1919px) */
-        @media (min-width: 1200px) and (max-width: 1919px) {
-            .container {
-                max-width: 1140px;
-            }
-        }
-
-        /* Desktop (992px - 1199px) */
-        @media (min-width: 992px) and (max-width: 1199px) {
-            .container {
-                max-width: 960px;
-                padding: 0 1.5rem;
-            }
-
-            .projects-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        /* Tablet Landscape (768px - 991px) */
-        @media (min-width: 768px) and (max-width: 991px) {
-            .container {
-                padding: 0 1.5rem;
-            }
-
-            h1 {
-                font-size: 3.5rem;
-            }
-
-            h2 {
-                font-size: 2.5rem;
-            }
-
-            .about-grid {
-                grid-template-columns: 1fr;
-                gap: var(--spacing-md);
-            }
-
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .projects-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: var(--spacing-md);
-            }
-
-            .stat-number {
-                font-size: 2.5rem;
-            }
-
-            .hero-cta {
-                gap: 1rem;
-            }
-        }
-
-        /* Tablet Portrait & Mobile Landscape (481px - 767px) */
-        @media (min-width: 481px) and (max-width: 767px) {
-            .container {
-                padding: 0 1.25rem;
-            }
-
-            .nav-links {
-                position: fixed;
-                top: 70px;
-                left: 0;
-                right: 0;
-                background: white;
-                flex-direction: column;
-                padding: var(--spacing-md);
-                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-                transform: translateY(-100%);
-                opacity: 0;
-                transition: all var(--transition-base);
-                z-index: 999;
-            }
-
-            .nav-links.active {
-                transform: translateY(0);
-                opacity: 1;
-            }
-
-            .mobile-menu-toggle {
-                display: block;
-            }
-
-            h1 {
-                font-size: 3rem;
-            }
-
-            h2 {
-                font-size: 2.25rem;
-            }
-
-            .about-grid,
-            .contact-grid {
-                grid-template-columns: 1fr;
-                gap: var(--spacing-md);
-            }
-
-            .projects-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-
-            .project-image {
-                height: 200px;
-            }
-
-            .section {
-                padding: 3rem 0;
-                min-height: auto;
-            }
-
-            .hero-cta {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            .btn {
-                width: 100%;
-                justify-content: center;
-                padding: 0.875rem 1.75rem;
-            }
-
-            .social-links {
-                gap: 0.75rem;
-            }
-
-            .social-link {
-                width: 45px;
-                height: 45px;
-            }
-
-            .stat-number {
-                font-size: 2.25rem;
-            }
-
-            .about-stats {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 1rem;
-            }
-        }
-
-        /* Mobile Portrait (320px - 480px) */
-        @media (max-width: 480px) {
-            :root {
-                --spacing-xs: 0.375rem;
-                --spacing-sm: 0.75rem;
-                --spacing-md: 1.5rem;
-                --spacing-lg: 3rem;
-                --spacing-xl: 4rem;
-            }
-
-            .container {
-                padding: 0 1rem;
-            }
-
-            .nav-links {
-                position: fixed;
-                top: 70px;
-                left: 0;
-                right: 0;
-                background: white;
-                flex-direction: column;
-                padding: var(--spacing-md);
-                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-                transform: translateY(-100%);
-                opacity: 0;
-                transition: all var(--transition-base);
-                z-index: 999;
-            }
-
-            .nav-links.active {
-                transform: translateY(0);
-                opacity: 1;
-            }
-
-            .mobile-menu-toggle {
-                display: block;
-            }
-
-            h1 {
-                font-size: 2.5rem;
-                line-height: 1.1;
-            }
-
-            h2 {
-                font-size: 1.875rem;
-            }
-
-            h3 {
-                font-size: 1.375rem;
-            }
-
-            p {
-                font-size: 1rem;
-            }
-
-            .hero-tag {
-                font-size: 0.8125rem;
-                padding: 0.375rem 0.875rem;
-            }
-
-            .hero-subtitle {
-                font-size: 1.125rem;
-                line-height: 1.5;
-            }
-
-            .about-grid,
-            .contact-grid {
-                grid-template-columns: 1fr;
-                gap: var(--spacing-md);
-            }
-
-            .projects-grid {
-                grid-template-columns: 1fr;
-                gap: 1.25rem;
-            }
-
-            .project-image {
-                height: 180px;
-                font-size: 3rem;
-            }
-
-            .project-content {
-                padding: 1.25rem;
-            }
-
-            .section {
-                padding: 2.5rem 0;
-                min-height: auto;
-            }
-
-            #hero {
-                padding-top: 80px;
-            }
-
-            .hero-cta {
-                flex-direction: column;
-                gap: 0.875rem;
-            }
-
-            .btn {
-                width: 100%;
-                justify-content: center;
-                padding: 0.875rem 1.5rem;
-                font-size: 0.9375rem;
-            }
-
-            .social-links {
-                gap: 0.625rem;
-                margin-top: var(--spacing-md);
-            }
-
-            .social-link {
-                width: 42px;
-                height: 42px;
-                font-size: 1.125rem;
-            }
-
-            .stat-number {
-                font-size: 2rem;
-            }
-
-            .stat-label {
-                font-size: 0.875rem;
-            }
-
-            .about-stats {
-                grid-template-columns: 1fr;
-                gap: 0.875rem;
-            }
-
-            .stat-card {
-                padding: 1.25rem;
-            }
-
-            .skills-list {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 0.625rem;
-            }
-
-            .skill-item {
-                padding: 0.75rem 0.5rem;
-                font-size: 0.875rem;
-            }
-
-            .project-title {
-                font-size: 1.25rem;
-            }
-
-            .project-description {
-                font-size: 0.9375rem;
-            }
-
-            .tag {
-                padding: 0.25rem 0.625rem;
-                font-size: 0.8125rem;
-            }
-
-            .project-links {
-                flex-direction: column;
-                gap: 0.625rem;
-            }
-
-            .project-link {
-                text-align: center;
-                justify-content: center;
-            }
-
-            .contact-method {
-                padding: 1rem;
-                flex-direction: column;
-                text-align: center;
-                gap: 0.75rem;
-            }
-
-            .contact-icon {
-                width: 55px;
-                height: 55px;
-                font-size: 1.75rem;
-            }
-
-            .footer-content {
-                grid-template-columns: 1fr;
-                gap: var(--spacing-md);
-            }
-
-            .logo {
-                font-size: 1.25rem;
-            }
-        }
-
-        /* Very Small Devices (max 360px) */
-        @media (max-width: 360px) {
-            h1 {
-                font-size: 2.25rem;
-            }
-
-            h2 {
-                font-size: 1.75rem;
-            }
-
-            .container {
-                padding: 0 0.875rem;
-            }
-
-            .skills-list {
-                grid-template-columns: 1fr;
-            }
-
-            .project-image {
-                height: 160px;
-            }
-        }
-
-        /* Landscape Orientation Optimizations */
-        @media (max-height: 500px) and (orientation: landscape) {
-            .section {
-                min-height: auto;
-                padding: 2rem 0;
-            }
-
-            #hero {
-                padding-top: 70px;
-            }
-
-            .hero-title {
-                font-size: 2.5rem;
-            }
-
-            .hero-subtitle {
-                font-size: 1.125rem;
-                margin-bottom: 1.5rem;
-            }
-
-            .hero-cta {
-                flex-direction: row;
-                flex-wrap: wrap;
-                gap: 1rem;
-            }
-
-            .btn {
-                width: auto;
-                padding: 0.75rem 1.5rem;
-            }
-
-            .social-links {
-                margin-top: 1.5rem;
-            }
-        }
-
-        /* ==================== SCROLL REVEAL ==================== */
-        .reveal {
-            opacity: 0;
-            transform: translateY(50px);
-            transition: all 0.6s ease;
-        }
-
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    </style>
+    
 </head>
 <body>
-    <!-- NoScript Warning -->
-    <noscript>
-        <div style="position: fixed; top: 0; left: 0; right: 0; background: #f39c12; color: white; padding: 1rem; text-align: center; z-index: 9999;">
-            ⚠️ Para uma melhor experiência, por favor ative o JavaScript no seu navegador.
-        </div>
-    </noscript>
-
-    <!-- Navigation -->
-    <nav id="navbar">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
         <div class="container">
-            <a href="#hero" class="logo">NB.</a>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#hero">Início</a></li>
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#projetos">Projetos</a></li>
-                <li><a href="#contato">Contato</a></li>
-            </ul>
-            <button class="mobile-menu-toggle" id="mobileMenuToggle">
-                <i class="fas fa-bars"></i>
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="bi bi-code-slash"></i> Natália Barros
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
             </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">
+                            <i class="bi bi-house-door"></i> Início
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="projetos/index.html">
+                            <i class="bi bi-folder"></i> Projetos
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="sobre/index.html">
+                            <i class="bi bi-person"></i> Sobre
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="contato/index.html">
+                            <i class="bi bi-envelope"></i> Contato
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="hero" class="section">
-        <div class="container">
-            <div class="hero-content">
-                <span class="hero-tag">👋 Olá, eu sou Natália</span>
-                <h1 class="hero-title">
-                    Desenvolvedora<br>
-                    <span class="text-gradient">Python Full Stack</span>
-                </h1>
-                <p class="hero-subtitle">
-                    Transformo ideias em soluções digitais através de código limpo,<br>
-                    design inteligente e tecnologias modernas.
-                </p>
-                <div class="hero-cta">
-                    <a href="#projetos" class="btn btn-primary">
-                        Ver Projetos <i class="fas fa-arrow-right"></i>
-                    </a>
-                    <a href="#contato" class="btn btn-secondary">
-                        Entrar em Contato <i class="fas fa-envelope"></i>
-                    </a>
-                </div>
-                <div class="social-links">
-                    <a href="https://github.com/nataliabarros1994?tab=repositories" target="_blank" class="social-link" title="GitHub">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/nataliachagas1994/" target="_blank" class="social-link" title="LinkedIn">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                    <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox" target="_blank" class="social-link" title="Email">
-                        <i class="fas fa-envelope"></i>
-                    </a>
-                    <a href="https://wa.me/message/VKWXMICWUXT5K1" target="_blank" class="social-link" title="WhatsApp">
-                        <i class="fab fa-whatsapp"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- Flash Messages -->
+    
+        
+    
 
-    <!-- About Section -->
-    <section id="sobre" class="section">
-        <div class="container">
-            <div class="about-grid">
-                <div class="about-content reveal">
-                    <h2>Sobre Mim</h2>
-                    <p>
-                        Sou desenvolvedora Python Full Stack apaixonada por criar soluções digitais
-                        que fazem a diferença. Com experiência em desenvolvimento web, automação e
-                        integração de sistemas, transformo desafios complexos em aplicações elegantes e eficientes.
+    <!-- Conteúdo Principal -->
+    <main>
+        
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="container">
+        <div class="row align-items-center min-vh-100">
+            <div class="col-lg-6 text-center text-lg-start">
+                <div class="hero-content" data-aos="fade-right">
+                    <span class="badge bg-success-subtle text-success mb-3 px-3 py-2">
+                        <i class="bi bi-github me-2"></i>
+                        Sincronizado com GitHub
+                    </span>
+                    <h1 class="display-3 fw-bold mb-3">
+                        Olá, eu sou<br>
+                        <span class="text-primary">Natália Barros</span>
+                    </h1>
+                    <h2 class="h3 text-muted mb-4">Desenvolvedora Python Full Stack</h2>
+                    <p class="lead mb-4 text-muted">
+                        Portfólio automaticamente sincronizado com meus repositórios do GitHub.
+                        Todos os projetos são atualizados diariamente via GitHub Actions.
                     </p>
-                    <p>
-                        Meu foco está em escrever código limpo, escalável e de fácil manutenção,
-                        sempre buscando as melhores práticas e tecnologias mais modernas para
-                        entregar valor aos usuários.
-                    </p>
-                    <div class="skills-list">
-                        <div class="skill-item">Python</div>
-                        <div class="skill-item">Django</div>
-                        <div class="skill-item">Flask</div>
-                        <div class="skill-item">JavaScript</div>
-                        <div class="skill-item">React</div>
-                        <div class="skill-item">HTML/CSS</div>
-                        <div class="skill-item">PostgreSQL</div>
-                        <div class="skill-item">Git</div>
+                    <div class="hero-buttons">
+                        <a href="projetos/index.html" class="btn btn-primary btn-lg me-3 mb-3">
+                            <i class="bi bi-folder-check"></i> Ver Todos os Projetos
+                        </a>
+                        <a href="https://github.com/nataliabarros1994" target="_blank" class="btn btn-outline-dark btn-lg mb-3">
+                            <i class="bi bi-github"></i> GitHub
+                        </a>
                     </div>
-                </div>
-                <div class="about-stats reveal">
-                    <div class="stat-card">
-                        <span class="stat-number">3+</span>
-                        <span class="stat-label">Anos de Experiência</span>
-                    </div>
-                    <div class="stat-card">
-                        <span class="stat-number">20+</span>
-                        <span class="stat-label">Projetos Concluídos</span>
-                    </div>
-                    <div class="stat-card">
-                        <span class="stat-number">100%</span>
-                        <span class="stat-label">Satisfação de Clientes</span>
-                    </div>
-                    <div class="stat-card">
-                        <span class="stat-number">24h</span>
-                        <span class="stat-label">Tempo de Resposta</span>
+
+                    <!-- Estatísticas -->
+                    <div class="hero-stats mt-5">
+                        <div class="row text-center">
+                            <div class="col-4">
+                                <h3 class="fw-bold text-primary mb-0">12</h3>
+                                <p class="text-muted small mb-0">Repositórios</p>
+                            </div>
+                            <div class="col-4">
+                                <h3 class="fw-bold text-primary mb-0">1</h3>
+                                <p class="text-muted small mb-0">Stars</p>
+                            </div>
+                            <div class="col-4">
+                                <h3 class="fw-bold text-primary mb-0">0</h3>
+                                <p class="text-muted small mb-0">Forks</p>
+                            </div>
+                        </div>
+                        
+                        <p class="text-muted small mt-3 mb-0">
+                            <i class="bi bi-clock"></i>
+                            Última atualização: 2026-01-06 14:44:08
+                        </p>
+                        
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+            <div class="col-lg-6 text-center" data-aos="fade-left">
+                <div class="hero-image">
+                    <div class="code-window">
+                        <div class="code-window-header">
+                            <span class="dot dot-red"></span>
+                            <span class="dot dot-yellow"></span>
+                            <span class="dot dot-green"></span>
+                            <span class="code-title">github_api.py</span>
+                        </div>
+                        <div class="code-window-body">
+                            <pre><code><span class="code-keyword">import</span> requests
 
-    <!-- Projects Section -->
-    <section id="projetos" class="section">
-        <div class="container">
-            <div class="section-header reveal">
-                <h2>Projetos em Destaque</h2>
-                <p>Alguns dos meus trabalhos mais recentes e relevantes</p>
-            </div>
-            <div class="projects-grid">
-                <!-- Project 1: MicroStack -->
-                <div class="project-card reveal">
-                    <div class="project-image">
-                        <i class="fas fa-cloud"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">MicroStack</h3>
-                        <p class="project-description">
-                            Plataforma SaaS completa com arquitetura de microserviços, sistema de pagamentos integrados
-                            (cartão de crédito, PayPal, Payoneer), dashboard em tempo real e gestão de usuários multi-tenant.
-                        </p>
-                        <div class="project-tags">
-                            <span class="tag">Microserviços</span>
-                            <span class="tag">SaaS</span>
-                            <span class="tag">Python</span>
-                            <span class="tag">Pagamentos</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/nataliabarros1994/microstack" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i> Ver Código
-                            </a>
-                        </div>
-                    </div>
-                </div>
+<span class="code-keyword">class</span> <span class="code-class">GitHubPortfolio</span>:
+    <span class="code-keyword">def</span> <span class="code-function">__init__</span>(<span class="code-param">self</span>):
+        <span class="code-param">self</span>.user = <span class="code-string">"nataliabarros1994"</span>
+        <span class="code-param">self</span>.auto_sync = <span class="code-string">True</span>
 
-                <!-- Project 2: Sistema de Detecção de Fraudes -->
-                <div class="project-card reveal">
-                    <div class="project-image">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Sistema de Detecção de Fraudes</h3>
-                        <p class="project-description">
-                            Sistema de detecção de fraudes em tempo real com Inteligência Artificial,
-                            utilizando machine learning para identificar padrões suspeitos e prevenir transações fraudulentas.
-                        </p>
-                        <div class="project-tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">Machine Learning</span>
-                            <span class="tag">IA</span>
-                            <span class="tag">Real-time</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/nataliabarros1994/sistema-de-detec-o-de-fraudes-em-tempo-real" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i> Ver Código
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 3: Athena Robotic Framework -->
-                <div class="project-card reveal">
-                    <div class="project-image">
-                        <i class="fas fa-robot"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Athena Robotic Framework</h3>
-                        <p class="project-description">
-                            Projeto completo de robótica usando ROS2 Jazzy Jalisco, desenvolvido para Ubuntu 24.04 LTS.
-                            Framework modular para controle e simulação de sistemas robóticos avançados.
-                        </p>
-                        <div class="project-tags">
-                            <span class="tag">ROS2</span>
-                            <span class="tag">Python</span>
-                            <span class="tag">Robótica</span>
-                            <span class="tag">Ubuntu</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/nataliabarros1994/athena-robotic-framework" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i> Ver Código
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 4: GlowShop E-commerce -->
-                <div class="project-card reveal">
-                    <div class="project-image">
-                        <i class="fas fa-shopping-cart"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">GlowShop - E-commerce Inteligente</h3>
-                        <p class="project-description">
-                            Plataforma moderna de e-commerce construída com arquitetura de microserviços,
-                            incluindo carrinho de compras, processamento de pagamentos e gestão de inventário.
-                        </p>
-                        <div class="project-tags">
-                            <span class="tag">Microserviços</span>
-                            <span class="tag">Django</span>
-                            <span class="tag">PostgreSQL</span>
-                            <span class="tag">Docker</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/nataliabarros1994/ecommerce-de-loja" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i> Ver Código
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 5: E-commerce API -->
-                <div class="project-card reveal">
-                    <div class="project-image">
-                        <i class="fas fa-server"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">E-commerce REST API</h3>
-                        <p class="project-description">
-                            API RESTful profissional para e-commerce com PostgreSQL, incluindo autenticação,
-                            gestão de produtos, pedidos e integração com sistemas de pagamento.
-                        </p>
-                        <div class="project-tags">
-                            <span class="tag">REST API</span>
-                            <span class="tag">PostgreSQL</span>
-                            <span class="tag">Python</span>
-                            <span class="tag">JWT</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/nataliabarros1994/ecommerce-api" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i> Ver Código
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 6: Sistema de Controle de Estoque -->
-                <div class="project-card reveal">
-                    <div class="project-image">
-                        <i class="fas fa-warehouse"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Mega Controle de Estoque</h3>
-                        <p class="project-description">
-                            Sistema completo de gestão de estoque com controle de entrada/saída,
-                            relatórios detalhados, alertas de estoque mínimo e dashboard analítico.
-                        </p>
-                        <div class="project-tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">Django</span>
-                            <span class="tag">MySQL</span>
-                            <span class="tag">Bootstrap</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/nataliabarros1994/mega-controle-estoque" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i> Ver Código
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 7: PhishGuardian -->
-                <div class="project-card reveal">
-                    <div class="project-image">
-                        <i class="fas fa-fish-fins"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">PhishGuardian – AI-Driven Phishing Simulation</h3>
-                        <p class="project-description">
-                            Plataforma MVP de cibersegurança em Python que gera simulações de phishing realistas e personalizadas
-                            com IA para pequenas empresas. Cria cenários de ataque baseados no comportamento, cargo e erros anteriores
-                            dos funcionários. Inclui campanhas de simulação, feedback instantâneo de treinamento, dashboards,
-                            analytics e detecção automatizada de padrões de phishing.
-                        </p>
-                        <div class="project-tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">FastAPI</span>
-                            <span class="tag">AI/LLM</span>
-                            <span class="tag">Email Engine</span>
-                            <span class="tag">Behavioral Analysis</span>
-                            <span class="tag">SMB Security</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/nataliabarros1994/Phishguardian" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i> Ver no GitHub
-                            </a>
-                            <a href="https://github.com/nataliabarros1994/Phishguardian#readme" target="_blank" class="project-link secondary">
-                                <i class="fas fa-book-open"></i> Saiba Mais
-                            </a>
+    <span class="code-keyword">def</span> <span class="code-function">fetch_projects</span>(<span class="code-param">self</span>):
+        <span class="code-keyword">return</span> requests.get(
+            <span class="code-string">f"api.github.com/users/{self.user}/repos"</span>
+        ).json()</code></pre>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+    <div class="hero-scroll">
+        <a href="#projetos-destaque" class="scroll-down">
+            <i class="bi bi-chevron-down"></i>
+        </a>
+    </div>
+</section>
 
-    <!-- Contact Section -->
-    <section id="contato" class="section">
-        <div class="container">
-            <div class="section-header reveal">
-                <h2>Vamos Trabalhar Juntos?</h2>
-                <p>Estou sempre aberta a novos projetos e oportunidades</p>
-            </div>
-            <div class="contact-grid">
-                <div class="contact-info reveal">
-                    <h3>Entre em Contato</h3>
-                    <div class="contact-methods">
-                        <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox" target="_blank" class="contact-method">
-                            <div class="contact-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div class="contact-details">
-                                <div class="contact-label">Email</div>
-                                <div class="contact-value">natalia.goldenglowitsolutions@gmail.com</div>
-                            </div>
-                        </a>
+<!-- Projetos em Destaque -->
+<section id="projetos-destaque" class="py-5 bg-light">
+    <div class="container">
+        <div class="section-header text-center mb-5" data-aos="fade-up">
+            <span class="badge bg-primary-subtle text-primary mb-3">
+                <i class="bi bi-github"></i> Do GitHub
+            </span>
+            <h2 class="display-5 fw-bold mb-3">Projetos em Destaque</h2>
+            <p class="lead text-muted">Repositórios com mais estrelas e atividade recente</p>
+        </div>
 
-                        <a href="https://www.linkedin.com/in/nataliachagas1994/" target="_blank" class="contact-method">
-                            <div class="contact-icon">
-                                <i class="fab fa-linkedin-in"></i>
-                            </div>
-                            <div class="contact-details">
-                                <div class="contact-label">LinkedIn</div>
-                                <div class="contact-value">linkedin.com/in/nataliachagas1994</div>
-                            </div>
-                        </a>
+        
+        <div class="row g-4">
+            
+            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="project-card h-100">
+                    <div class="project-header p-3">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <h5 class="project-name mb-0">
+                                <i class="bi bi-folder-fill text-primary me-2"></i>
+                                Phishguardian
+                            </h5>
+                            
+                        </div>
+                        <p class="project-description text-muted small mb-0">
+                            PhishGuardian is a phishing simulation platform for corporate security training. It allows you to cr...
+                        </p>
+                    </div>
 
-                        <a href="https://wa.me/message/VKWXMICWUXT5K1" target="_blank" class="contact-method">
-                            <div class="contact-icon">
-                                <i class="fab fa-whatsapp"></i>
-                            </div>
-                            <div class="contact-details">
-                                <div class="contact-label">WhatsApp</div>
-                                <div class="contact-value">Iniciar conversa</div>
-                            </div>
-                        </a>
+                    <div class="project-body p-3">
+                        <!-- Tecnologias -->
+                        <div class="project-tech mb-3">
+                            
+                            <span class="tech-badge-main me-2">
+                                <i class="bi bi-circle-fill" style="font-size: 10px;"></i>
+                                Python
+                            </span>
+                            
+                            
+                            <span class="tech-badge">Angular</span>
+                            
+                            <span class="tech-badge">CSS3</span>
+                            
+                        </div>
 
-                        <a href="https://github.com/nataliabarros1994?tab=repositories" target="_blank" class="contact-method">
-                            <div class="contact-icon">
-                                <i class="fab fa-github"></i>
-                            </div>
-                            <div class="contact-details">
-                                <div class="contact-label">GitHub</div>
-                                <div class="contact-value">github.com/nataliabarros1994</div>
-                            </div>
-                        </a>
+                        <!-- Stats -->
+                        <div class="project-stats mb-3">
+                            <span class="stat-item me-3">
+                                <i class="bi bi-star-fill text-warning"></i>
+                                0
+                            </span>
+                            <span class="stat-item me-3">
+                                <i class="bi bi-diagram-3-fill text-info"></i>
+                                0
+                            </span>
+                            <span class="stat-item text-muted small">
+                                <i class="bi bi-calendar3"></i>
+                                2025-12-05
+                            </span>
+                        </div>
+
+                        <!-- Links -->
+                        <div class="project-links">
+                            <a href="https://github.com/nataliabarros1994/Phishguardian" target="_blank"
+                               class="btn btn-sm btn-outline-dark me-2">
+                                <i class="bi bi-github"></i> Código
+                            </a>
+                            
+                        </div>
                     </div>
                 </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="project-card h-100">
+                    <div class="project-header p-3">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <h5 class="project-name mb-0">
+                                <i class="bi bi-folder-fill text-primary me-2"></i>
+                                Cleantrack
+                            </h5>
+                            
+                        </div>
+                        <p class="project-description text-muted small mb-0">
+                            CleanTrack is a lightweight compliance SaaS for healthcare facilities. Staff log cleanings by scanni...
+                        </p>
+                    </div>
 
-                <div class="contact-cta reveal">
-                    <h3>Disponível para Projetos</h3>
-                    <p>
-                        Estou disponível para projetos freelance, consultorias e oportunidades de trabalho.
-                        Respondo todas as mensagens em até 24 horas.
-                    </p>
-                    <a href="https://wa.me/message/VKWXMICWUXT5K1" target="_blank" class="btn btn-primary" style="background: white; color: #0a0a0a;">
-                        <i class="fab fa-whatsapp"></i> Fale Comigo Agora
-                    </a>
+                    <div class="project-body p-3">
+                        <!-- Tecnologias -->
+                        <div class="project-tech mb-3">
+                            
+                            <span class="tech-badge-main me-2">
+                                <i class="bi bi-circle-fill" style="font-size: 10px;"></i>
+                                Python
+                            </span>
+                            
+                            
+                            <span class="tech-badge">CSS3</span>
+                            
+                            <span class="tech-badge">Flask</span>
+                            
+                        </div>
+
+                        <!-- Stats -->
+                        <div class="project-stats mb-3">
+                            <span class="stat-item me-3">
+                                <i class="bi bi-star-fill text-warning"></i>
+                                0
+                            </span>
+                            <span class="stat-item me-3">
+                                <i class="bi bi-diagram-3-fill text-info"></i>
+                                0
+                            </span>
+                            <span class="stat-item text-muted small">
+                                <i class="bi bi-calendar3"></i>
+                                2025-11-24
+                            </span>
+                        </div>
+
+                        <!-- Links -->
+                        <div class="project-links">
+                            <a href="https://github.com/nataliabarros1994/CLEANTRACK" target="_blank"
+                               class="btn btn-sm btn-outline-dark me-2">
+                                <i class="bi bi-github"></i> Código
+                            </a>
+                            
+                        </div>
+                    </div>
                 </div>
             </div>
+            
+            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="project-card h-100">
+                    <div class="project-header p-3">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <h5 class="project-name mb-0">
+                                <i class="bi bi-folder-fill text-primary me-2"></i>
+                                NPX PDF Brasil
+                            </h5>
+                            
+                            <span class="badge bg-success" title="Atualizado recentemente">
+                                <i class="bi bi-lightning-fill"></i>
+                            </span>
+                            
+                        </div>
+                        <p class="project-description text-muted small mb-0">
+                            PDF Brasil is a free online SaaS platform for PDF manipulation. Features include merge, split, compr...
+                        </p>
+                    </div>
+
+                    <div class="project-body p-3">
+                        <!-- Tecnologias -->
+                        <div class="project-tech mb-3">
+                            
+                            <span class="tech-badge-main me-2">
+                                <i class="bi bi-circle-fill" style="font-size: 10px;"></i>
+                                TypeScript
+                            </span>
+                            
+                            
+                            <span class="tech-badge">Next.js</span>
+                            
+                            <span class="tech-badge">TypeScript</span>
+                            
+                        </div>
+
+                        <!-- Stats -->
+                        <div class="project-stats mb-3">
+                            <span class="stat-item me-3">
+                                <i class="bi bi-star-fill text-warning"></i>
+                                0
+                            </span>
+                            <span class="stat-item me-3">
+                                <i class="bi bi-diagram-3-fill text-info"></i>
+                                0
+                            </span>
+                            <span class="stat-item text-muted small">
+                                <i class="bi bi-calendar3"></i>
+                                2026-01-06
+                            </span>
+                        </div>
+
+                        <!-- Links -->
+                        <div class="project-links">
+                            <a href="https://github.com/nataliabarros1994/NPX-PDF-BRASIL" target="_blank"
+                               class="btn btn-sm btn-outline-dark me-2">
+                                <i class="bi bi-github"></i> Código
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
+                <div class="project-card h-100">
+                    <div class="project-header p-3">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <h5 class="project-name mb-0">
+                                <i class="bi bi-folder-fill text-primary me-2"></i>
+                                Guided Mvp
+                            </h5>
+                            
+                            <span class="badge bg-success" title="Atualizado recentemente">
+                                <i class="bi bi-lightning-fill"></i>
+                            </span>
+                            
+                        </div>
+                        <p class="project-description text-muted small mb-0">
+                            O que: scaffold completo para MVP Guiado: backend FastAPI (detect-scale, estimativa, auth, projetos)...
+                        </p>
+                    </div>
+
+                    <div class="project-body p-3">
+                        <!-- Tecnologias -->
+                        <div class="project-tech mb-3">
+                            
+                            
+                        </div>
+
+                        <!-- Stats -->
+                        <div class="project-stats mb-3">
+                            <span class="stat-item me-3">
+                                <i class="bi bi-star-fill text-warning"></i>
+                                0
+                            </span>
+                            <span class="stat-item me-3">
+                                <i class="bi bi-diagram-3-fill text-info"></i>
+                                0
+                            </span>
+                            <span class="stat-item text-muted small">
+                                <i class="bi bi-calendar3"></i>
+                                2025-12-11
+                            </span>
+                        </div>
+
+                        <!-- Links -->
+                        <div class="project-links">
+                            <a href="https://github.com/nataliabarros1994/Guided-MVP" target="_blank"
+                               class="btn btn-sm btn-outline-dark me-2">
+                                <i class="bi bi-github"></i> Código
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="500">
+                <div class="project-card h-100">
+                    <div class="project-header p-3">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <h5 class="project-name mb-0">
+                                <i class="bi bi-folder-fill text-primary me-2"></i>
+                                Meu Portfolio Python
+                            </h5>
+                            
+                            <span class="badge bg-success" title="Atualizado recentemente">
+                                <i class="bi bi-lightning-fill"></i>
+                            </span>
+                            
+                        </div>
+                        <p class="project-description text-muted small mb-0">
+                            Projeto desenvolvido com dedicação
+                        </p>
+                    </div>
+
+                    <div class="project-body p-3">
+                        <!-- Tecnologias -->
+                        <div class="project-tech mb-3">
+                            
+                            <span class="tech-badge-main me-2">
+                                <i class="bi bi-circle-fill" style="font-size: 10px;"></i>
+                                HTML
+                            </span>
+                            
+                            
+                            <span class="tech-badge">CSS</span>
+                            
+                            <span class="tech-badge">CSS3</span>
+                            
+                        </div>
+
+                        <!-- Stats -->
+                        <div class="project-stats mb-3">
+                            <span class="stat-item me-3">
+                                <i class="bi bi-star-fill text-warning"></i>
+                                0
+                            </span>
+                            <span class="stat-item me-3">
+                                <i class="bi bi-diagram-3-fill text-info"></i>
+                                0
+                            </span>
+                            <span class="stat-item text-muted small">
+                                <i class="bi bi-calendar3"></i>
+                                2025-12-11
+                            </span>
+                        </div>
+
+                        <!-- Links -->
+                        <div class="project-links">
+                            <a href="https://github.com/nataliabarros1994/meu-portfolio-python" target="_blank"
+                               class="btn btn-sm btn-outline-dark me-2">
+                                <i class="bi bi-github"></i> Código
+                            </a>
+                            
+                            <a href="https://nataliabarros1994.github.io/meu-portfolio-python" target="_blank"
+                               class="btn btn-sm btn-outline-primary">
+                                <i class="bi bi-box-arrow-up-right"></i> Demo
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="600">
+                <div class="project-card h-100">
+                    <div class="project-header p-3">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <h5 class="project-name mb-0">
+                                <i class="bi bi-folder-fill text-primary me-2"></i>
+                                Discor Saas
+                            </h5>
+                            
+                        </div>
+                        <p class="project-description text-muted small mb-0">
+                            A full-featured SaaS platform with Stripe subscriptions, real-time Discord notifications, and CRUD e...
+                        </p>
+                    </div>
+
+                    <div class="project-body p-3">
+                        <!-- Tecnologias -->
+                        <div class="project-tech mb-3">
+                            
+                            <span class="tech-badge-main me-2">
+                                <i class="bi bi-circle-fill" style="font-size: 10px;"></i>
+                                TypeScript
+                            </span>
+                            
+                            
+                            <span class="tech-badge">Angular</span>
+                            
+                            <span class="tech-badge">CSS</span>
+                            
+                        </div>
+
+                        <!-- Stats -->
+                        <div class="project-stats mb-3">
+                            <span class="stat-item me-3">
+                                <i class="bi bi-star-fill text-warning"></i>
+                                0
+                            </span>
+                            <span class="stat-item me-3">
+                                <i class="bi bi-diagram-3-fill text-info"></i>
+                                0
+                            </span>
+                            <span class="stat-item text-muted small">
+                                <i class="bi bi-calendar3"></i>
+                                2025-11-18
+                            </span>
+                        </div>
+
+                        <!-- Links -->
+                        <div class="project-links">
+                            <a href="https://github.com/nataliabarros1994/DISCOR-SAAS" target="_blank"
+                               class="btn btn-sm btn-outline-dark me-2">
+                                <i class="bi bi-github"></i> Código
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="700">
+                <div class="project-card h-100">
+                    <div class="project-header p-3">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <h5 class="project-name mb-0">
+                                <i class="bi bi-folder-fill text-primary me-2"></i>
+                                Netflixclone
+                            </h5>
+                            
+                        </div>
+                        <p class="project-description text-muted small mb-0">
+                            Projeto desenvolvido com dedicação
+                        </p>
+                    </div>
+
+                    <div class="project-body p-3">
+                        <!-- Tecnologias -->
+                        <div class="project-tech mb-3">
+                            
+                            <span class="tech-badge-main me-2">
+                                <i class="bi bi-circle-fill" style="font-size: 10px;"></i>
+                                HTML
+                            </span>
+                            
+                            
+                            <span class="tech-badge">CSS</span>
+                            
+                            <span class="tech-badge">CSS3</span>
+                            
+                        </div>
+
+                        <!-- Stats -->
+                        <div class="project-stats mb-3">
+                            <span class="stat-item me-3">
+                                <i class="bi bi-star-fill text-warning"></i>
+                                1
+                            </span>
+                            <span class="stat-item me-3">
+                                <i class="bi bi-diagram-3-fill text-info"></i>
+                                0
+                            </span>
+                            <span class="stat-item text-muted small">
+                                <i class="bi bi-calendar3"></i>
+                                2020-08-02
+                            </span>
+                        </div>
+
+                        <!-- Links -->
+                        <div class="project-links">
+                            <a href="https://github.com/nataliabarros1994/netflixclone" target="_blank"
+                               class="btn btn-sm btn-outline-dark me-2">
+                                <i class="bi bi-github"></i> Código
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
         </div>
-    </section>
+
+        <div class="text-center mt-5" data-aos="fade-up">
+            <a href="projetos/index.html" class="btn btn-primary btn-lg">
+                Ver Todos os 12 Projetos <i class="bi bi-arrow-right ms-2"></i>
+            </a>
+        </div>
+        
+    </div>
+</section>
+
+<!-- Tecnologias -->
+
+<section class="py-5">
+    <div class="container">
+        <div class="section-header text-center mb-5" data-aos="fade-up">
+            <span class="badge bg-primary-subtle text-primary mb-3">Skills</span>
+            <h2 class="display-5 fw-bold mb-3">Principais Tecnologias</h2>
+            <p class="lead text-muted">Baseado nos repositórios do GitHub</p>
+        </div>
+
+        <div class="row g-3" data-aos="fade-up">
+            
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="tech-badge-large text-center p-3">
+                    <h6 class="mb-1">Flask</h6>
+                    <small class="text-muted">9 projetos</small>
+                </div>
+            </div>
+            
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="tech-badge-large text-center p-3">
+                    <h6 class="mb-1">Python</h6>
+                    <small class="text-muted">9 projetos</small>
+                </div>
+            </div>
+            
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="tech-badge-large text-center p-3">
+                    <h6 class="mb-1">CSS3</h6>
+                    <small class="text-muted">5 projetos</small>
+                </div>
+            </div>
+            
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="tech-badge-large text-center p-3">
+                    <h6 class="mb-1">HTML</h6>
+                    <small class="text-muted">5 projetos</small>
+                </div>
+            </div>
+            
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="tech-badge-large text-center p-3">
+                    <h6 class="mb-1">Angular</h6>
+                    <small class="text-muted">4 projetos</small>
+                </div>
+            </div>
+            
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="tech-badge-large text-center p-3">
+                    <h6 class="mb-1">TypeScript</h6>
+                    <small class="text-muted">4 projetos</small>
+                </div>
+            </div>
+            
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="tech-badge-large text-center p-3">
+                    <h6 class="mb-1">CSS</h6>
+                    <small class="text-muted">3 projetos</small>
+                </div>
+            </div>
+            
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="tech-badge-large text-center p-3">
+                    <h6 class="mb-1">Sass</h6>
+                    <small class="text-muted">3 projetos</small>
+                </div>
+            </div>
+            
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="tech-badge-large text-center p-3">
+                    <h6 class="mb-1">JavaScript</h6>
+                    <small class="text-muted">1 projetos</small>
+                </div>
+            </div>
+            
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="tech-badge-large text-center p-3">
+                    <h6 class="mb-1">Node.js</h6>
+                    <small class="text-muted">1 projetos</small>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+
+<!-- Call to Action -->
+<section class="cta-section py-5 bg-primary text-white">
+    <div class="container text-center" data-aos="zoom-in">
+        <h2 class="display-5 fw-bold mb-3">Veja Todos os Meus Projetos</h2>
+        <p class="lead mb-4">
+            12 repositórios públicos no GitHub
+        </p>
+        <div class="cta-buttons">
+            <a href="projetos/index.html" class="btn btn-light btn-lg me-3">
+                <i class="bi bi-folder"></i> Ver Projetos
+            </a>
+            <a href="https://github.com/nataliabarros1994" target="_blank" class="btn btn-outline-light btn-lg">
+                <i class="bi bi-github"></i> GitHub
+            </a>
+        </div>
+    </div>
+</section>
+
+    </main>
 
     <!-- Footer -->
-    <footer>
+    <footer class="bg-dark text-white py-5 mt-5">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>Natália Barros</h4>
-                    <p>
-                        Desenvolvedora Python Full Stack dedicada a criar
-                        soluções digitais inovadoras e de alto impacto.
-                    </p>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h5 class="fw-bold mb-3">Natália Barros</h5>
+                    <p class="text-muted">Desenvolvedora Python Full Stack</p>
+                    <p class="text-muted small">Desenvolvendo soluções inovadoras com Python e tecnologias modernas.</p>
                 </div>
-                <div class="footer-section">
-                    <h4>Links Rápidos</h4>
-                    <a href="#hero">Início</a>
-                    <a href="#sobre">Sobre</a>
-                    <a href="#projetos">Projetos</a>
-                    <a href="#contato">Contato</a>
+                <div class="col-md-4 mb-4">
+                    <h6 class="fw-bold mb-3">Links Rápidos</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="index.html" class="text-decoration-none text-muted hover-primary">Início</a></li>
+                        <li class="mb-2"><a href="projetos/index.html" class="text-decoration-none text-muted hover-primary">Projetos</a></li>
+                        <li class="mb-2"><a href="sobre/index.html" class="text-decoration-none text-muted hover-primary">Sobre Mim</a></li>
+                        <li class="mb-2"><a href="contato/index.html" class="text-decoration-none text-muted hover-primary">Contato</a></li>
+                    </ul>
                 </div>
-                <div class="footer-section">
-                    <h4>Redes Sociais</h4>
-                    <a href="https://github.com/nataliabarros1994?tab=repositories" target="_blank">
-                        <i class="fab fa-github"></i> GitHub
-                    </a>
-                    <a href="https://www.linkedin.com/in/nataliachagas1994/" target="_blank">
-                        <i class="fab fa-linkedin-in"></i> LinkedIn
-                    </a>
-                    <a href="https://wa.me/message/VKWXMICWUXT5K1" target="_blank">
-                        <i class="fab fa-whatsapp"></i> WhatsApp
-                    </a>
+                <div class="col-md-4 mb-4">
+                    <h6 class="fw-bold mb-3">Conecte-se</h6>
+                    <div class="social-links">
+                        <a href="https://github.com/nataliabarros1994" target="_blank" class="btn btn-outline-light btn-sm me-2 mb-2">
+                            <i class="bi bi-github"></i> GitHub
+                        </a>
+                        <a href="https://www.linkedin.com/in/nataliachagas1994/" target="_blank" class="btn btn-outline-light btn-sm me-2 mb-2">
+                            <i class="bi bi-linkedin"></i> LinkedIn
+                        </a>
+                        <a href="mailto:natalia.goldenglowitsolutions@gmail.com" class="btn btn-outline-light btn-sm mb-2">
+                            <i class="bi bi-envelope"></i> Email
+                        </a>
+                    </div>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Natália Barros. Todos os direitos reservados.</p>
+            <hr class="border-secondary my-4">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0 text-muted small">
+                        &copy; 2026 Natália Barros. Todos os direitos reservados.
+                    </p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="mb-0 text-muted small">
+                        Feito com <i class="bi bi-heart-fill text-danger"></i> usando Flask e Bootstrap
+                    </p>
+                </div>
             </div>
         </div>
     </footer>
 
-    <!-- JavaScript -->
-    <script>
-        // Polyfill for smooth scroll in older browsers
-        (function() {
-            'use strict';
+    <!-- Botão Voltar ao Topo -->
+    <button id="backToTop" class="btn btn-primary btn-floating" title="Voltar ao topo">
+        <i class="bi bi-arrow-up"></i>
+    </button>
 
-            // Feature detection
-            if (!('scrollBehavior' in document.documentElement.style)) {
-                // Smooth scroll polyfill for older browsers
-                const scrollToSmooth = (element) => {
-                    window.scroll({
-                        behavior: 'smooth',
-                        left: 0,
-                        top: element.offsetTop
-                    });
-                };
-            }
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-            // Safe querySelector wrapper
-            const safeQuery = (selector) => {
-                try {
-                    return document.querySelector(selector);
-                } catch (e) {
-                    console.warn('Element not found:', selector);
-                    return null;
-                }
-            };
+    <!-- JavaScript Customizado -->
+    <script src="static/js/script.js"></script>
 
-            // Safe querySelectorAll wrapper
-            const safeQueryAll = (selector) => {
-                try {
-                    return document.querySelectorAll(selector);
-                } catch (e) {
-                    console.warn('Elements not found:', selector);
-                    return [];
-                }
-            };
-        })();
+    
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script>
+    AOS.init({
+        duration: 800,
+        once: true,
+        offset: 100
+    });
+</script>
 
-        // Mobile Menu Toggle
-        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-        const navLinks = document.getElementById('navLinks');
-
-        mobileMenuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            const icon = mobileMenuToggle.querySelector('i');
-            icon.classList.toggle('fa-bars');
-            icon.classList.toggle('fa-times');
-        });
-
-        // Close mobile menu when clicking on a link
-        navLinks.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-                const icon = mobileMenuToggle.querySelector('i');
-                icon.classList.add('fa-bars');
-                icon.classList.remove('fa-times');
-            });
-        });
-
-        // Navbar scroll effect
-        const navbar = document.getElementById('navbar');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
-
-        // Scroll reveal animation
-        const revealElements = document.querySelectorAll('.reveal');
-
-        const revealOnScroll = () => {
-            revealElements.forEach(element => {
-                const elementTop = element.getBoundingClientRect().top;
-                const windowHeight = window.innerHeight;
-
-                if (elementTop < windowHeight - 100) {
-                    element.classList.add('active');
-                }
-            });
-        };
-
-        window.addEventListener('scroll', revealOnScroll);
-        revealOnScroll(); // Initial check
-
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-    </script>
 </body>
 </html>

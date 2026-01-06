@@ -82,9 +82,32 @@ def index():
 
     # Projetos em destaque (IDs dos projetos com mais stars)
     featured_ids = stats.get('featured_projects', [])
-    featured_projects = [p for p in projects if p['id'] in featured_ids][:6]
 
-    # Se não houver featured, pegar os 6 primeiros
+    # Para garantir que projetos específicos apareçam como destaque,
+    # independentemente de estrelas, adicionamos IDs específicos
+    # que você deseja manter como destaque
+    required_featured_ids = [1129151570]  # NPX-PDF-BRASIL
+
+    # Combinar IDs de projetos com mais estrelas com IDs específicos
+    all_featured_ids = list(set(featured_ids + required_featured_ids))
+
+    # Pegar projetos correspondentes
+    featured_projects = []
+    for project_id in all_featured_ids:
+        project = next((p for p in projects if p['id'] == project_id), None)
+        if project:
+            featured_projects.append(project)
+
+    # Se ainda não tiver 6 projetos, adicionar os restantes dos mais estrelados
+    remaining_slots = 6 - len(featured_projects)
+    if remaining_slots > 0:
+        # Pegar projetos mais estrelados que ainda não estão na lista
+        remaining_projects = [p for p in projects
+                            if p['id'] not in all_featured_ids
+                            and p['id'] in featured_ids]
+        featured_projects.extend(remaining_projects[:remaining_slots])
+
+    # Se ainda assim não houver projetos, pegar os 6 primeiros
     if not featured_projects:
         featured_projects = projects[:6]
 

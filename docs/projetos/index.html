@@ -1,0 +1,1479 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfólio profissional de Natália Barros - Desenvolvedora Python Full Stack">
+    <meta name="keywords" content="python, flask, desenvolvedor, portfolio, web development">
+    <meta name="author" content="Natália Barros">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Natália Barros - Portfolio">
+    <meta property="og:description" content="Portfolio profissional de desenvolvimento Python">
+    <meta property="og:type" content="website">
+
+    <title>Projetos do GitHub - Natália Barros</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS Customizado -->
+    <link rel="stylesheet" href="../static/css/style.css">
+
+    
+<style>
+.project-filters {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+}
+
+.filter-tag {
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    border: 2px solid #e0e0e0;
+    background: white;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin: 0.25rem;
+    display: inline-block;
+}
+
+.filter-tag:hover {
+    border-color: #007bff;
+    background: #f0f8ff;
+}
+
+.filter-tag.active {
+    background: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+
+.project-card.hidden {
+    display: none !important;
+}
+</style>
+
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="../index.html">
+                <i class="bi bi-code-slash"></i> Natália Barros
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link " href="../index.html">
+                            <i class="bi bi-house-door"></i> Início
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">
+                            <i class="bi bi-folder"></i> Projetos
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="../sobre/index.html">
+                            <i class="bi bi-person"></i> Sobre
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="../contato/index.html">
+                            <i class="bi bi-envelope"></i> Contato
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Flash Messages -->
+    
+        
+    
+
+    <!-- Conteúdo Principal -->
+    <main>
+        
+<!-- Page Header -->
+<section class="page-header bg-primary text-white">
+    <div class="container">
+        <div class="row align-items-center py-5">
+            <div class="col-lg-8">
+                <h1 class="display-4 fw-bold mb-3">
+                    <i class="bi bi-github"></i> Repositórios do GitHub
+                </h1>
+                <p class="lead mb-0">
+                    Todos os meus projetos públicos, sincronizados automaticamente
+                </p>
+            </div>
+            <div class="col-lg-4 text-lg-end">
+                <div class="stats-badge">
+                    <h3 class="fw-bold mb-0" id="total-visible">13</h3>
+                    <p class="mb-0">Projetos exibidos</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Estatísticas Rápidas -->
+<section class="py-3 bg-light border-bottom">
+    <div class="container">
+        <div class="row text-center g-3">
+            <div class="col-6 col-md-3">
+                <h4 class="fw-bold text-primary mb-0">12</h4>
+                <small class="text-muted">Total de Projetos</small>
+            </div>
+            <div class="col-6 col-md-3">
+                <h4 class="fw-bold text-warning mb-0">1</h4>
+                <small class="text-muted">Total de Stars</small>
+            </div>
+            <div class="col-6 col-md-3">
+                <h4 class="fw-bold text-info mb-0">0</h4>
+                <small class="text-muted">Total de Forks</small>
+            </div>
+            <div class="col-6 col-md-3">
+                <h4 class="fw-bold text-success mb-0">2</h4>
+                <small class="text-muted">Atualizados Recentemente</small>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Filtros e Ordenação -->
+<section class="py-4 bg-light">
+    <div class="container">
+        <div class="project-filters">
+            <div class="row g-3">
+                <!-- Busca -->
+                <div class="col-md-6">
+                    <label class="form-label fw-semibold">
+                        <i class="bi bi-search"></i> Buscar
+                    </label>
+                    <input type="text"
+                           id="searchInput"
+                           class="form-control"
+                           placeholder="Buscar por nome ou descrição...">
+                </div>
+
+                <!-- Ordenação -->
+                <div class="col-md-3">
+                    <label class="form-label fw-semibold">
+                        <i class="bi bi-sort-down"></i> Ordenar por
+                    </label>
+                    <select id="sortSelect" class="form-select">
+                        <option value="stars">Mais Stars</option>
+                        <option value="updated">Mais Recentes</option>
+                        <option value="name">Nome (A-Z)</option>
+                        <option value="forks">Mais Forks</option>
+                    </select>
+                </div>
+
+                <!-- Mostrar recentes -->
+                <div class="col-md-3 d-flex align-items-end">
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="recentOnly">
+                        <label class="form-check-label" for="recentOnly">
+                            Apenas recentes
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Filtro por Linguagem -->
+            
+            <div class="mt-3">
+                <label class="form-label fw-semibold">
+                    <i class="bi bi-code-slash"></i> Linguagens
+                </label>
+                <div class="filter-tags">
+                    <span class="filter-tag active" data-filter="all">
+                        Todas
+                    </span>
+                    
+                    <span class="filter-tag" data-filter="language" data-value="Assembly">
+                        Assembly
+                    </span>
+                    
+                    <span class="filter-tag" data-filter="language" data-value="Batchfile">
+                        Batchfile
+                    </span>
+                    
+                    <span class="filter-tag" data-filter="language" data-value="C">
+                        C
+                    </span>
+                    
+                    <span class="filter-tag" data-filter="language" data-value="C++">
+                        C++
+                    </span>
+                    
+                    <span class="filter-tag" data-filter="language" data-value="CMake">
+                        CMake
+                    </span>
+                    
+                    <span class="filter-tag" data-filter="language" data-value="CSS">
+                        CSS
+                    </span>
+                    
+                    <span class="filter-tag" data-filter="language" data-value="Cython">
+                        Cython
+                    </span>
+                    
+                    <span class="filter-tag" data-filter="language" data-value="Dockerfile">
+                        Dockerfile
+                    </span>
+                    
+                    <span class="filter-tag" data-filter="language" data-value="Fortran">
+                        Fortran
+                    </span>
+                    
+                    <span class="filter-tag" data-filter="language" data-value="Go">
+                        Go
+                    </span>
+                    
+                    <span class="filter-tag" data-filter="language" data-value="HTML">
+                        HTML
+                    </span>
+                    
+                    <span class="filter-tag" data-filter="language" data-value="JavaScript">
+                        JavaScript
+                    </span>
+                    
+                    <span class="filter-tag" data-filter="language" data-value="Lua">
+                        Lua
+                    </span>
+                    
+                    <span class="filter-tag" data-filter="language" data-value="Makefile">
+                        Makefile
+                    </span>
+                    
+                    <span class="filter-tag" data-filter="language" data-value="Mako">
+                        Mako
+                    </span>
+                    
+                    <span class="filter-tag" data-filter="language" data-value="Meson">
+                        Meson
+                    </span>
+                    
+                    <span class="filter-tag" data-filter="language" data-value="PowerShell">
+                        PowerShell
+                    </span>
+                    
+                    <span class="filter-tag" data-filter="language" data-value="Procfile">
+                        Procfile
+                    </span>
+                    
+                    <span class="filter-tag" data-filter="language" data-value="Python">
+                        Python
+                    </span>
+                    
+                    <span class="filter-tag" data-filter="language" data-value="Roff">
+                        Roff
+                    </span>
+                    
+                    <span class="filter-tag" data-filter="language" data-value="Shell">
+                        Shell
+                    </span>
+                    
+                    <span class="filter-tag" data-filter="language" data-value="Smarty">
+                        Smarty
+                    </span>
+                    
+                    <span class="filter-tag" data-filter="language" data-value="TypeScript">
+                        TypeScript
+                    </span>
+                    
+                </div>
+            </div>
+            
+
+            <!-- Limpar filtros -->
+            <div class="mt-3 text-end">
+                <button id="clearFilters" class="btn btn-sm btn-outline-secondary">
+                    <i class="bi bi-x-circle"></i> Limpar Filtros
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Lista de Projetos -->
+<section class="py-5">
+    <div class="container">
+        
+        <div class="row g-4" id="projectsGrid">
+            
+            <div class="col-md-6 col-lg-4 project-item"
+                 data-name="npx pdf brasil"
+                 data-description="pdf brasil is a free online saas platform for pdf manipulation. features include merge, split, compress, rotate, and convert pdfs. built with next.js 14, typescript, tailwind css, and go backend."
+                 data-language="TypeScript"
+                 data-stars="0"
+                 data-forks="0"
+                 data-updated="2026-01-06"
+                 data-recent="true">
+
+                <div class="project-card h-100" data-aos="fade-up">
+                    <div class="project-header p-3">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <h5 class="project-name mb-0">
+                                <i class="bi bi-folder-fill text-primary me-2"></i>
+                                NPX PDF Brasil
+                            </h5>
+                            
+                            <span class="badge bg-success" title="Atualizado nos últimos 30 dias">
+                                <i class="bi bi-lightning-fill"></i> Novo
+                            </span>
+                            
+                        </div>
+                        <p class="project-description text-muted small mb-0">
+                            PDF Brasil is a free online SaaS platform for PDF manipulation. Features include merge, split, compress, rotate, and convert PDFs. Built with Next.js 14, TypeScript, Tailwind CSS, and Go backend.
+                        </p>
+                    </div>
+
+                    <div class="project-body p-3">
+                        <!-- Tecnologias -->
+                        <div class="project-tech mb-3">
+                            
+                            <span class="tech-badge-main me-2">
+                                <i class="bi bi-circle-fill" style="font-size: 10px;"></i>
+                                TypeScript
+                            </span>
+                            
+                            
+                            <span class="tech-badge">Next.js</span>
+                            
+                            <span class="tech-badge">TypeScript</span>
+                            
+                            <span class="tech-badge">Tailwind CSS</span>
+                            
+                        </div>
+
+                        <!-- Topics -->
+                        
+
+                        <!-- Stats -->
+                        <div class="project-stats mb-3">
+                            <span class="stat-item me-3" title="Stars">
+                                <i class="bi bi-star-fill text-warning"></i>
+                                0
+                            </span>
+                            <span class="stat-item me-3" title="Forks">
+                                <i class="bi bi-diagram-3-fill text-info"></i>
+                                0
+                            </span>
+                            <span class="stat-item text-muted small" title="Última atualização">
+                                <i class="bi bi-calendar3"></i>
+                                2026-01-06
+                            </span>
+                        </div>
+
+                        <!-- Links -->
+                        <div class="project-links">
+                            <a href="https://github.com/nataliabarros1994/NPX-PDF-BRASIL" target="_blank"
+                               class="btn btn-sm btn-outline-dark me-2">
+                                <i class="bi bi-github"></i> Código
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 project-item"
+                 data-name="meu portfolio python"
+                 data-description="none"
+                 data-language="HTML"
+                 data-stars="0"
+                 data-forks="0"
+                 data-updated="2025-12-11"
+                 data-recent="true">
+
+                <div class="project-card h-100" data-aos="fade-up">
+                    <div class="project-header p-3">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <h5 class="project-name mb-0">
+                                <i class="bi bi-folder-fill text-primary me-2"></i>
+                                Meu Portfolio Python
+                            </h5>
+                            
+                            <span class="badge bg-success" title="Atualizado nos últimos 30 dias">
+                                <i class="bi bi-lightning-fill"></i> Novo
+                            </span>
+                            
+                        </div>
+                        <p class="project-description text-muted small mb-0">
+                            None
+                        </p>
+                    </div>
+
+                    <div class="project-body p-3">
+                        <!-- Tecnologias -->
+                        <div class="project-tech mb-3">
+                            
+                            <span class="tech-badge-main me-2">
+                                <i class="bi bi-circle-fill" style="font-size: 10px;"></i>
+                                HTML
+                            </span>
+                            
+                            
+                            <span class="tech-badge">CSS</span>
+                            
+                            <span class="tech-badge">CSS3</span>
+                            
+                            <span class="tech-badge">Flask</span>
+                            
+                        </div>
+
+                        <!-- Topics -->
+                        
+
+                        <!-- Stats -->
+                        <div class="project-stats mb-3">
+                            <span class="stat-item me-3" title="Stars">
+                                <i class="bi bi-star-fill text-warning"></i>
+                                0
+                            </span>
+                            <span class="stat-item me-3" title="Forks">
+                                <i class="bi bi-diagram-3-fill text-info"></i>
+                                0
+                            </span>
+                            <span class="stat-item text-muted small" title="Última atualização">
+                                <i class="bi bi-calendar3"></i>
+                                2025-12-11
+                            </span>
+                        </div>
+
+                        <!-- Links -->
+                        <div class="project-links">
+                            <a href="https://github.com/nataliabarros1994/meu-portfolio-python" target="_blank"
+                               class="btn btn-sm btn-outline-dark me-2">
+                                <i class="bi bi-github"></i> Código
+                            </a>
+                            
+                            <a href="https://nataliabarros1994.github.io/meu-portfolio-python" target="_blank"
+                               class="btn btn-sm btn-outline-primary">
+                                <i class="bi bi-box-arrow-up-right"></i> Demo
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 project-item"
+                 data-name="guided mvp"
+                 data-description="o que: scaffold completo para mvp guiado: backend fastapi (detect-scale, estimativa, auth, projetos), cliente react (vite) com fluxo upload → mark → review, scripts de teste e geração de imagens, docker + docker-compose dev. por que: permitir validação rápida do fluxo pixels→metros, geração de estimativas e salvamento de projetos."
+                 data-language="None"
+                 data-stars="0"
+                 data-forks="0"
+                 data-updated="2025-12-11"
+                 data-recent="true">
+
+                <div class="project-card h-100" data-aos="fade-up">
+                    <div class="project-header p-3">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <h5 class="project-name mb-0">
+                                <i class="bi bi-folder-fill text-primary me-2"></i>
+                                Guided Mvp
+                            </h5>
+                            
+                            <span class="badge bg-success" title="Atualizado nos últimos 30 dias">
+                                <i class="bi bi-lightning-fill"></i> Novo
+                            </span>
+                            
+                        </div>
+                        <p class="project-description text-muted small mb-0">
+                            O que: scaffold completo para MVP Guiado: backend FastAPI (detect-scale, estimativa, auth, projetos), cliente React (Vite) com fluxo Upload → Mark → Review, scripts de teste e geração de imagens, Docker + docker-compose dev. Por que: permitir validação rápida do fluxo pixels→metros, geração de estimativas e salvamento de projetos.
+                        </p>
+                    </div>
+
+                    <div class="project-body p-3">
+                        <!-- Tecnologias -->
+                        <div class="project-tech mb-3">
+                            
+                            
+                        </div>
+
+                        <!-- Topics -->
+                        
+
+                        <!-- Stats -->
+                        <div class="project-stats mb-3">
+                            <span class="stat-item me-3" title="Stars">
+                                <i class="bi bi-star-fill text-warning"></i>
+                                0
+                            </span>
+                            <span class="stat-item me-3" title="Forks">
+                                <i class="bi bi-diagram-3-fill text-info"></i>
+                                0
+                            </span>
+                            <span class="stat-item text-muted small" title="Última atualização">
+                                <i class="bi bi-calendar3"></i>
+                                2025-12-11
+                            </span>
+                        </div>
+
+                        <!-- Links -->
+                        <div class="project-links">
+                            <a href="https://github.com/nataliabarros1994/Guided-MVP" target="_blank"
+                               class="btn btn-sm btn-outline-dark me-2">
+                                <i class="bi bi-github"></i> Código
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 project-item"
+                 data-name="phishguardian"
+                 data-description="phishguardian is a phishing simulation platform for corporate security training. it allows you to create campaigns, manage targets, send simulated emails, and monitor click and submission metrics. it includes 10 phishing templates, real-time notifications, and a dashboard with detailed reports."
+                 data-language="Python"
+                 data-stars="0"
+                 data-forks="0"
+                 data-updated="2025-12-05"
+                 data-recent="false">
+
+                <div class="project-card h-100" data-aos="fade-up">
+                    <div class="project-header p-3">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <h5 class="project-name mb-0">
+                                <i class="bi bi-folder-fill text-primary me-2"></i>
+                                Phishguardian
+                            </h5>
+                            
+                        </div>
+                        <p class="project-description text-muted small mb-0">
+                            PhishGuardian is a phishing simulation platform for corporate security training. It allows you to create campaigns, manage targets, send simulated emails, and monitor click and submission metrics. It includes 10 phishing templates, real-time notifications, and a dashboard with detailed reports.
+                        </p>
+                    </div>
+
+                    <div class="project-body p-3">
+                        <!-- Tecnologias -->
+                        <div class="project-tech mb-3">
+                            
+                            <span class="tech-badge-main me-2">
+                                <i class="bi bi-circle-fill" style="font-size: 10px;"></i>
+                                Python
+                            </span>
+                            
+                            
+                            <span class="tech-badge">Angular</span>
+                            
+                            <span class="tech-badge">CSS3</span>
+                            
+                            <span class="tech-badge">Flask</span>
+                            
+                        </div>
+
+                        <!-- Topics -->
+                        
+
+                        <!-- Stats -->
+                        <div class="project-stats mb-3">
+                            <span class="stat-item me-3" title="Stars">
+                                <i class="bi bi-star-fill text-warning"></i>
+                                0
+                            </span>
+                            <span class="stat-item me-3" title="Forks">
+                                <i class="bi bi-diagram-3-fill text-info"></i>
+                                0
+                            </span>
+                            <span class="stat-item text-muted small" title="Última atualização">
+                                <i class="bi bi-calendar3"></i>
+                                2025-12-05
+                            </span>
+                        </div>
+
+                        <!-- Links -->
+                        <div class="project-links">
+                            <a href="https://github.com/nataliabarros1994/Phishguardian" target="_blank"
+                               class="btn btn-sm btn-outline-dark me-2">
+                                <i class="bi bi-github"></i> Código
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 project-item"
+                 data-name="cleantrack"
+                 data-description="cleantrack is a lightweight compliance saas for healthcare facilities. staff log cleanings by scanning a qr code—no login required. managers track compliance in real time and generate audit-ready reports in one click. secure, fast to deploy, and designed to prevent costly regulatory fines."
+                 data-language="Python"
+                 data-stars="0"
+                 data-forks="0"
+                 data-updated="2025-11-24"
+                 data-recent="false">
+
+                <div class="project-card h-100" data-aos="fade-up">
+                    <div class="project-header p-3">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <h5 class="project-name mb-0">
+                                <i class="bi bi-folder-fill text-primary me-2"></i>
+                                Cleantrack
+                            </h5>
+                            
+                        </div>
+                        <p class="project-description text-muted small mb-0">
+                            CleanTrack is a lightweight compliance SaaS for healthcare facilities. Staff log cleanings by scanning a QR code—no login required. Managers track compliance in real time and generate audit-ready reports in one click. Secure, fast to deploy, and designed to prevent costly regulatory fines.
+                        </p>
+                    </div>
+
+                    <div class="project-body p-3">
+                        <!-- Tecnologias -->
+                        <div class="project-tech mb-3">
+                            
+                            <span class="tech-badge-main me-2">
+                                <i class="bi bi-circle-fill" style="font-size: 10px;"></i>
+                                Python
+                            </span>
+                            
+                            
+                            <span class="tech-badge">CSS3</span>
+                            
+                            <span class="tech-badge">Flask</span>
+                            
+                            <span class="tech-badge">HTML</span>
+                            
+                        </div>
+
+                        <!-- Topics -->
+                        
+
+                        <!-- Stats -->
+                        <div class="project-stats mb-3">
+                            <span class="stat-item me-3" title="Stars">
+                                <i class="bi bi-star-fill text-warning"></i>
+                                0
+                            </span>
+                            <span class="stat-item me-3" title="Forks">
+                                <i class="bi bi-diagram-3-fill text-info"></i>
+                                0
+                            </span>
+                            <span class="stat-item text-muted small" title="Última atualização">
+                                <i class="bi bi-calendar3"></i>
+                                2025-11-24
+                            </span>
+                        </div>
+
+                        <!-- Links -->
+                        <div class="project-links">
+                            <a href="https://github.com/nataliabarros1994/CLEANTRACK" target="_blank"
+                               class="btn btn-sm btn-outline-dark me-2">
+                                <i class="bi bi-github"></i> Código
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 project-item"
+                 data-name="discor saas"
+                 data-description="a full-featured saas platform with stripe subscriptions, real-time discord notifications, and crud event management—built with next.js, clerk, and neon postgresql."
+                 data-language="TypeScript"
+                 data-stars="0"
+                 data-forks="0"
+                 data-updated="2025-11-18"
+                 data-recent="false">
+
+                <div class="project-card h-100" data-aos="fade-up">
+                    <div class="project-header p-3">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <h5 class="project-name mb-0">
+                                <i class="bi bi-folder-fill text-primary me-2"></i>
+                                Discor Saas
+                            </h5>
+                            
+                        </div>
+                        <p class="project-description text-muted small mb-0">
+                            A full-featured SaaS platform with Stripe subscriptions, real-time Discord notifications, and CRUD event management—built with Next.js, Clerk, and Neon PostgreSQL.
+                        </p>
+                    </div>
+
+                    <div class="project-body p-3">
+                        <!-- Tecnologias -->
+                        <div class="project-tech mb-3">
+                            
+                            <span class="tech-badge-main me-2">
+                                <i class="bi bi-circle-fill" style="font-size: 10px;"></i>
+                                TypeScript
+                            </span>
+                            
+                            
+                            <span class="tech-badge">Angular</span>
+                            
+                            <span class="tech-badge">CSS</span>
+                            
+                            <span class="tech-badge">JavaScript</span>
+                            
+                        </div>
+
+                        <!-- Topics -->
+                        
+
+                        <!-- Stats -->
+                        <div class="project-stats mb-3">
+                            <span class="stat-item me-3" title="Stars">
+                                <i class="bi bi-star-fill text-warning"></i>
+                                0
+                            </span>
+                            <span class="stat-item me-3" title="Forks">
+                                <i class="bi bi-diagram-3-fill text-info"></i>
+                                0
+                            </span>
+                            <span class="stat-item text-muted small" title="Última atualização">
+                                <i class="bi bi-calendar3"></i>
+                                2025-11-18
+                            </span>
+                        </div>
+
+                        <!-- Links -->
+                        <div class="project-links">
+                            <a href="https://github.com/nataliabarros1994/DISCOR-SAAS" target="_blank"
+                               class="btn btn-sm btn-outline-dark me-2">
+                                <i class="bi bi-github"></i> Código
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 project-item"
+                 data-name="microstack"
+                 data-description="&#34;microstack is a modern and responsive saas platform built with microservices architecture. it features smart pricing plans, secure multi-payment integration (credit, debit, paypal, payoneer), and automated email notifications for seamless user experience.&#34;"
+                 data-language="HTML"
+                 data-stars="0"
+                 data-forks="0"
+                 data-updated="2025-10-30"
+                 data-recent="false">
+
+                <div class="project-card h-100" data-aos="fade-up">
+                    <div class="project-header p-3">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <h5 class="project-name mb-0">
+                                <i class="bi bi-folder-fill text-primary me-2"></i>
+                                Microstack
+                            </h5>
+                            
+                        </div>
+                        <p class="project-description text-muted small mb-0">
+                            &#34;MicroStack is a modern and responsive SaaS platform built with microservices architecture. It features smart pricing plans, secure multi-payment integration (credit, debit, PayPal, Payoneer), and automated email notifications for seamless user experience.&#34;
+                        </p>
+                    </div>
+
+                    <div class="project-body p-3">
+                        <!-- Tecnologias -->
+                        <div class="project-tech mb-3">
+                            
+                            <span class="tech-badge-main me-2">
+                                <i class="bi bi-circle-fill" style="font-size: 10px;"></i>
+                                HTML
+                            </span>
+                            
+                            
+                            <span class="tech-badge">Angular</span>
+                            
+                            <span class="tech-badge">CSS3</span>
+                            
+                            <span class="tech-badge">Flask</span>
+                            
+                        </div>
+
+                        <!-- Topics -->
+                        
+
+                        <!-- Stats -->
+                        <div class="project-stats mb-3">
+                            <span class="stat-item me-3" title="Stars">
+                                <i class="bi bi-star-fill text-warning"></i>
+                                0
+                            </span>
+                            <span class="stat-item me-3" title="Forks">
+                                <i class="bi bi-diagram-3-fill text-info"></i>
+                                0
+                            </span>
+                            <span class="stat-item text-muted small" title="Última atualização">
+                                <i class="bi bi-calendar3"></i>
+                                2025-10-30
+                            </span>
+                        </div>
+
+                        <!-- Links -->
+                        <div class="project-links">
+                            <a href="https://github.com/nataliabarros1994/microstack" target="_blank"
+                               class="btn btn-sm btn-outline-dark me-2">
+                                <i class="bi bi-github"></i> Código
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 project-item"
+                 data-name="sistema de detec o de fraudes em tempo real"
+                 data-description="sistema de detecção de fraudes em tempo real com ia"
+                 data-language="Python"
+                 data-stars="0"
+                 data-forks="0"
+                 data-updated="2025-10-20"
+                 data-recent="false">
+
+                <div class="project-card h-100" data-aos="fade-up">
+                    <div class="project-header p-3">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <h5 class="project-name mb-0">
+                                <i class="bi bi-folder-fill text-primary me-2"></i>
+                                Sistema De Detec O De Fraudes Em Tempo Real
+                            </h5>
+                            
+                        </div>
+                        <p class="project-description text-muted small mb-0">
+                            sistema de detecção de fraudes em tempo real com IA
+                        </p>
+                    </div>
+
+                    <div class="project-body p-3">
+                        <!-- Tecnologias -->
+                        <div class="project-tech mb-3">
+                            
+                            <span class="tech-badge-main me-2">
+                                <i class="bi bi-circle-fill" style="font-size: 10px;"></i>
+                                Python
+                            </span>
+                            
+                            
+                            <span class="tech-badge">C</span>
+                            
+                            <span class="tech-badge">Flask</span>
+                            
+                            <span class="tech-badge">Python</span>
+                            
+                        </div>
+
+                        <!-- Topics -->
+                        
+
+                        <!-- Stats -->
+                        <div class="project-stats mb-3">
+                            <span class="stat-item me-3" title="Stars">
+                                <i class="bi bi-star-fill text-warning"></i>
+                                0
+                            </span>
+                            <span class="stat-item me-3" title="Forks">
+                                <i class="bi bi-diagram-3-fill text-info"></i>
+                                0
+                            </span>
+                            <span class="stat-item text-muted small" title="Última atualização">
+                                <i class="bi bi-calendar3"></i>
+                                2025-10-20
+                            </span>
+                        </div>
+
+                        <!-- Links -->
+                        <div class="project-links">
+                            <a href="https://github.com/nataliabarros1994/sistema-de-detec-o-de-fraudes-em-tempo-real" target="_blank"
+                               class="btn btn-sm btn-outline-dark me-2">
+                                <i class="bi bi-github"></i> Código
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 project-item"
+                 data-name="athena robotic framework"
+                 data-description="none"
+                 data-language="Shell"
+                 data-stars="0"
+                 data-forks="0"
+                 data-updated="2025-10-09"
+                 data-recent="false">
+
+                <div class="project-card h-100" data-aos="fade-up">
+                    <div class="project-header p-3">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <h5 class="project-name mb-0">
+                                <i class="bi bi-folder-fill text-primary me-2"></i>
+                                Athena Robotic Framework
+                            </h5>
+                            
+                        </div>
+                        <p class="project-description text-muted small mb-0">
+                            None
+                        </p>
+                    </div>
+
+                    <div class="project-body p-3">
+                        <!-- Tecnologias -->
+                        <div class="project-tech mb-3">
+                            
+                            <span class="tech-badge-main me-2">
+                                <i class="bi bi-circle-fill" style="font-size: 10px;"></i>
+                                Shell
+                            </span>
+                            
+                            
+                            <span class="tech-badge">C++</span>
+                            
+                            <span class="tech-badge">Flask</span>
+                            
+                            <span class="tech-badge">Python</span>
+                            
+                        </div>
+
+                        <!-- Topics -->
+                        
+
+                        <!-- Stats -->
+                        <div class="project-stats mb-3">
+                            <span class="stat-item me-3" title="Stars">
+                                <i class="bi bi-star-fill text-warning"></i>
+                                0
+                            </span>
+                            <span class="stat-item me-3" title="Forks">
+                                <i class="bi bi-diagram-3-fill text-info"></i>
+                                0
+                            </span>
+                            <span class="stat-item text-muted small" title="Última atualização">
+                                <i class="bi bi-calendar3"></i>
+                                2025-10-09
+                            </span>
+                        </div>
+
+                        <!-- Links -->
+                        <div class="project-links">
+                            <a href="https://github.com/nataliabarros1994/athena-robotic-framework" target="_blank"
+                               class="btn btn-sm btn-outline-dark me-2">
+                                <i class="bi bi-github"></i> Código
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 project-item"
+                 data-name="ecommerce de loja"
+                 data-description="ecommerce de loja com micro serviços"
+                 data-language="Shell"
+                 data-stars="0"
+                 data-forks="0"
+                 data-updated="2025-10-06"
+                 data-recent="false">
+
+                <div class="project-card h-100" data-aos="fade-up">
+                    <div class="project-header p-3">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <h5 class="project-name mb-0">
+                                <i class="bi bi-folder-fill text-primary me-2"></i>
+                                Ecommerce De Loja
+                            </h5>
+                            
+                        </div>
+                        <p class="project-description text-muted small mb-0">
+                            ecommerce de loja com micro serviços
+                        </p>
+                    </div>
+
+                    <div class="project-body p-3">
+                        <!-- Tecnologias -->
+                        <div class="project-tech mb-3">
+                            
+                            <span class="tech-badge-main me-2">
+                                <i class="bi bi-circle-fill" style="font-size: 10px;"></i>
+                                Shell
+                            </span>
+                            
+                            
+                            <span class="tech-badge">Angular</span>
+                            
+                            <span class="tech-badge">Flask</span>
+                            
+                            <span class="tech-badge">Python</span>
+                            
+                        </div>
+
+                        <!-- Topics -->
+                        
+
+                        <!-- Stats -->
+                        <div class="project-stats mb-3">
+                            <span class="stat-item me-3" title="Stars">
+                                <i class="bi bi-star-fill text-warning"></i>
+                                0
+                            </span>
+                            <span class="stat-item me-3" title="Forks">
+                                <i class="bi bi-diagram-3-fill text-info"></i>
+                                0
+                            </span>
+                            <span class="stat-item text-muted small" title="Última atualização">
+                                <i class="bi bi-calendar3"></i>
+                                2025-10-06
+                            </span>
+                        </div>
+
+                        <!-- Links -->
+                        <div class="project-links">
+                            <a href="https://github.com/nataliabarros1994/ecommerce-de-loja" target="_blank"
+                               class="btn btn-sm btn-outline-dark me-2">
+                                <i class="bi bi-github"></i> Código
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 project-item"
+                 data-name="ecommerce api"
+                 data-description="professional rest api with postgresql for e-commerce"
+                 data-language="Python"
+                 data-stars="0"
+                 data-forks="0"
+                 data-updated="2025-09-29"
+                 data-recent="false">
+
+                <div class="project-card h-100" data-aos="fade-up">
+                    <div class="project-header p-3">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <h5 class="project-name mb-0">
+                                <i class="bi bi-folder-fill text-primary me-2"></i>
+                                Ecommerce Api
+                            </h5>
+                            
+                        </div>
+                        <p class="project-description text-muted small mb-0">
+                            Professional REST API with PostgreSQL for E-Commerce
+                        </p>
+                    </div>
+
+                    <div class="project-body p-3">
+                        <!-- Tecnologias -->
+                        <div class="project-tech mb-3">
+                            
+                            <span class="tech-badge-main me-2">
+                                <i class="bi bi-circle-fill" style="font-size: 10px;"></i>
+                                Python
+                            </span>
+                            
+                            
+                            <span class="tech-badge">Flask</span>
+                            
+                            <span class="tech-badge">Python</span>
+                            
+                        </div>
+
+                        <!-- Topics -->
+                        
+
+                        <!-- Stats -->
+                        <div class="project-stats mb-3">
+                            <span class="stat-item me-3" title="Stars">
+                                <i class="bi bi-star-fill text-warning"></i>
+                                0
+                            </span>
+                            <span class="stat-item me-3" title="Forks">
+                                <i class="bi bi-diagram-3-fill text-info"></i>
+                                0
+                            </span>
+                            <span class="stat-item text-muted small" title="Última atualização">
+                                <i class="bi bi-calendar3"></i>
+                                2025-09-29
+                            </span>
+                        </div>
+
+                        <!-- Links -->
+                        <div class="project-links">
+                            <a href="https://github.com/nataliabarros1994/ecommerce-api" target="_blank"
+                               class="btn btn-sm btn-outline-dark me-2">
+                                <i class="bi bi-github"></i> Código
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 project-item"
+                 data-name="mega controle estoque"
+                 data-description="meu primeiro projeto em python — sistema de estoque completo"
+                 data-language="Python"
+                 data-stars="0"
+                 data-forks="0"
+                 data-updated="2025-09-23"
+                 data-recent="false">
+
+                <div class="project-card h-100" data-aos="fade-up">
+                    <div class="project-header p-3">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <h5 class="project-name mb-0">
+                                <i class="bi bi-folder-fill text-primary me-2"></i>
+                                Mega Controle Estoque
+                            </h5>
+                            
+                        </div>
+                        <p class="project-description text-muted small mb-0">
+                            Meu primeiro projeto em Python — Sistema de Estoque Completo
+                        </p>
+                    </div>
+
+                    <div class="project-body p-3">
+                        <!-- Tecnologias -->
+                        <div class="project-tech mb-3">
+                            
+                            <span class="tech-badge-main me-2">
+                                <i class="bi bi-circle-fill" style="font-size: 10px;"></i>
+                                Python
+                            </span>
+                            
+                            
+                            <span class="tech-badge">Flask</span>
+                            
+                            <span class="tech-badge">Python</span>
+                            
+                        </div>
+
+                        <!-- Topics -->
+                        
+
+                        <!-- Stats -->
+                        <div class="project-stats mb-3">
+                            <span class="stat-item me-3" title="Stars">
+                                <i class="bi bi-star-fill text-warning"></i>
+                                0
+                            </span>
+                            <span class="stat-item me-3" title="Forks">
+                                <i class="bi bi-diagram-3-fill text-info"></i>
+                                0
+                            </span>
+                            <span class="stat-item text-muted small" title="Última atualização">
+                                <i class="bi bi-calendar3"></i>
+                                2025-09-23
+                            </span>
+                        </div>
+
+                        <!-- Links -->
+                        <div class="project-links">
+                            <a href="https://github.com/nataliabarros1994/mega-controle-estoque" target="_blank"
+                               class="btn btn-sm btn-outline-dark me-2">
+                                <i class="bi bi-github"></i> Código
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 project-item"
+                 data-name="netflixclone"
+                 data-description="none"
+                 data-language="HTML"
+                 data-stars="1"
+                 data-forks="0"
+                 data-updated="2020-08-02"
+                 data-recent="false">
+
+                <div class="project-card h-100" data-aos="fade-up">
+                    <div class="project-header p-3">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <h5 class="project-name mb-0">
+                                <i class="bi bi-folder-fill text-primary me-2"></i>
+                                Netflixclone
+                            </h5>
+                            
+                        </div>
+                        <p class="project-description text-muted small mb-0">
+                            None
+                        </p>
+                    </div>
+
+                    <div class="project-body p-3">
+                        <!-- Tecnologias -->
+                        <div class="project-tech mb-3">
+                            
+                            <span class="tech-badge-main me-2">
+                                <i class="bi bi-circle-fill" style="font-size: 10px;"></i>
+                                HTML
+                            </span>
+                            
+                            
+                            <span class="tech-badge">CSS</span>
+                            
+                            <span class="tech-badge">CSS3</span>
+                            
+                            <span class="tech-badge">HTML</span>
+                            
+                        </div>
+
+                        <!-- Topics -->
+                        
+
+                        <!-- Stats -->
+                        <div class="project-stats mb-3">
+                            <span class="stat-item me-3" title="Stars">
+                                <i class="bi bi-star-fill text-warning"></i>
+                                1
+                            </span>
+                            <span class="stat-item me-3" title="Forks">
+                                <i class="bi bi-diagram-3-fill text-info"></i>
+                                0
+                            </span>
+                            <span class="stat-item text-muted small" title="Última atualização">
+                                <i class="bi bi-calendar3"></i>
+                                2020-08-02
+                            </span>
+                        </div>
+
+                        <!-- Links -->
+                        <div class="project-links">
+                            <a href="https://github.com/nataliabarros1994/netflixclone" target="_blank"
+                               class="btn btn-sm btn-outline-dark me-2">
+                                <i class="bi bi-github"></i> Código
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+        <!-- Empty State quando filtrado -->
+        <div id="emptyState" class="text-center py-5" style="display: none;">
+            <i class="bi bi-search display-1 text-muted"></i>
+            <h3 class="mt-4 mb-3">Nenhum projeto encontrado</h3>
+            <p class="text-muted">Tente ajustar seus filtros de busca</p>
+            <button id="clearFiltersBtn" class="btn btn-primary">
+                Limpar Filtros
+            </button>
+        </div>
+
+        
+    </div>
+</section>
+
+<!-- Última Atualização -->
+
+<section class="py-3 bg-light">
+    <div class="container text-center">
+        <p class="text-muted mb-0">
+            <i class="bi bi-clock"></i>
+            Projetos sincronizados em: <strong>2026-01-06 14:44:08</strong>
+            <br>
+            <small>Atualização automática diária via GitHub Actions</small>
+        </p>
+    </div>
+</section>
+
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h5 class="fw-bold mb-3">Natália Barros</h5>
+                    <p class="text-muted">Desenvolvedora Python Full Stack</p>
+                    <p class="text-muted small">Desenvolvendo soluções inovadoras com Python e tecnologias modernas.</p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h6 class="fw-bold mb-3">Links Rápidos</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="../index.html" class="text-decoration-none text-muted hover-primary">Início</a></li>
+                        <li class="mb-2"><a href="index.html" class="text-decoration-none text-muted hover-primary">Projetos</a></li>
+                        <li class="mb-2"><a href="../sobre/index.html" class="text-decoration-none text-muted hover-primary">Sobre Mim</a></li>
+                        <li class="mb-2"><a href="../contato/index.html" class="text-decoration-none text-muted hover-primary">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h6 class="fw-bold mb-3">Conecte-se</h6>
+                    <div class="social-links">
+                        <a href="https://github.com/nataliabarros1994" target="_blank" class="btn btn-outline-light btn-sm me-2 mb-2">
+                            <i class="bi bi-github"></i> GitHub
+                        </a>
+                        <a href="https://www.linkedin.com/in/nataliachagas1994/" target="_blank" class="btn btn-outline-light btn-sm me-2 mb-2">
+                            <i class="bi bi-linkedin"></i> LinkedIn
+                        </a>
+                        <a href="mailto:natalia.goldenglowitsolutions@gmail.com" class="btn btn-outline-light btn-sm mb-2">
+                            <i class="bi bi-envelope"></i> Email
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <hr class="border-secondary my-4">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0 text-muted small">
+                        &copy; 2026 Natália Barros. Todos os direitos reservados.
+                    </p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="mb-0 text-muted small">
+                        Feito com <i class="bi bi-heart-fill text-danger"></i> usando Flask e Bootstrap
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botão Voltar ao Topo -->
+    <button id="backToTop" class="btn btn-primary btn-floating" title="Voltar ao topo">
+        <i class="bi bi-arrow-up"></i>
+    </button>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- JavaScript Customizado -->
+    <script src="../static/js/script.js"></script>
+
+    
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script>
+AOS.init({ duration: 600, once: true });
+
+// ============================================
+// FILTROS E BUSCA
+// ============================================
+
+const searchInput = document.getElementById('searchInput');
+const sortSelect = document.getElementById('sortSelect');
+const recentOnlyCheckbox = document.getElementById('recentOnly');
+const filterTags = document.querySelectorAll('.filter-tag');
+const projectItems = document.querySelectorAll('.project-item');
+const emptyState = document.getElementById('emptyState');
+const totalVisible = document.getElementById('total-visible');
+const clearFiltersBtn = document.getElementById('clearFilters');
+const clearFiltersBtnEmpty = document.getElementById('clearFiltersBtn');
+
+let activeLanguage = 'all';
+
+// Busca em tempo real
+searchInput.addEventListener('input', filterProjects);
+sortSelect.addEventListener('change', sortProjects);
+recentOnlyCheckbox.addEventListener('change', filterProjects);
+
+// Filtros de linguagem
+filterTags.forEach(tag => {
+    tag.addEventListener('click', function() {
+        filterTags.forEach(t => t.classList.remove('active'));
+        this.classList.add('active');
+
+        activeLanguage = this.dataset.value || 'all';
+        filterProjects();
+    });
+});
+
+// Limpar filtros
+[clearFiltersBtn, clearFiltersBtnEmpty].forEach(btn => {
+    if (btn) {
+        btn.addEventListener('click', () => {
+            searchInput.value = '';
+            recentOnlyCheckbox.checked = false;
+            sortSelect.value = 'stars';
+            filterTags.forEach(t => t.classList.remove('active'));
+            filterTags[0].classList.add('active');
+            activeLanguage = 'all';
+            filterProjects();
+            sortProjects();
+        });
+    }
+});
+
+function filterProjects() {
+    const searchTerm = searchInput.value.toLowerCase();
+    const recentOnly = recentOnlyCheckbox.checked;
+    let visibleCount = 0;
+
+    projectItems.forEach(item => {
+        const name = item.dataset.name;
+        const description = item.dataset.description;
+        const language = item.dataset.language;
+        const isRecent = item.dataset.recent === 'true';
+
+        // Filtro de busca
+        const matchesSearch = !searchTerm ||
+            name.includes(searchTerm) ||
+            description.includes(searchTerm);
+
+        // Filtro de linguagem
+        const matchesLanguage = activeLanguage === 'all' ||
+            language === activeLanguage;
+
+        // Filtro de recentes
+        const matchesRecent = !recentOnly || isRecent;
+
+        if (matchesSearch && matchesLanguage && matchesRecent) {
+            item.classList.remove('hidden');
+            item.style.display = 'block';
+            visibleCount++;
+        } else {
+            item.classList.add('hidden');
+            item.style.display = 'none';
+        }
+    });
+
+    // Atualizar contador
+    totalVisible.textContent = visibleCount;
+
+    // Mostrar empty state
+    if (visibleCount === 0) {
+        emptyState.style.display = 'block';
+    } else {
+        emptyState.style.display = 'none';
+    }
+}
+
+function sortProjects() {
+    const grid = document.getElementById('projectsGrid');
+    const items = Array.from(projectItems);
+    const sortBy = sortSelect.value;
+
+    items.sort((a, b) => {
+        switch (sortBy) {
+            case 'stars':
+                return parseInt(b.dataset.stars) - parseInt(a.dataset.stars);
+            case 'forks':
+                return parseInt(b.dataset.forks) - parseInt(a.dataset.forks);
+            case 'updated':
+                return b.dataset.updated.localeCompare(a.dataset.updated);
+            case 'name':
+                return a.dataset.name.localeCompare(b.dataset.name);
+            default:
+                return 0;
+        }
+    });
+
+    items.forEach(item => grid.appendChild(item));
+}
+
+// Ordenação inicial
+sortProjects();
+</script>
+
+</body>
+</html>
