@@ -457,7 +457,7 @@ Este projeto demonstra expertise em:
 Estou aberta a oportunidades de trabalho remoto ou presencial!
 
 **Áreas de Interesse:**
-- Desenvolvimento Python Full Stack
+- Desenvolvimento Full Stack (Python, Next.js, Go, Node.js)
 - Desenvolvimento Web Frontend
 - Machine Learning / IA
 - Robótica (ROS2)

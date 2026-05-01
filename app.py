@@ -180,10 +180,10 @@ def sobre():
 
     experiencias = [
         {
-            'cargo': 'Desenvolvedora Python',
+            'cargo': 'Desenvolvedora Full Stack',
             'empresa': 'Tech Company',
             'periodo': '2023 - Presente',
-            'descricao': 'Desenvolvimento de aplicações web com Flask e Django'
+            'descricao': 'Desenvolvimento de aplicações web com Python (Django/FastAPI), Next.js e TypeScript'
         },
         {
             'cargo': 'Desenvolvedora Junior',
@@ -349,7 +349,7 @@ def inject_info_portfolio():
     """Injeta informações do portfólio em todos os templates"""
     return {
         'nome_portfolio': 'Natália Barros',
-        'titulo_portfolio': 'Desenvolvedora Python Full Stack',
+        'titulo_portfolio': 'Desenvolvedora Full Stack',
         'github_link': 'https://github.com/nataliabarros1994',
         'linkedin_link': 'https://linkedin.com/in/nataliabarros',
         'email_contato': 'natalia@exemplo.com'

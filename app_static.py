@@ -45,7 +45,7 @@ def load_projects_data():
 def inject_portfolio_info():
     return {
         'nome_portfolio': 'Natália Barros',
-        'titulo_portfolio': 'Desenvolvedora Python Full Stack',
+        'titulo_portfolio': 'Desenvolvedora Full Stack',
         'github_username': 'nataliabarros1994',
         'github_link': 'https://github.com/nataliabarros1994',
         'linkedin_link': 'https://www.linkedin.com/in/nataliachagas1994/',
@@ -151,10 +151,10 @@ def sobre():
 
     experiencias = [
         {
-            'cargo': 'Desenvolvedora Python',
+            'cargo': 'Desenvolvedora Full Stack',
             'empresa': 'Tech Company',
             'periodo': '2023 - Presente',
-            'descricao': 'Desenvolvimento de aplicações web com Flask e Django'
+            'descricao': 'Desenvolvimento de aplicações web com Python (Django/FastAPI), Next.js e TypeScript'
         },
         {
             'cargo': 'Desenvolvedora Junior',
@@ -199,3 +199,4 @@ def handle_404(e):
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
+
