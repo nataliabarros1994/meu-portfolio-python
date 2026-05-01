@@ -352,7 +352,7 @@ def inject_info_portfolio():
         'titulo_portfolio': 'Desenvolvedora Full Stack',
         'github_link': 'https://github.com/nataliabarros1994',
         'linkedin_link': 'https://linkedin.com/in/nataliabarros',
-        'email_contato': 'natalia@exemplo.com'
+        'email_contato': 'natalia.goldenglowitsolutions@gmail.com'
     }
 
 

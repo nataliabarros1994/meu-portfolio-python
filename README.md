@@ -216,7 +216,7 @@ Sistema completo de gerenciamento de inventário.
 
 ### **Canais Profissionais:**
 
-- 📧 **Email:** [natalia.goldenglowitsolutions@gmail.com](mailto:natalia.goldenglowitsolutions@gmail.com)
+- 📧 **Email:** [natalia.goldenglowitsolutions@gmail.com](https://mail.google.com/mail/?view=cm&to=natalia.goldenglowitsolutions@gmail.com)
 - 💼 **LinkedIn:** [linkedin.com/in/nataliachagas1994](https://www.linkedin.com/in/nataliachagas1994/)
 - 🐙 **GitHub:** [github.com/nataliabarros1994](https://github.com/nataliabarros1994)
 - 💬 **WhatsApp:** [+55 (22) 98150-7669](https://wa.me/5522981507669)
