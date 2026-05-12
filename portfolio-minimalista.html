@@ -899,7 +899,7 @@ footer {
         <span class="gradient-text" data-i18n="projects.titleAccent">destaque</span>
       </h2>
       <p class="section-subtitle" data-i18n="projects.subtitle">
-        Uma seleção dos trabalhos mais recentes — SaaS, visão computacional, microserviços, site institucional e robótica.
+        Uma seleção dos trabalhos mais recentes — SaaS, agendamento com IA, visão computacional, microserviços, site institucional e robótica.
       </p>
     </div>
 
@@ -929,7 +929,33 @@ footer {
         </a>
       </article>
 
-      <!-- 2. Pousada Praia do Forte (NEW) -->
+      <!-- 2. Veluri — Plataforma de Agendamento com IA (FEATURED) -->
+      <article class="project-card featured reveal">
+        <div class="project-header">
+          <div class="project-icon"><i class="fas fa-calendar-check"></i></div>
+          <span class="project-badge" data-i18n="projects.featured">em destaque</span>
+        </div>
+        <h3 class="project-title">Veluri — Plataforma de Agendamento com IA</h3>
+        <p class="project-desc" data-i18n="projects.veluri.desc">
+          SaaS multi-tenant de agendamento para PMEs brasileiras (salões, clínicas estéticas, personal trainers, psicólogos). Booking público em 4 passos, painel premium e atendente IA "Aura" em português com 7 tools (Claude tool-use). Lembretes por email via Resend + BullMQ, backend Fastify, Next.js 15, PostgreSQL com Prisma, Redis e Docker em produção.
+        </p>
+        <div class="project-tags">
+          <span class="tag">Next.js 15</span>
+          <span class="tag">TypeScript</span>
+          <span class="tag">Fastify</span>
+          <span class="tag">PostgreSQL</span>
+          <span class="tag">Prisma</span>
+          <span class="tag">Redis</span>
+          <span class="tag">BullMQ</span>
+          <span class="tag">Claude AI</span>
+          <span class="tag">Docker</span>
+        </div>
+        <a href="https://github.com/nataliabarros1994/plataforma-de-agendamento-com-IA" target="_blank" rel="noopener" class="project-link">
+          <i class="fab fa-github"></i> <span data-i18n="projects.viewCode">Ver no GitHub</span> <i class="fas fa-arrow-right"></i>
+        </a>
+      </article>
+
+      <!-- 3. Pousada Praia do Forte (NEW) -->
       <article class="project-card reveal">
         <div class="project-header">
           <div class="project-icon"><i class="fas fa-umbrella-beach"></i></div>
@@ -951,7 +977,7 @@ footer {
         </a>
       </article>
 
-      <!-- 3. CleanTrack -->
+      <!-- 4. CleanTrack -->
       <article class="project-card reveal">
         <div class="project-header">
           <div class="project-icon"><i class="fas fa-clipboard-check"></i></div>
@@ -973,7 +999,7 @@ footer {
         </a>
       </article>
 
-      <!-- 4. EstiMate MVP -->
+      <!-- 5. EstiMate MVP -->
       <article class="project-card reveal">
         <div class="project-header">
           <div class="project-icon"><i class="fas fa-ruler-combined"></i></div>
@@ -995,7 +1021,7 @@ footer {
         </a>
       </article>
 
-      <!-- 5. Discord SaaS -->
+      <!-- 6. Discord SaaS -->
       <article class="project-card reveal">
         <div class="project-header">
           <div class="project-icon"><i class="fab fa-discord"></i></div>
@@ -1017,7 +1043,7 @@ footer {
         </a>
       </article>
 
-      <!-- 6. MicroStack -->
+      <!-- 7. MicroStack -->
       <article class="project-card reveal">
         <div class="project-header">
           <div class="project-icon"><i class="fas fa-layer-group"></i></div>
@@ -1039,7 +1065,7 @@ footer {
         </a>
       </article>
 
-      <!-- 7. Athena Robotic -->
+      <!-- 8. Athena Robotic -->
       <article class="project-card reveal">
         <div class="project-header">
           <div class="project-icon"><i class="fas fa-robot"></i></div>
@@ -1059,7 +1085,7 @@ footer {
         </a>
       </article>
 
-      <!-- 8. Sistema de Detecção de Fraudes -->
+      <!-- 9. Sistema de Detecção de Fraudes -->
       <article class="project-card reveal">
         <div class="project-header">
           <div class="project-icon"><i class="fas fa-shield-alt"></i></div>
@@ -1193,10 +1219,11 @@ footer {
         eyebrow: 'portfólio',
         title: 'Projetos em',
         titleAccent: 'destaque',
-        subtitle: 'Uma seleção dos trabalhos mais recentes — SaaS, visão computacional, microserviços, site institucional e robótica.',
+        subtitle: 'Uma seleção dos trabalhos mais recentes — SaaS, agendamento com IA, visão computacional, microserviços, site institucional e robótica.',
         featured: 'em destaque',
         viewCode: 'Ver no GitHub',
         npx: { desc: 'Plataforma SaaS de manipulação de PDFs com pagamento PIX nativo, semelhante ao iLovePDF mas pensada para o mercado brasileiro. Monorepo Nx com Go 1.22+ (Fiber) no backend, Next.js 14 com TypeScript no frontend, PostgreSQL 16 e Redis. Arquitetura production-ready com Docker.' },
+        veluri: { desc: 'SaaS multi-tenant de agendamento para PMEs brasileiras (salões, clínicas estéticas, personal trainers, psicólogos). Booking público em 4 passos, painel premium e atendente IA "Aura" em português com 7 tools (Claude tool-use). Lembretes por email via Resend + BullMQ, backend Fastify, Next.js 15, PostgreSQL com Prisma, Redis e Docker em produção.' },
         pousada: { desc: 'Site institucional para pousada em Cabo Frio. Hero com animações sutis de vento, seções de suítes, experiências e depoimentos, e formulário de reserva integrado ao WhatsApp. Tipografia editorial, paleta sereno/areia/terracota, totalmente responsivo e otimizado para SEO local.' },
         cleantrack: { desc: 'Plataforma SaaS multi-tenant em Django para rastreamento de limpeza de equipamentos médicos. Registro via QR code, integrações Stripe e Resend, dashboard em tempo real, relatórios auditáveis e suporte a impressoras térmicas (Brother, Zebra, DYMO). Arquitetura HIPAA-safe.' },
         estimate: { desc: 'Aplicação de visão computacional que estima materiais de construção a partir de fotos com objetos de referência (cartão, porta) para detecção automática de escala. Detecção via OpenCV, seleção interativa de área e cálculo de tinta/azulejos.' },
@@ -1278,10 +1305,11 @@ footer {
         eyebrow: 'portfolio',
         title: 'Featured',
         titleAccent: 'projects',
-        subtitle: 'A selection of recent work — SaaS, computer vision, microservices, institutional sites and robotics.',
+        subtitle: 'A selection of recent work — SaaS, AI scheduling, computer vision, microservices, institutional sites and robotics.',
         featured: 'featured',
         viewCode: 'View on GitHub',
         npx: { desc: 'PDF-manipulation SaaS with native PIX payments, similar to iLovePDF but tailored for the Brazilian market. Nx monorepo with Go 1.22+ (Fiber) on the backend, Next.js 14 with TypeScript on the frontend, PostgreSQL 16 and Redis. Production-ready architecture with Docker.' },
+        veluri: { desc: 'Multi-tenant scheduling SaaS for Brazilian SMBs (beauty salons, aesthetic clinics, personal trainers, therapists). 4-step public booking, premium dashboard and an in-Portuguese AI assistant "Aura" with 7 tools (Claude tool-use). Email reminders via Resend + BullMQ, Fastify backend, Next.js 15, PostgreSQL with Prisma, Redis and Docker in production.' },
         pousada: { desc: 'Institutional website for an inn in Cabo Frio. Hero with subtle wind animations, sections for suites, experiences and testimonials, and a reservation form integrated with WhatsApp. Editorial typography, serene/sand/terracotta palette, fully responsive and optimized for local SEO.' },
         cleantrack: { desc: 'Multi-tenant Django SaaS platform for tracking medical equipment cleaning. QR code registration, Stripe and Resend integrations, real-time dashboard, auditable reports and thermal printer support (Brother, Zebra, DYMO). HIPAA-safe architecture.' },
         estimate: { desc: 'Computer vision app that estimates construction materials from photos using reference objects (credit card, door) for automatic scale detection. OpenCV detection, interactive area selection and paint/tile calculation.' },

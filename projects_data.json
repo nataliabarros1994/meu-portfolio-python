@@ -24,6 +24,27 @@
       "size": 184
     },
     {
+      "id": 1129999999,
+      "name": "plataforma-de-agendamento-com-IA",
+      "title": "Veluri — Plataforma de Agendamento com IA",
+      "description": "SaaS multi-tenant de agendamento para PMEs brasileiras com atendente IA \"Aura\" (Claude tool-use), booking público em 4 passos, lembretes por email via Resend + BullMQ e deploy em Docker.",
+      "language": "TypeScript",
+      "languages": ["TypeScript", "CSS", "JavaScript", "Dockerfile"],
+      "technologies": ["Next.js 15", "TypeScript", "Fastify", "PostgreSQL", "Prisma", "Redis", "BullMQ", "Claude AI", "Docker"],
+      "github_url": "https://github.com/nataliabarros1994/plataforma-de-agendamento-com-IA",
+      "demo_url": null,
+      "stars": 0,
+      "forks": 0,
+      "watchers": 0,
+      "created_at": "2026-05-12",
+      "updated_at": "2026-05-12",
+      "topics": ["saas", "multi-tenant", "ai", "scheduling", "claude"],
+      "has_wiki": true,
+      "has_pages": false,
+      "is_recent": true,
+      "size": 500
+    },
+    {
       "id": 1119999999,
       "name": "NPX-PDF-BRASIL",
       "title": "NPX PDF Brasil",
@@ -151,6 +172,7 @@
     "featured_projects": [
       1081985172,
       1119999999,
+      1129999999,
       1114643188,
       1110632778,
       1102830411
