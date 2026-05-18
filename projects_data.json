@@ -24,6 +24,27 @@
       "size": 184
     },
     {
+      "id": 1139999999,
+      "name": "customerpulse-ai",
+      "title": "CustomerPulse AI — Previsor de Churn",
+      "description": "Previsor de Churn com Machine Learning e Dashboard no Streamlit. Random Forest treinado com Scikit-learn, análise exploratória com Pandas/NumPy/Seaborn/Matplotlib e dashboard interativo em Streamlit.",
+      "language": "Jupyter Notebook",
+      "languages": ["Jupyter Notebook", "Python"],
+      "technologies": ["Python", "Scikit-learn", "Random Forest", "Pandas", "NumPy", "Streamlit", "Seaborn", "Matplotlib"],
+      "github_url": "https://github.com/nataliabarros1994/customerpulse-ai",
+      "demo_url": null,
+      "stars": 0,
+      "forks": 0,
+      "watchers": 0,
+      "created_at": "2026-05-18",
+      "updated_at": "2026-05-18",
+      "topics": ["machine-learning", "churn-prediction", "data-science", "streamlit", "random-forest"],
+      "has_wiki": true,
+      "has_pages": false,
+      "is_recent": true,
+      "size": 250
+    },
+    {
       "id": 1129999999,
       "name": "plataforma-de-agendamento-com-IA",
       "title": "Veluri — Plataforma de Agendamento com IA",
