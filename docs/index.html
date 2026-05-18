@@ -1,1451 +1,738 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfólio profissional de Natália Barros - Desenvolvedora Full Stack">
+    <meta name="keywords" content="python, flask, desenvolvedor, portfolio, web development">
+    <meta name="author" content="Natália Barros">
 
-<title>Natália Barros — Desenvolvedora Full Stack</title>
-<meta name="title" content="Natália Barros — Desenvolvedora Full Stack">
-<meta name="description" content="Desenvolvedora Full Stack. Construo aplicações web modernas com Python, Django, FastAPI, Next.js, TypeScript, React, Go e Node.js — do back ao front, do MVP à escala.">
-<meta name="keywords" content="Natália Barros, Desenvolvedora Full Stack, Python, Django, FastAPI, Next.js, TypeScript, React, Go, Node.js, PostgreSQL, Docker">
-<meta name="author" content="Natália Barros">
-<meta name="robots" content="index, follow">
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Natália Barros - Portfolio">
+    <meta property="og:description" content="Portfolio profissional de desenvolvimento Python">
+    <meta property="og:type" content="website">
 
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://nataliabarros1994.github.io/meu-portfolio-python/">
-<meta property="og:title" content="Natália Barros — Desenvolvedora Full Stack">
-<meta property="og:description" content="Desenvolvedora Full Stack — Python, TypeScript, Go, Next.js e o que mais o problema pedir.">
+    <title>Natália Barros - Portfólio Automático GitHub</title>
 
-<meta property="twitter:card" content="summary_large_image">
-<meta property="twitter:title" content="Natália Barros — Desenvolvedora Full Stack">
-<meta property="twitter:description" content="Desenvolvedora Full Stack — Python, TypeScript, Go, Next.js e o que mais o problema pedir.">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' x2='1' y1='0' y2='1'%3E%3Cstop offset='0%25' stop-color='%237C3AED'/%3E%3Cstop offset='100%25' stop-color='%2306B6D4'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='22' fill='url(%23g)'/%3E%3Ctext x='50' y='66' text-anchor='middle' font-size='44' font-family='Inter,sans-serif' font-weight='700' fill='white'%3ENB%3C/text%3E%3C/svg%3E">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- CSS Customizado -->
+    <link rel="stylesheet" href="static/css/style.css">
 
-<style>
-:root {
-  --bg: #0A0A0F;
-  --bg-elev: #12121A;
-  --bg-elev-2: #1A1A24;
-  --border: rgba(255, 255, 255, 0.08);
-  --border-strong: rgba(255, 255, 255, 0.14);
-  --text: #F5F5F7;
-  --text-2: rgba(245, 245, 247, 0.72);
-  --text-3: rgba(245, 245, 247, 0.5);
-  --purple: #7C3AED;
-  --purple-soft: rgba(124, 58, 237, 0.10);
-  --purple-glow: rgba(124, 58, 237, 0.32);
-  --cyan: #06B6D4;
-  --cyan-soft: rgba(6, 182, 212, 0.10);
-  --cyan-glow: rgba(6, 182, 212, 0.30);
-  --gradient: linear-gradient(135deg, #7C3AED 0%, #06B6D4 100%);
-  --gradient-soft: linear-gradient(135deg, rgba(124,58,237,.10) 0%, rgba(6,182,212,.06) 100%);
-
-  --container: 1200px;
-  --radius: 12px;
-  --radius-lg: 20px;
-  --transition: 280ms cubic-bezier(.2, .7, .2, 1);
-}
-
-* { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  font-weight: 400;
-  line-height: 1.6;
-  overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-img, svg { display: block; max-width: 100%; }
-a { color: inherit; text-decoration: none; }
-button { font-family: inherit; cursor: pointer; }
-
-::selection { background: var(--purple); color: white; }
-
-.container {
-  max-width: var(--container);
-  margin: 0 auto;
-  padding: 0 32px;
-}
-
-.mono { font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; }
-
-.gradient-text {
-  background: var(--gradient);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
-}
-
-/* ============ BG EFFECTS ============ */
-.bg-glow {
-  position: fixed; inset: 0; z-index: 0;
-  pointer-events: none; overflow: hidden;
-}
-.bg-glow::before, .bg-glow::after {
-  content: '';
-  position: absolute;
-  width: 720px; height: 720px;
-  border-radius: 50%;
-  filter: blur(140px);
-  opacity: 0.18;
-}
-.bg-glow::before { background: var(--purple); top: -12%; left: -8%; }
-.bg-glow::after  { background: var(--cyan);  bottom: -16%; right: -8%; }
-
-.bg-grid {
-  position: fixed; inset: 0; z-index: 0; pointer-events: none;
-  background-image:
-    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
-  background-size: 56px 56px;
-  -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
-  mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
-}
-
-/* ============ NAVBAR ============ */
-nav.navbar {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 100;
-  padding: 18px 32px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid transparent;
-  transition: background var(--transition), border-color var(--transition), padding var(--transition);
-}
-nav.navbar.scrolled {
-  background: rgba(10, 10, 15, 0.72);
-  backdrop-filter: blur(16px) saturate(140%);
-  -webkit-backdrop-filter: blur(16px) saturate(140%);
-  border-bottom-color: var(--border);
-}
-
-.logo {
-  display: flex; align-items: center; gap: 10px;
-  font-weight: 600; font-size: 15px; letter-spacing: -0.01em;
-}
-.logo-mark {
-  width: 32px; height: 32px;
-  border-radius: 8px;
-  background: var(--gradient);
-  display: grid; place-items: center;
-  color: white; font-weight: 700; font-size: 13px;
-}
-
-.nav-links { display: flex; align-items: center; gap: 6px; }
-.nav-links a {
-  color: var(--text-2);
-  font-size: 13.5px;
-  font-weight: 500;
-  padding: 8px 14px;
-  border-radius: 8px;
-  transition: color var(--transition), background var(--transition);
-}
-.nav-links a:hover { color: var(--text); background: var(--bg-elev); }
-.nav-links a.active { color: var(--text); background: var(--purple-soft); }
-
-.nav-actions { display: flex; align-items: center; gap: 12px; }
-
-.lang-toggle {
-  background: var(--bg-elev);
-  border: 1px solid var(--border);
-  color: var(--text-2);
-  padding: 8px 12px;
-  border-radius: 8px;
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  transition: all var(--transition);
-}
-.lang-toggle:hover { border-color: var(--purple); color: var(--text); }
-
-.mobile-toggle {
-  display: none;
-  background: var(--bg-elev);
-  border: 1px solid var(--border);
-  color: var(--text);
-  width: 40px; height: 40px;
-  border-radius: 8px;
-  align-items: center; justify-content: center;
-}
-
-/* ============ HERO ============ */
-.hero {
-  position: relative;
-  z-index: 1;
-  min-height: 100vh;
-  padding: 140px 0 80px;
-  display: flex;
-  align-items: center;
-}
-.hero-status {
-  display: inline-flex; align-items: center; gap: 10px;
-  background: var(--bg-elev);
-  border: 1px solid var(--border);
-  padding: 6px 14px 6px 12px;
-  border-radius: 999px;
-  font-size: 12.5px;
-  color: var(--text-2);
-  margin-bottom: 28px;
-}
-.hero-status::before {
-  content: ''; width: 8px; height: 8px;
-  border-radius: 50%;
-  background: #22c55e;
-  box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.18);
-  animation: pulse-dot 2.4s ease-in-out infinite;
-}
-@keyframes pulse-dot {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.5); }
-  50%      { box-shadow: 0 0 0 9px rgba(34, 197, 94, 0); }
-}
-
-.hero-name {
-  font-size: 14px;
-  color: var(--text-3);
-  font-family: 'JetBrains Mono', monospace;
-  margin-bottom: 18px;
-  letter-spacing: 0.02em;
-}
-.hero-name .arrow { color: var(--cyan); }
-
-.hero-title {
-  font-size: clamp(48px, 8vw, 96px);
-  line-height: 1.02;
-  letter-spacing: -0.04em;
-  font-weight: 700;
-  margin-bottom: 28px;
-}
-.hero-title .accent {
-  background: var(--gradient);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
-  display: inline-block;
-}
-
-.hero-subtitle {
-  font-size: 19px;
-  line-height: 1.6;
-  color: var(--text-2);
-  max-width: 640px;
-  margin-bottom: 40px;
-}
-.hero-subtitle .hl { color: var(--text); font-weight: 500; }
-
-.hero-actions {
-  display: flex; flex-wrap: wrap; gap: 14px;
-  margin-bottom: 56px;
-}
-
-.btn {
-  display: inline-flex; align-items: center; gap: 10px;
-  padding: 14px 24px;
-  border-radius: 10px;
-  font-size: 14.5px;
-  font-weight: 500;
-  border: 1px solid transparent;
-  transition: all var(--transition);
-}
-.btn-primary { background: var(--gradient); color: white; }
-.btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 32px -8px var(--purple-glow);
-}
-.btn-ghost {
-  background: var(--bg-elev);
-  color: var(--text);
-  border-color: var(--border);
-}
-.btn-ghost:hover { border-color: var(--purple); background: var(--bg-elev-2); }
-
-.hero-techstrip {
-  display: flex; flex-wrap: wrap; gap: 8px 16px;
-  align-items: center;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 12.5px;
-  color: var(--text-3);
-}
-.hero-techstrip .label { color: var(--cyan); }
-.hero-techstrip .sep { color: var(--text-3); opacity: .35; }
-.hero-techstrip .tech {
-  color: var(--text-2);
-  transition: color var(--transition);
-}
-.hero-techstrip .tech:hover { color: var(--text); }
-
-.hero-social {
-  display: flex; gap: 8px;
-  margin-top: 36px;
-}
-.social-link {
-  width: 40px; height: 40px;
-  border-radius: 10px;
-  background: var(--bg-elev);
-  border: 1px solid var(--border);
-  display: grid; place-items: center;
-  color: var(--text-2);
-  transition: all var(--transition);
-}
-.social-link:hover {
-  color: var(--text);
-  border-color: var(--purple);
-  transform: translateY(-2px);
-}
-
-/* ============ SECTION COMMONS ============ */
-section { position: relative; z-index: 1; }
-.section { padding: 120px 0; }
-
-.section-head {
-  margin-bottom: 56px;
-  max-width: 720px;
-}
-.section-eyebrow {
-  display: inline-flex; align-items: center; gap: 10px;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 12.5px;
-  color: var(--cyan);
-  margin-bottom: 18px;
-  letter-spacing: 0.02em;
-}
-.section-eyebrow::before {
-  content: ''; width: 24px; height: 1px; background: var(--cyan);
-}
-.section-title {
-  font-size: clamp(34px, 4.4vw, 52px);
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-  font-weight: 700;
-  margin-bottom: 16px;
-}
-.section-subtitle {
-  font-size: 17px;
-  color: var(--text-2);
-  line-height: 1.6;
-}
-
-/* ============ EXPERIENCE ============ */
-.exp-timeline {
-  display: flex; flex-direction: column; gap: 18px;
-}
-.exp-card {
-  position: relative;
-  background: var(--bg-elev);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  padding: 32px;
-  transition: transform var(--transition), border-color var(--transition);
-}
-.exp-card:hover {
-  transform: translateY(-3px);
-  border-color: rgba(124, 58, 237, 0.32);
-}
-.exp-card::before {
-  content: '';
-  position: absolute;
-  left: 0; top: 28px; bottom: 28px;
-  width: 3px;
-  border-radius: 0 3px 3px 0;
-  background: var(--gradient);
-  opacity: .6;
-}
-.exp-header {
-  display: flex; flex-wrap: wrap;
-  gap: 12px 24px;
-  align-items: baseline;
-  justify-content: space-between;
-  margin-bottom: 6px;
-}
-.exp-role {
-  font-size: 21px;
-  font-weight: 600;
-  letter-spacing: -0.01em;
-}
-.exp-period {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 12.5px;
-  color: var(--cyan);
-  white-space: nowrap;
-}
-.exp-company {
-  display: flex; align-items: center; gap: 10px;
-  font-size: 14px;
-  color: var(--text-2);
-  margin-bottom: 16px;
-}
-.exp-company .dot {
-  width: 4px; height: 4px;
-  border-radius: 50%;
-  background: var(--purple);
-}
-.exp-desc {
-  font-size: 15px;
-  line-height: 1.7;
-  color: var(--text-2);
-  margin-bottom: 20px;
-}
-.exp-stack { display: flex; flex-wrap: wrap; gap: 6px; }
-
-.tag {
-  display: inline-block;
-  padding: 4px 10px;
-  border-radius: 6px;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 11.5px;
-  background: var(--bg-elev-2);
-  color: var(--text-2);
-  border: 1px solid var(--border);
-}
-
-/* ============ ABOUT ============ */
-.about-grid {
-  display: grid;
-  grid-template-columns: 1.4fr 1fr;
-  gap: 64px;
-  align-items: start;
-}
-.about-text p {
-  font-size: 16.5px;
-  line-height: 1.78;
-  color: var(--text-2);
-  margin-bottom: 18px;
-}
-.about-text p strong { color: var(--text); font-weight: 500; }
-
-.about-stats {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 14px;
-  margin-top: 28px;
-}
-.stat-card {
-  background: var(--bg-elev);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 22px;
-}
-.stat-num {
-  font-size: 30px;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  background: var(--gradient);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  display: block;
-  margin-bottom: 4px;
-}
-.stat-label {
-  font-size: 12.5px;
-  color: var(--text-3);
-  font-family: 'JetBrains Mono', monospace;
-}
-
-.skills-block {
-  background: var(--bg-elev);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  padding: 28px;
-}
-.skill-cat { margin-bottom: 22px; }
-.skill-cat:last-child { margin-bottom: 0; }
-.skill-cat h4 {
-  font-size: 11.5px;
-  color: var(--cyan);
-  font-family: 'JetBrains Mono', monospace;
-  font-weight: 500;
-  margin-bottom: 12px;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-}
-.skill-list { display: flex; flex-wrap: wrap; gap: 6px; }
-
-/* ============ PROJECTS ============ */
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-  gap: 22px;
-}
-
-.project-card {
-  position: relative;
-  background: var(--bg-elev);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  padding: 28px;
-  transition: all var(--transition);
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-}
-.project-card::after {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 1px;
-  background: var(--gradient);
-  opacity: 0;
-  transition: opacity var(--transition);
-}
-.project-card:hover {
-  transform: translateY(-4px);
-  border-color: var(--border-strong);
-  background: var(--bg-elev-2);
-}
-.project-card:hover::after { opacity: 1; }
-
-.project-card.featured {
-  background: var(--gradient-soft), var(--bg-elev);
-  background-blend-mode: normal;
-  border-color: rgba(124, 58, 237, 0.28);
-}
-.project-card.featured::after { opacity: 1; }
-@media (min-width: 900px) {
-  .project-card.featured { grid-column: span 2; }
-}
-
-.project-header {
-  display: flex; align-items: center; gap: 14px;
-  margin-bottom: 18px;
-}
-.project-icon {
-  width: 44px; height: 44px;
-  border-radius: 10px;
-  background: var(--purple-soft);
-  border: 1px solid rgba(124, 58, 237, 0.2);
-  display: grid; place-items: center;
-  font-size: 18px;
-  color: var(--purple);
-}
-.project-card.featured .project-icon {
-  background: var(--gradient);
-  border-color: transparent;
-  color: white;
-}
-.project-badge {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 10.5px;
-  letter-spacing: 0.08em;
-  color: var(--cyan);
-  text-transform: uppercase;
-  margin-left: auto;
-  padding: 3px 8px;
-  border: 1px solid var(--cyan);
-  border-radius: 4px;
-}
-
-.project-title {
-  font-size: 19px;
-  font-weight: 600;
-  letter-spacing: -0.01em;
-  margin-bottom: 10px;
-}
-.project-card.featured .project-title { font-size: 24px; }
-
-.project-desc {
-  font-size: 14.5px;
-  line-height: 1.65;
-  color: var(--text-2);
-  margin-bottom: 20px;
-  flex: 1;
-}
-
-.project-tags {
-  display: flex; flex-wrap: wrap; gap: 6px;
-  margin-bottom: 20px;
-}
-
-.project-link {
-  display: inline-flex; align-items: center; gap: 8px;
-  font-size: 13.5px;
-  color: var(--cyan);
-  font-weight: 500;
-  margin-top: auto;
-  transition: gap var(--transition), color var(--transition);
-}
-.project-link:hover { gap: 12px; color: var(--text); }
-
-/* ============ CONTACT ============ */
-.contact-wrap {
-  background: var(--bg-elev);
-  border-radius: var(--radius-lg);
-  padding: 64px 48px;
-  border: 1px solid var(--border);
-  position: relative;
-  overflow: hidden;
-}
-.contact-wrap::before {
-  content: '';
-  position: absolute;
-  top: -40%; left: 50%;
-  width: 720px; height: 720px;
-  background: radial-gradient(circle, rgba(124,58,237,.18), transparent 60%);
-  transform: translateX(-50%);
-  pointer-events: none;
-}
-.contact-inner {
-  position: relative;
-  text-align: center;
-  max-width: 720px;
-  margin: 0 auto;
-}
-.contact-title {
-  font-size: clamp(32px, 4.4vw, 44px);
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  margin-bottom: 16px;
-  line-height: 1.15;
-}
-.contact-subtitle {
-  font-size: 17px;
-  color: var(--text-2);
-  margin-bottom: 32px;
-}
-.contact-actions {
-  display: flex; justify-content: center; flex-wrap: wrap;
-  gap: 14px;
-  margin-bottom: 36px;
-}
-.contact-info {
-  display: flex; flex-wrap: wrap;
-  justify-content: center;
-  gap: 12px 28px;
-  font-size: 13px;
-  color: var(--text-3);
-  font-family: 'JetBrains Mono', monospace;
-}
-.contact-info a:hover { color: var(--cyan); }
-.contact-info i { color: var(--purple); margin-right: 6px; }
-
-/* ============ FOOTER ============ */
-footer {
-  position: relative;
-  z-index: 1;
-  padding: 48px 0 32px;
-  border-top: 1px solid var(--border);
-  margin-top: 80px;
-}
-.footer-grid {
-  display: flex; flex-wrap: wrap;
-  gap: 16px 24px;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 13.5px;
-  color: var(--text-3);
-}
-.footer-grid a:hover { color: var(--text); }
-.footer-built {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 12px;
-}
-
-/* ============ MOBILE NAV ============ */
-.mobile-nav {
-  position: fixed;
-  inset: 0;
-  z-index: 99;
-  background: rgba(10, 10, 15, 0.96);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  display: flex; flex-direction: column;
-  align-items: center; justify-content: center;
-  gap: 28px;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity var(--transition);
-}
-.mobile-nav.open { opacity: 1; pointer-events: auto; }
-.mobile-nav a {
-  font-size: 22px;
-  font-weight: 500;
-  color: var(--text);
-}
-
-/* ============ REVEAL ============ */
-.reveal {
-  opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 800ms cubic-bezier(.2,.7,.2,1), transform 800ms cubic-bezier(.2,.7,.2,1);
-}
-.reveal.in { opacity: 1; transform: translateY(0); }
-
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: .001ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: .001ms !important;
-  }
-  .reveal { opacity: 1; transform: none; }
-}
-
-/* ============ RESPONSIVE ============ */
-@media (max-width: 900px) {
-  .nav-links { display: none; }
-  .mobile-toggle { display: grid; }
-  .lang-toggle { padding: 6px 10px; }
-  .hero { padding-top: 120px; min-height: auto; }
-  .about-grid { grid-template-columns: 1fr; gap: 32px; }
-  .about-stats { grid-template-columns: repeat(2, 1fr); }
-  .contact-wrap { padding: 48px 24px; }
-  .section { padding: 80px 0; }
-  .container { padding: 0 20px; }
-  nav.navbar { padding: 14px 20px; }
-  nav.navbar.scrolled { padding: 10px 20px; }
-  .exp-card { padding: 24px; }
-  .exp-card::before { left: 0; top: 24px; bottom: 24px; }
-  .exp-header { flex-direction: column; gap: 4px; }
-  .project-card { padding: 24px; }
-  .project-card.featured { grid-column: 1 / -1; }
-  .hero-actions .btn { padding: 12px 18px; font-size: 14px; }
-}
-</style>
+    
 </head>
 <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="bi bi-code-slash"></i> Natália Barros
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">
+                            <i class="bi bi-house-door"></i> Início
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="projetos/index.html">
+                            <i class="bi bi-folder"></i> Projetos
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="sobre/index.html">
+                            <i class="bi bi-person"></i> Sobre
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="contato/index.html">
+                            <i class="bi bi-envelope"></i> Contato
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-<div class="bg-glow" aria-hidden="true"></div>
-<div class="bg-grid" aria-hidden="true"></div>
+    <!-- Flash Messages -->
+    
+        
+    
 
-<!-- NAVBAR -->
-<nav class="navbar" id="navbar">
-  <a href="#hero" class="logo">
-    <span class="logo-mark">NB</span>
-    <span>Natália Barros</span>
-  </a>
-  <div class="nav-links" id="navLinks">
-    <a href="#experiencia" data-i18n="nav.experience">Experiência</a>
-    <a href="#sobre" data-i18n="nav.about">Sobre</a>
-    <a href="#projetos" data-i18n="nav.projects">Projetos</a>
-    <a href="#contato" data-i18n="nav.contact">Contato</a>
-  </div>
-  <div class="nav-actions">
-    <button class="lang-toggle" id="langToggle" aria-label="Trocar idioma"><span id="currentLang">PT</span></button>
-    <button class="mobile-toggle" id="mobileToggle" aria-label="Menu" aria-expanded="false">
-      <i class="fas fa-bars"></i>
+    <!-- Conteúdo Principal -->
+    <main>
+        
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="container">
+        <div class="row align-items-center min-vh-100">
+            <div class="col-lg-6 text-center text-lg-start">
+                <div class="hero-content" data-aos="fade-right">
+                    <span class="badge bg-success-subtle text-success mb-3 px-3 py-2">
+                        <i class="bi bi-github me-2"></i>
+                        Sincronizado com GitHub
+                    </span>
+                    <h1 class="display-3 fw-bold mb-3">
+                        Olá, eu sou<br>
+                        <span class="text-primary">Natália Barros</span>
+                    </h1>
+                    <h2 class="h3 text-muted mb-4">Desenvolvedora Full Stack</h2>
+                    <p class="lead mb-4 text-muted">
+                        Portfólio automaticamente sincronizado com meus repositórios do GitHub.
+                        Todos os projetos são atualizados diariamente via GitHub Actions.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="projetos/index.html" class="btn btn-primary btn-lg me-3 mb-3">
+                            <i class="bi bi-folder-check"></i> Ver Todos os Projetos
+                        </a>
+                        <a href="https://github.com/nataliabarros1994" target="_blank" class="btn btn-outline-dark btn-lg mb-3">
+                            <i class="bi bi-github"></i> GitHub
+                        </a>
+                    </div>
+
+                    <!-- Estatísticas -->
+                    <div class="hero-stats mt-5">
+                        <div class="row text-center">
+                            <div class="col-4">
+                                <h3 class="fw-bold text-primary mb-0">14</h3>
+                                <p class="text-muted small mb-0">Repositórios</p>
+                            </div>
+                            <div class="col-4">
+                                <h3 class="fw-bold text-primary mb-0">1</h3>
+                                <p class="text-muted small mb-0">Stars</p>
+                            </div>
+                            <div class="col-4">
+                                <h3 class="fw-bold text-primary mb-0">0</h3>
+                                <p class="text-muted small mb-0">Forks</p>
+                            </div>
+                        </div>
+                        
+                        <p class="text-muted small mt-3 mb-0">
+                            <i class="bi bi-clock"></i>
+                            Última atualização: 2026-01-06 14:44:08
+                        </p>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 text-center" data-aos="fade-left">
+                <div class="hero-image">
+                    <div class="code-window">
+                        <div class="code-window-header">
+                            <span class="dot dot-red"></span>
+                            <span class="dot dot-yellow"></span>
+                            <span class="dot dot-green"></span>
+                            <span class="code-title">github_api.py</span>
+                        </div>
+                        <div class="code-window-body">
+                            <pre><code><span class="code-keyword">import</span> requests
+
+<span class="code-keyword">class</span> <span class="code-class">GitHubPortfolio</span>:
+    <span class="code-keyword">def</span> <span class="code-function">__init__</span>(<span class="code-param">self</span>):
+        <span class="code-param">self</span>.user = <span class="code-string">"nataliabarros1994"</span>
+        <span class="code-param">self</span>.auto_sync = <span class="code-string">True</span>
+
+    <span class="code-keyword">def</span> <span class="code-function">fetch_projects</span>(<span class="code-param">self</span>):
+        <span class="code-keyword">return</span> requests.get(
+            <span class="code-string">f"api.github.com/users/{self.user}/repos"</span>
+        ).json()</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="hero-scroll">
+        <a href="#projetos-destaque" class="scroll-down">
+            <i class="bi bi-chevron-down"></i>
+        </a>
+    </div>
+</section>
+
+<!-- Projetos em Destaque -->
+<section id="projetos-destaque" class="py-5 bg-light">
+    <div class="container">
+        <div class="section-header text-center mb-5" data-aos="fade-up">
+            <span class="badge bg-primary-subtle text-primary mb-3">
+                <i class="bi bi-github"></i> Do GitHub
+            </span>
+            <h2 class="display-5 fw-bold mb-3">Projetos em Destaque</h2>
+            <p class="lead text-muted">Repositórios com mais estrelas e atividade recente</p>
+        </div>
+
+        
+        <div class="row g-4">
+            
+            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="project-card h-100">
+                    <div class="project-header p-3">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <h5 class="project-name mb-0">
+                                <i class="bi bi-folder-fill text-primary me-2"></i>
+                                CustomerPulse AI — Previsor de Churn
+                            </h5>
+                            
+                            <span class="badge bg-success" title="Atualizado recentemente">
+                                <i class="bi bi-lightning-fill"></i>
+                            </span>
+                            
+                        </div>
+                        <p class="project-description text-muted small mb-0">
+                            Previsor de Churn com Machine Learning e Dashboard no Streamlit. Random Forest treinado com Scikit-l...
+                        </p>
+                    </div>
+
+                    <div class="project-body p-3">
+                        <!-- Tecnologias -->
+                        <div class="project-tech mb-3">
+                            
+                            <span class="tech-badge-main me-2">
+                                <i class="bi bi-circle-fill" style="font-size: 10px;"></i>
+                                Jupyter Notebook
+                            </span>
+                            
+                            
+                            <span class="tech-badge">Python</span>
+                            
+                            <span class="tech-badge">Scikit-learn</span>
+                            
+                        </div>
+
+                        <!-- Stats -->
+                        <div class="project-stats mb-3">
+                            <span class="stat-item me-3">
+                                <i class="bi bi-star-fill text-warning"></i>
+                                0
+                            </span>
+                            <span class="stat-item me-3">
+                                <i class="bi bi-diagram-3-fill text-info"></i>
+                                0
+                            </span>
+                            <span class="stat-item text-muted small">
+                                <i class="bi bi-calendar3"></i>
+                                2026-05-18
+                            </span>
+                        </div>
+
+                        <!-- Links -->
+                        <div class="project-links">
+                            <a href="https://github.com/nataliabarros1994/customerpulse-ai" target="_blank"
+                               class="btn btn-sm btn-outline-dark me-2">
+                                <i class="bi bi-github"></i> Código
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="project-card h-100">
+                    <div class="project-header p-3">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <h5 class="project-name mb-0">
+                                <i class="bi bi-folder-fill text-primary me-2"></i>
+                                Veluri — Plataforma de Agendamento com IA
+                            </h5>
+                            
+                            <span class="badge bg-success" title="Atualizado recentemente">
+                                <i class="bi bi-lightning-fill"></i>
+                            </span>
+                            
+                        </div>
+                        <p class="project-description text-muted small mb-0">
+                            SaaS multi-tenant de agendamento para PMEs brasileiras com atendente IA &#34;Aura&#34; (Claude tool-use), bo...
+                        </p>
+                    </div>
+
+                    <div class="project-body p-3">
+                        <!-- Tecnologias -->
+                        <div class="project-tech mb-3">
+                            
+                            <span class="tech-badge-main me-2">
+                                <i class="bi bi-circle-fill" style="font-size: 10px;"></i>
+                                TypeScript
+                            </span>
+                            
+                            
+                            <span class="tech-badge">Next.js 15</span>
+                            
+                            <span class="tech-badge">TypeScript</span>
+                            
+                        </div>
+
+                        <!-- Stats -->
+                        <div class="project-stats mb-3">
+                            <span class="stat-item me-3">
+                                <i class="bi bi-star-fill text-warning"></i>
+                                0
+                            </span>
+                            <span class="stat-item me-3">
+                                <i class="bi bi-diagram-3-fill text-info"></i>
+                                0
+                            </span>
+                            <span class="stat-item text-muted small">
+                                <i class="bi bi-calendar3"></i>
+                                2026-05-12
+                            </span>
+                        </div>
+
+                        <!-- Links -->
+                        <div class="project-links">
+                            <a href="https://github.com/nataliabarros1994/plataforma-de-agendamento-com-IA" target="_blank"
+                               class="btn btn-sm btn-outline-dark me-2">
+                                <i class="bi bi-github"></i> Código
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="project-card h-100">
+                    <div class="project-header p-3">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <h5 class="project-name mb-0">
+                                <i class="bi bi-folder-fill text-primary me-2"></i>
+                                NPX PDF Brasil
+                            </h5>
+                            
+                            <span class="badge bg-success" title="Atualizado recentemente">
+                                <i class="bi bi-lightning-fill"></i>
+                            </span>
+                            
+                        </div>
+                        <p class="project-description text-muted small mb-0">
+                            PDF Brasil is a free online SaaS platform for PDF manipulation. Features include merge, split, compr...
+                        </p>
+                    </div>
+
+                    <div class="project-body p-3">
+                        <!-- Tecnologias -->
+                        <div class="project-tech mb-3">
+                            
+                            <span class="tech-badge-main me-2">
+                                <i class="bi bi-circle-fill" style="font-size: 10px;"></i>
+                                TypeScript
+                            </span>
+                            
+                            
+                            <span class="tech-badge">Next.js</span>
+                            
+                            <span class="tech-badge">TypeScript</span>
+                            
+                        </div>
+
+                        <!-- Stats -->
+                        <div class="project-stats mb-3">
+                            <span class="stat-item me-3">
+                                <i class="bi bi-star-fill text-warning"></i>
+                                0
+                            </span>
+                            <span class="stat-item me-3">
+                                <i class="bi bi-diagram-3-fill text-info"></i>
+                                0
+                            </span>
+                            <span class="stat-item text-muted small">
+                                <i class="bi bi-calendar3"></i>
+                                2026-01-06
+                            </span>
+                        </div>
+
+                        <!-- Links -->
+                        <div class="project-links">
+                            <a href="https://github.com/nataliabarros1994/NPX-PDF-BRASIL" target="_blank"
+                               class="btn btn-sm btn-outline-dark me-2">
+                                <i class="bi bi-github"></i> Código
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
+                <div class="project-card h-100">
+                    <div class="project-header p-3">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <h5 class="project-name mb-0">
+                                <i class="bi bi-folder-fill text-primary me-2"></i>
+                                Netflixclone
+                            </h5>
+                            
+                        </div>
+                        <p class="project-description text-muted small mb-0">
+                            Projeto desenvolvido com dedicação
+                        </p>
+                    </div>
+
+                    <div class="project-body p-3">
+                        <!-- Tecnologias -->
+                        <div class="project-tech mb-3">
+                            
+                            <span class="tech-badge-main me-2">
+                                <i class="bi bi-circle-fill" style="font-size: 10px;"></i>
+                                HTML
+                            </span>
+                            
+                            
+                            <span class="tech-badge">CSS</span>
+                            
+                            <span class="tech-badge">CSS3</span>
+                            
+                        </div>
+
+                        <!-- Stats -->
+                        <div class="project-stats mb-3">
+                            <span class="stat-item me-3">
+                                <i class="bi bi-star-fill text-warning"></i>
+                                1
+                            </span>
+                            <span class="stat-item me-3">
+                                <i class="bi bi-diagram-3-fill text-info"></i>
+                                0
+                            </span>
+                            <span class="stat-item text-muted small">
+                                <i class="bi bi-calendar3"></i>
+                                2020-08-02
+                            </span>
+                        </div>
+
+                        <!-- Links -->
+                        <div class="project-links">
+                            <a href="https://github.com/nataliabarros1994/netflixclone" target="_blank"
+                               class="btn btn-sm btn-outline-dark me-2">
+                                <i class="bi bi-github"></i> Código
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="500">
+                <div class="project-card h-100">
+                    <div class="project-header p-3">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <h5 class="project-name mb-0">
+                                <i class="bi bi-folder-fill text-primary me-2"></i>
+                                Meu Portfolio Python
+                            </h5>
+                            
+                            <span class="badge bg-success" title="Atualizado recentemente">
+                                <i class="bi bi-lightning-fill"></i>
+                            </span>
+                            
+                        </div>
+                        <p class="project-description text-muted small mb-0">
+                            Projeto desenvolvido com dedicação
+                        </p>
+                    </div>
+
+                    <div class="project-body p-3">
+                        <!-- Tecnologias -->
+                        <div class="project-tech mb-3">
+                            
+                            <span class="tech-badge-main me-2">
+                                <i class="bi bi-circle-fill" style="font-size: 10px;"></i>
+                                HTML
+                            </span>
+                            
+                            
+                            <span class="tech-badge">CSS</span>
+                            
+                            <span class="tech-badge">CSS3</span>
+                            
+                        </div>
+
+                        <!-- Stats -->
+                        <div class="project-stats mb-3">
+                            <span class="stat-item me-3">
+                                <i class="bi bi-star-fill text-warning"></i>
+                                0
+                            </span>
+                            <span class="stat-item me-3">
+                                <i class="bi bi-diagram-3-fill text-info"></i>
+                                0
+                            </span>
+                            <span class="stat-item text-muted small">
+                                <i class="bi bi-calendar3"></i>
+                                2025-12-11
+                            </span>
+                        </div>
+
+                        <!-- Links -->
+                        <div class="project-links">
+                            <a href="https://github.com/nataliabarros1994/meu-portfolio-python" target="_blank"
+                               class="btn btn-sm btn-outline-dark me-2">
+                                <i class="bi bi-github"></i> Código
+                            </a>
+                            
+                            <a href="https://nataliabarros1994.github.io/meu-portfolio-python" target="_blank"
+                               class="btn btn-sm btn-outline-primary">
+                                <i class="bi bi-box-arrow-up-right"></i> Demo
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="600">
+                <div class="project-card h-100">
+                    <div class="project-header p-3">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <h5 class="project-name mb-0">
+                                <i class="bi bi-folder-fill text-primary me-2"></i>
+                                Guided Mvp
+                            </h5>
+                            
+                            <span class="badge bg-success" title="Atualizado recentemente">
+                                <i class="bi bi-lightning-fill"></i>
+                            </span>
+                            
+                        </div>
+                        <p class="project-description text-muted small mb-0">
+                            O que: scaffold completo para MVP Guiado: backend FastAPI (detect-scale, estimativa, auth, projetos)...
+                        </p>
+                    </div>
+
+                    <div class="project-body p-3">
+                        <!-- Tecnologias -->
+                        <div class="project-tech mb-3">
+                            
+                            
+                        </div>
+
+                        <!-- Stats -->
+                        <div class="project-stats mb-3">
+                            <span class="stat-item me-3">
+                                <i class="bi bi-star-fill text-warning"></i>
+                                0
+                            </span>
+                            <span class="stat-item me-3">
+                                <i class="bi bi-diagram-3-fill text-info"></i>
+                                0
+                            </span>
+                            <span class="stat-item text-muted small">
+                                <i class="bi bi-calendar3"></i>
+                                2025-12-11
+                            </span>
+                        </div>
+
+                        <!-- Links -->
+                        <div class="project-links">
+                            <a href="https://github.com/nataliabarros1994/Guided-MVP" target="_blank"
+                               class="btn btn-sm btn-outline-dark me-2">
+                                <i class="bi bi-github"></i> Código
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="text-center mt-5" data-aos="fade-up">
+            <a href="projetos/index.html" class="btn btn-primary btn-lg">
+                Ver Todos os 14 Projetos <i class="bi bi-arrow-right ms-2"></i>
+            </a>
+        </div>
+        
+    </div>
+</section>
+
+<!-- Tecnologias -->
+
+<section class="py-5">
+    <div class="container">
+        <div class="section-header text-center mb-5" data-aos="fade-up">
+            <span class="badge bg-primary-subtle text-primary mb-3">Skills</span>
+            <h2 class="display-5 fw-bold mb-3">Principais Tecnologias</h2>
+            <p class="lead text-muted">Baseado nos repositórios do GitHub</p>
+        </div>
+
+        <div class="row g-3" data-aos="fade-up">
+            
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="tech-badge-large text-center p-3">
+                    <h6 class="mb-1">Flask</h6>
+                    <small class="text-muted">9 projetos</small>
+                </div>
+            </div>
+            
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="tech-badge-large text-center p-3">
+                    <h6 class="mb-1">Python</h6>
+                    <small class="text-muted">9 projetos</small>
+                </div>
+            </div>
+            
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="tech-badge-large text-center p-3">
+                    <h6 class="mb-1">CSS3</h6>
+                    <small class="text-muted">5 projetos</small>
+                </div>
+            </div>
+            
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="tech-badge-large text-center p-3">
+                    <h6 class="mb-1">HTML</h6>
+                    <small class="text-muted">5 projetos</small>
+                </div>
+            </div>
+            
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="tech-badge-large text-center p-3">
+                    <h6 class="mb-1">Angular</h6>
+                    <small class="text-muted">4 projetos</small>
+                </div>
+            </div>
+            
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="tech-badge-large text-center p-3">
+                    <h6 class="mb-1">TypeScript</h6>
+                    <small class="text-muted">4 projetos</small>
+                </div>
+            </div>
+            
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="tech-badge-large text-center p-3">
+                    <h6 class="mb-1">CSS</h6>
+                    <small class="text-muted">3 projetos</small>
+                </div>
+            </div>
+            
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="tech-badge-large text-center p-3">
+                    <h6 class="mb-1">Sass</h6>
+                    <small class="text-muted">3 projetos</small>
+                </div>
+            </div>
+            
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="tech-badge-large text-center p-3">
+                    <h6 class="mb-1">JavaScript</h6>
+                    <small class="text-muted">1 projetos</small>
+                </div>
+            </div>
+            
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="tech-badge-large text-center p-3">
+                    <h6 class="mb-1">Node.js</h6>
+                    <small class="text-muted">1 projetos</small>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+
+<!-- Call to Action -->
+<section class="cta-section py-5 bg-primary text-white">
+    <div class="container text-center" data-aos="zoom-in">
+        <h2 class="display-5 fw-bold mb-3">Veja Todos os Meus Projetos</h2>
+        <p class="lead mb-4">
+            14 repositórios públicos no GitHub
+        </p>
+        <div class="cta-buttons">
+            <a href="projetos/index.html" class="btn btn-light btn-lg me-3">
+                <i class="bi bi-folder"></i> Ver Projetos
+            </a>
+            <a href="https://github.com/nataliabarros1994" target="_blank" class="btn btn-outline-light btn-lg">
+                <i class="bi bi-github"></i> GitHub
+            </a>
+        </div>
+    </div>
+</section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h5 class="fw-bold mb-3">Natália Barros</h5>
+                    <p class="text-muted">Desenvolvedora Full Stack</p>
+                    <p class="text-muted small">Desenvolvendo soluções inovadoras com Python e tecnologias modernas.</p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h6 class="fw-bold mb-3">Links Rápidos</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="index.html" class="text-decoration-none text-muted hover-primary">Início</a></li>
+                        <li class="mb-2"><a href="projetos/index.html" class="text-decoration-none text-muted hover-primary">Projetos</a></li>
+                        <li class="mb-2"><a href="sobre/index.html" class="text-decoration-none text-muted hover-primary">Sobre Mim</a></li>
+                        <li class="mb-2"><a href="contato/index.html" class="text-decoration-none text-muted hover-primary">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h6 class="fw-bold mb-3">Conecte-se</h6>
+                    <div class="social-links">
+                        <a href="https://github.com/nataliabarros1994" target="_blank" class="btn btn-outline-light btn-sm me-2 mb-2">
+                            <i class="bi bi-github"></i> GitHub
+                        </a>
+                        <a href="https://www.linkedin.com/in/nataliachagas1994/" target="_blank" class="btn btn-outline-light btn-sm me-2 mb-2">
+                            <i class="bi bi-linkedin"></i> LinkedIn
+                        </a>
+                        <a href="https://mail.google.com/mail/?view=cm&to=natalia.goldenglowitsolutions@gmail.com" target="_blank" rel="noopener" class="btn btn-outline-light btn-sm mb-2">
+                            <i class="bi bi-envelope"></i> Email
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <hr class="border-secondary my-4">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0 text-muted small">
+                        &copy; 2026 Natália Barros. Todos os direitos reservados.
+                    </p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="mb-0 text-muted small">
+                        Feito com <i class="bi bi-heart-fill text-danger"></i> usando Flask e Bootstrap
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botão Voltar ao Topo -->
+    <button id="backToTop" class="btn btn-primary btn-floating" title="Voltar ao topo">
+        <i class="bi bi-arrow-up"></i>
     </button>
-  </div>
-</nav>
 
-<!-- MOBILE NAV OVERLAY -->
-<div class="mobile-nav" id="mobileNav" role="dialog" aria-modal="true">
-  <a href="#experiencia" data-i18n="nav.experience">Experiência</a>
-  <a href="#sobre" data-i18n="nav.about">Sobre</a>
-  <a href="#projetos" data-i18n="nav.projects">Projetos</a>
-  <a href="#contato" data-i18n="nav.contact">Contato</a>
-</div>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-<!-- HERO -->
-<section class="hero" id="hero">
-  <div class="container">
-    <span class="hero-status" data-i18n="hero.status">Disponível para novos projetos</span>
-    <p class="hero-name mono">
-      <span class="arrow">&gt;</span> <span data-i18n="hero.greeting">Olá, eu sou Natália Barros</span>
-    </p>
-    <h1 class="hero-title">
-      <span data-i18n="hero.title">Desenvolvedora</span><br>
-      <span class="accent" data-i18n="hero.titleAccent">Full Stack</span>
-    </h1>
-    <p class="hero-subtitle" data-i18n-html="hero.subtitle">
-      Construo aplicações web modernas com <span class="hl">Python, TypeScript e Go</span> — do back ao front, do MVP à escala.
-    </p>
-    <div class="hero-actions">
-      <a href="#projetos" class="btn btn-primary">
-        <span data-i18n="hero.ctaProjects">Ver Projetos</span>
-        <i class="fas fa-arrow-right"></i>
-      </a>
-      <a href="#contato" class="btn btn-ghost">
-        <i class="fas fa-paper-plane"></i>
-        <span data-i18n="hero.ctaContact">Conversar</span>
-      </a>
-    </div>
-    <div class="hero-techstrip">
-      <span class="label">stack:</span>
-      <span class="tech">Python</span><span class="sep">/</span>
-      <span class="tech">Django</span><span class="sep">/</span>
-      <span class="tech">FastAPI</span><span class="sep">/</span>
-      <span class="tech">Next.js</span><span class="sep">/</span>
-      <span class="tech">TypeScript</span><span class="sep">/</span>
-      <span class="tech">React</span><span class="sep">/</span>
-      <span class="tech">Go</span><span class="sep">/</span>
-      <span class="tech">Node.js</span>
-    </div>
-    <div class="hero-social">
-      <a href="https://github.com/nataliabarros1994?tab=repositories" target="_blank" rel="noopener" class="social-link" title="GitHub"><i class="fab fa-github"></i></a>
-      <a href="https://www.linkedin.com/in/nataliachagas1994/" target="_blank" rel="noopener" class="social-link" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-      <a href="https://wa.me/5522981507669" target="_blank" rel="noopener" class="social-link" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-      <a href="https://mail.google.com/mail/?view=cm&to=natalia.goldenglowitsolutions@gmail.com" target="_blank" rel="noopener" class="social-link" title="Email"><i class="fas fa-envelope"></i></a>
-    </div>
-  </div>
-</section>
+    <!-- JavaScript Customizado -->
+    <script src="static/js/script.js"></script>
 
-<!-- EXPERIENCE -->
-<section class="section" id="experiencia">
-  <div class="container">
-    <div class="section-head reveal">
-      <span class="section-eyebrow" data-i18n="experience.eyebrow">trajetória</span>
-      <h2 class="section-title">
-        <span data-i18n="experience.title">Experiência</span>
-        <span class="gradient-text" data-i18n="experience.titleAccent">Profissional</span>
-      </h2>
-      <p class="section-subtitle" data-i18n="experience.subtitle">
-        Construindo produtos digitais de ponta a ponta — do back-end Python ao front-end Next.js.
-      </p>
-    </div>
-    <div class="exp-timeline" id="expTimeline">
-      <!-- rendered via JS -->
-    </div>
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section class="section" id="sobre">
-  <div class="container">
-    <div class="about-grid">
-      <div class="about-text reveal">
-        <span class="section-eyebrow" data-i18n="about.eyebrow">sobre mim</span>
-        <h2 class="section-title">
-          <span data-i18n="about.title">Resolvendo problemas com</span>
-          <span class="gradient-text" data-i18n="about.titleAccent">código que dura.</span>
-        </h2>
-        <p data-i18n-html="about.p1">
-          Sou desenvolvedora <strong>Full Stack</strong>. Trabalho confortavelmente nos dois lados da stack — back-end em <strong>Python (Django, FastAPI)</strong>, <strong>Go</strong> e <strong>Node.js</strong>; front-end em <strong>Next.js</strong>, <strong>React</strong> e <strong>TypeScript</strong>.
-        </p>
-        <p data-i18n="about.p2">
-          Faço produto: do esboço da arquitetura à integração de pagamento, do schema do banco ao deploy. Não tenho preferência religiosa por linguagem — uso o que faz sentido para o problema.
-        </p>
-        <p data-i18n="about.p3">
-          Já entreguei MVPs em visão computacional, plataformas SaaS multi-tenant em produção, microserviços com filas e cache, e sites institucionais com performance impecável. Foco em código limpo, observável e que outras pessoas conseguem ler depois.
-        </p>
-        <div class="about-stats">
-          <div class="stat-card">
-            <span class="stat-num">3+</span>
-            <span class="stat-label" data-i18n="about.stats.experience">anos de experiência</span>
-          </div>
-          <div class="stat-card">
-            <span class="stat-num">20+</span>
-            <span class="stat-label" data-i18n="about.stats.projects">projetos entregues</span>
-          </div>
-          <div class="stat-card">
-            <span class="stat-num">8</span>
-            <span class="stat-label" data-i18n="about.stats.languages">linguagens & frameworks</span>
-          </div>
-          <div class="stat-card">
-            <span class="stat-num">100%</span>
-            <span class="stat-label" data-i18n="about.stats.delivery">comprometimento</span>
-          </div>
-        </div>
-      </div>
-
-      <aside class="skills-block reveal">
-        <div class="skill-cat">
-          <h4 data-i18n="skills.backend">Back-end</h4>
-          <div class="skill-list">
-            <span class="tag">Python</span>
-            <span class="tag">Django</span>
-            <span class="tag">FastAPI</span>
-            <span class="tag">Go</span>
-            <span class="tag">Fiber</span>
-            <span class="tag">Node.js</span>
-          </div>
-        </div>
-        <div class="skill-cat">
-          <h4 data-i18n="skills.frontend">Front-end</h4>
-          <div class="skill-list">
-            <span class="tag">Next.js</span>
-            <span class="tag">React</span>
-            <span class="tag">TypeScript</span>
-            <span class="tag">JavaScript</span>
-            <span class="tag">HTML5 / CSS3</span>
-            <span class="tag">Tailwind</span>
-          </div>
-        </div>
-        <div class="skill-cat">
-          <h4 data-i18n="skills.data">Dados & infra</h4>
-          <div class="skill-list">
-            <span class="tag">PostgreSQL</span>
-            <span class="tag">Redis</span>
-            <span class="tag">Docker</span>
-            <span class="tag">Prisma</span>
-            <span class="tag">Stripe</span>
-            <span class="tag">Git / GitHub</span>
-          </div>
-        </div>
-      </aside>
-    </div>
-  </div>
-</section>
-
-<!-- PROJECTS -->
-<section class="section" id="projetos">
-  <div class="container">
-    <div class="section-head reveal">
-      <span class="section-eyebrow" data-i18n="projects.eyebrow">portfólio</span>
-      <h2 class="section-title">
-        <span data-i18n="projects.title">Projetos em</span>
-        <span class="gradient-text" data-i18n="projects.titleAccent">destaque</span>
-      </h2>
-      <p class="section-subtitle" data-i18n="projects.subtitle">
-        Uma seleção dos trabalhos mais recentes — SaaS, visão computacional, microserviços, site institucional e robótica.
-      </p>
-    </div>
-
-    <div class="projects-grid">
-
-      <!-- 1. NPX-PDF-BRASIL (FEATURED) -->
-      <article class="project-card featured reveal">
-        <div class="project-header">
-          <div class="project-icon"><i class="fas fa-file-pdf"></i></div>
-          <span class="project-badge" data-i18n="projects.featured">em destaque</span>
-        </div>
-        <h3 class="project-title">NPX-PDF-BRASIL</h3>
-        <p class="project-desc" data-i18n="projects.npx.desc">
-          Plataforma SaaS de manipulação de PDFs com pagamento PIX nativo, semelhante ao iLovePDF mas pensada para o mercado brasileiro. Monorepo Nx com Go 1.22+ (Fiber) no backend, Next.js 14 com TypeScript no frontend, PostgreSQL 16 e Redis. Arquitetura production-ready com Docker.
-        </p>
-        <div class="project-tags">
-          <span class="tag">Go</span>
-          <span class="tag">Fiber</span>
-          <span class="tag">Next.js 14</span>
-          <span class="tag">TypeScript</span>
-          <span class="tag">PostgreSQL</span>
-          <span class="tag">Redis</span>
-          <span class="tag">Docker</span>
-        </div>
-        <a href="https://github.com/nataliabarros1994/NPX-PDF-BRASIL" target="_blank" rel="noopener" class="project-link">
-          <i class="fab fa-github"></i> <span data-i18n="projects.viewCode">Ver no GitHub</span> <i class="fas fa-arrow-right"></i>
-        </a>
-      </article>
-
-      <!-- 2. Pousada Praia do Forte (NEW) -->
-      <article class="project-card reveal">
-        <div class="project-header">
-          <div class="project-icon"><i class="fas fa-umbrella-beach"></i></div>
-        </div>
-        <h3 class="project-title">Pousada Praia do Forte</h3>
-        <p class="project-desc" data-i18n="projects.pousada.desc">
-          Site institucional para pousada em Cabo Frio. Hero com animações sutis de vento, seções de suítes, experiências e depoimentos, e formulário de reserva integrado ao WhatsApp. Tipografia editorial, paleta sereno/areia/terracota, totalmente responsivo e otimizado para SEO local.
-        </p>
-        <div class="project-tags">
-          <span class="tag">HTML5</span>
-          <span class="tag">CSS3</span>
-          <span class="tag">JavaScript</span>
-          <span class="tag">SVG Animation</span>
-          <span class="tag">Responsive</span>
-          <span class="tag">SEO</span>
-        </div>
-        <a href="https://github.com/nataliabarros1994" target="_blank" rel="noopener" class="project-link">
-          <i class="fab fa-github"></i> <span data-i18n="projects.viewCode">Ver no GitHub</span> <i class="fas fa-arrow-right"></i>
-        </a>
-      </article>
-
-      <!-- 3. CleanTrack -->
-      <article class="project-card reveal">
-        <div class="project-header">
-          <div class="project-icon"><i class="fas fa-clipboard-check"></i></div>
-        </div>
-        <h3 class="project-title">CleanTrack</h3>
-        <p class="project-desc" data-i18n="projects.cleantrack.desc">
-          Plataforma SaaS multi-tenant em Django para rastreamento de limpeza de equipamentos médicos. Registro via QR code, integrações Stripe e Resend, dashboard em tempo real, relatórios auditáveis e suporte a impressoras térmicas (Brother, Zebra, DYMO). Arquitetura HIPAA-safe.
-        </p>
-        <div class="project-tags">
-          <span class="tag">Python</span>
-          <span class="tag">Django</span>
-          <span class="tag">PostgreSQL</span>
-          <span class="tag">Stripe</span>
-          <span class="tag">Multi-tenant</span>
-          <span class="tag">HIPAA</span>
-        </div>
-        <a href="https://github.com/nataliabarros1994/CLEANTRACK" target="_blank" rel="noopener" class="project-link">
-          <i class="fab fa-github"></i> <span data-i18n="projects.viewCode">Ver no GitHub</span> <i class="fas fa-arrow-right"></i>
-        </a>
-      </article>
-
-      <!-- 4. EstiMate MVP -->
-      <article class="project-card reveal">
-        <div class="project-header">
-          <div class="project-icon"><i class="fas fa-ruler-combined"></i></div>
-        </div>
-        <h3 class="project-title">EstiMate MVP</h3>
-        <p class="project-desc" data-i18n="projects.estimate.desc">
-          Aplicação de visão computacional que estima materiais de construção a partir de fotos com objetos de referência (cartão, porta) para detecção automática de escala. Detecção via OpenCV, seleção interativa de área e cálculo de tinta/azulejos.
-        </p>
-        <div class="project-tags">
-          <span class="tag">Python</span>
-          <span class="tag">FastAPI</span>
-          <span class="tag">OpenCV</span>
-          <span class="tag">NumPy</span>
-          <span class="tag">React</span>
-          <span class="tag">Vite</span>
-        </div>
-        <a href="https://github.com/nataliabarros1994/Guided-MVP" target="_blank" rel="noopener" class="project-link">
-          <i class="fab fa-github"></i> <span data-i18n="projects.viewCode">Ver no GitHub</span> <i class="fas fa-arrow-right"></i>
-        </a>
-      </article>
-
-      <!-- 5. Discord SaaS -->
-      <article class="project-card reveal">
-        <div class="project-header">
-          <div class="project-icon"><i class="fab fa-discord"></i></div>
-        </div>
-        <h3 class="project-title">Discord SaaS Platform</h3>
-        <p class="project-desc" data-i18n="projects.discord.desc">
-          Plataforma SaaS completa em Next.js 15 com autenticação Clerk, pagamentos Stripe (PRO/FREE), notificações Discord em tempo real e dashboard responsivo de categorias, eventos e quotas. Arquitetura production-ready com TypeScript e Prisma.
-        </p>
-        <div class="project-tags">
-          <span class="tag">Next.js 15</span>
-          <span class="tag">TypeScript</span>
-          <span class="tag">Stripe</span>
-          <span class="tag">Clerk</span>
-          <span class="tag">Prisma</span>
-          <span class="tag">Neon DB</span>
-        </div>
-        <a href="https://github.com/nataliabarros1994/DISCOR-SAAS" target="_blank" rel="noopener" class="project-link">
-          <i class="fab fa-github"></i> <span data-i18n="projects.viewCode">Ver no GitHub</span> <i class="fas fa-arrow-right"></i>
-        </a>
-      </article>
-
-      <!-- 6. MicroStack -->
-      <article class="project-card reveal">
-        <div class="project-header">
-          <div class="project-icon"><i class="fas fa-layer-group"></i></div>
-        </div>
-        <h3 class="project-title">MicroStack</h3>
-        <p class="project-desc" data-i18n="projects.microstack.desc">
-          Plataforma SaaS com arquitetura de microserviços, design responsivo, integrações de pagamento (cartão, débito, PayPal, Payoneer), notificações automáticas e dashboard administrativo em tempo real.
-        </p>
-        <div class="project-tags">
-          <span class="tag">Microserviços</span>
-          <span class="tag">FastAPI</span>
-          <span class="tag">PostgreSQL</span>
-          <span class="tag">Redis</span>
-          <span class="tag">Celery</span>
-          <span class="tag">Docker</span>
-        </div>
-        <a href="https://github.com/nataliabarros1994/microstack" target="_blank" rel="noopener" class="project-link">
-          <i class="fab fa-github"></i> <span data-i18n="projects.viewCode">Ver no GitHub</span> <i class="fas fa-arrow-right"></i>
-        </a>
-      </article>
-
-      <!-- 7. Athena Robotic -->
-      <article class="project-card reveal">
-        <div class="project-header">
-          <div class="project-icon"><i class="fas fa-robot"></i></div>
-        </div>
-        <h3 class="project-title">Athena Robotic Framework</h3>
-        <p class="project-desc" data-i18n="projects.athena.desc">
-          Framework modular de robótica em ROS2 Jazzy Jalisco, desenvolvido para Ubuntu 24.04 LTS. Controle e simulação de sistemas robóticos avançados.
-        </p>
-        <div class="project-tags">
-          <span class="tag">ROS2</span>
-          <span class="tag">Python</span>
-          <span class="tag">Robótica</span>
-          <span class="tag">Ubuntu</span>
-        </div>
-        <a href="https://github.com/nataliabarros1994/athena-robotic-framework" target="_blank" rel="noopener" class="project-link">
-          <i class="fab fa-github"></i> <span data-i18n="projects.viewCode">Ver no GitHub</span> <i class="fas fa-arrow-right"></i>
-        </a>
-      </article>
-
-      <!-- 8. Sistema de Detecção de Fraudes -->
-      <article class="project-card reveal">
-        <div class="project-header">
-          <div class="project-icon"><i class="fas fa-shield-alt"></i></div>
-        </div>
-        <h3 class="project-title" data-i18n="projects.fraud.title">Sistema de Detecção de Fraudes</h3>
-        <p class="project-desc" data-i18n="projects.fraud.desc">
-          Detecção de fraudes em tempo real com Inteligência Artificial — machine learning para identificar padrões suspeitos e prevenir transações fraudulentas.
-        </p>
-        <div class="project-tags">
-          <span class="tag">Python</span>
-          <span class="tag">Machine Learning</span>
-          <span class="tag">IA</span>
-          <span class="tag">Real-time</span>
-        </div>
-        <a href="https://github.com/nataliabarros1994/sistema-de-detec-o-de-fraudes-em-tempo-real" target="_blank" rel="noopener" class="project-link">
-          <i class="fab fa-github"></i> <span data-i18n="projects.viewCode">Ver no GitHub</span> <i class="fas fa-arrow-right"></i>
-        </a>
-      </article>
-
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section class="section" id="contato">
-  <div class="container">
-    <div class="contact-wrap reveal">
-      <div class="contact-inner">
-        <span class="section-eyebrow" data-i18n="contact.eyebrow" style="justify-content: center;">vamos conversar</span>
-        <h2 class="contact-title">
-          <span data-i18n="contact.title">Tem um projeto em</span>
-          <span class="gradient-text" data-i18n="contact.titleAccent">mente?</span>
-        </h2>
-        <p class="contact-subtitle" data-i18n="contact.subtitle">
-          Estou aceitando novos projetos a partir do próximo mês. Respondo todas as mensagens em até 24 horas.
-        </p>
-        <div class="contact-actions">
-          <a href="https://wa.me/5522981507669?text=Olá%20Natália!%20Vi%20seu%20portfolio%20e%20gostaria%20de%20conversar." target="_blank" rel="noopener" class="btn btn-primary">
-            <i class="fab fa-whatsapp"></i>
-            <span data-i18n="contact.btnWhatsapp">Falar no WhatsApp</span>
-          </a>
-          <a href="https://mail.google.com/mail/?view=cm&to=natalia.goldenglowitsolutions@gmail.com" target="_blank" rel="noopener" class="btn btn-ghost">
-            <i class="fas fa-envelope"></i>
-            <span data-i18n="contact.btnEmail">Enviar e-mail</span>
-          </a>
-        </div>
-        <div class="contact-info">
-          <span><i class="fas fa-envelope"></i><a href="https://mail.google.com/mail/?view=cm&to=natalia.goldenglowitsolutions@gmail.com" target="_blank" rel="noopener">natalia.goldenglowitsolutions@gmail.com</a></span>
-          <span><i class="fab fa-linkedin"></i><a href="https://www.linkedin.com/in/nataliachagas1994/" target="_blank" rel="noopener">/in/nataliachagas1994</a></span>
-          <span><i class="fab fa-github"></i><a href="https://github.com/nataliabarros1994" target="_blank" rel="noopener">@nataliabarros1994</a></span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <div class="container">
-    <div class="footer-grid">
-      <span>&copy; <span id="year">2026</span> Natália Barros · <span data-i18n="footer.rights">todos os direitos reservados</span></span>
-      <span class="footer-built">
-        <span data-i18n="footer.built">construído com</span> Inter · JS puro · ❤
-      </span>
-    </div>
-  </div>
-</footer>
-
+    
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 <script>
-(() => {
-  'use strict';
-
-  // ============ TRANSLATIONS ============
-  const translations = {
-    pt: {
-      nav: { home: 'Início', experience: 'Experiência', about: 'Sobre', projects: 'Projetos', contact: 'Contato' },
-      hero: {
-        status: 'Disponível para novos projetos',
-        greeting: 'Olá, eu sou Natália Barros',
-        title: 'Desenvolvedora',
-        titleAccent: 'Full Stack',
-        subtitle: 'Construo aplicações web modernas com <span class="hl">Python, TypeScript e Go</span> — do back ao front, do MVP à escala.',
-        ctaProjects: 'Ver Projetos',
-        ctaContact: 'Conversar'
-      },
-      experience: {
-        eyebrow: 'trajetória',
-        title: 'Experiência',
-        titleAccent: 'Profissional',
-        subtitle: 'Construindo produtos digitais de ponta a ponta — do back-end Python ao front-end Next.js.',
-        items: [
-          {
-            role: 'Desenvolvedora Full Stack',
-            period: '2024 — Presente',
-            company: 'Golden Glow IT Solutions · Freelance',
-            desc: 'Desenvolvimento end-to-end de SaaS multi-tenant, sites institucionais e MVPs para clientes em saúde, e-commerce e turismo. Stack heterogêneo: Python/Django/FastAPI no back-end, Go (Fiber) para serviços de alta concorrência, Next.js + TypeScript no front. Integrações Stripe, Resend, PIX, Discord. Deploy via Docker e infra própria.',
-            stack: ['Python', 'Django', 'FastAPI', 'Go', 'Next.js', 'TypeScript', 'PostgreSQL', 'Docker', 'Stripe']
-          },
-          {
-            role: 'Desenvolvedora Full Stack',
-            period: '2023 — 2024',
-            company: 'Projetos próprios & contratos pontuais',
-            desc: 'Construção de plataformas SaaS completas (Discord SaaS, MicroStack), aplicações de visão computacional (EstiMate MVP) e arquiteturas de microserviços com filas (Celery), cache (Redis) e bancos relacionais. Foco em production-readiness desde o primeiro commit.',
-            stack: ['Next.js 15', 'TypeScript', 'Prisma', 'FastAPI', 'OpenCV', 'Redis', 'Celery']
-          },
-          {
-            role: 'Desenvolvedora Python',
-            period: '2022 — 2023',
-            company: 'Início da carreira · projetos de formação',
-            desc: 'APIs RESTful, automação de processos, primeiros sistemas multi-tenant e exploração de robótica com ROS2 (Athena Robotic Framework). Aprofundamento em Python, Flask, Django e fundamentos de engenharia de software.',
-            stack: ['Python', 'Flask', 'Django', 'PostgreSQL', 'ROS2', 'Linux']
-          }
-        ]
-      },
-      about: {
-        eyebrow: 'sobre mim',
-        title: 'Resolvendo problemas com',
-        titleAccent: 'código que dura.',
-        p1: 'Sou desenvolvedora <strong>Full Stack</strong>. Trabalho confortavelmente nos dois lados da stack — back-end em <strong>Python (Django, FastAPI)</strong>, <strong>Go</strong> e <strong>Node.js</strong>; front-end em <strong>Next.js</strong>, <strong>React</strong> e <strong>TypeScript</strong>.',
-        p2: 'Faço produto: do esboço da arquitetura à integração de pagamento, do schema do banco ao deploy. Não tenho preferência religiosa por linguagem — uso o que faz sentido para o problema.',
-        p3: 'Já entreguei MVPs em visão computacional, plataformas SaaS multi-tenant em produção, microserviços com filas e cache, e sites institucionais com performance impecável. Foco em código limpo, observável e que outras pessoas conseguem ler depois.',
-        stats: {
-          experience: 'anos de experiência',
-          projects: 'projetos entregues',
-          languages: 'linguagens & frameworks',
-          delivery: 'comprometimento'
-        }
-      },
-      skills: { backend: 'Back-end', frontend: 'Front-end', data: 'Dados & infra' },
-      projects: {
-        eyebrow: 'portfólio',
-        title: 'Projetos em',
-        titleAccent: 'destaque',
-        subtitle: 'Uma seleção dos trabalhos mais recentes — SaaS, visão computacional, microserviços, site institucional e robótica.',
-        featured: 'em destaque',
-        viewCode: 'Ver no GitHub',
-        npx: { desc: 'Plataforma SaaS de manipulação de PDFs com pagamento PIX nativo, semelhante ao iLovePDF mas pensada para o mercado brasileiro. Monorepo Nx com Go 1.22+ (Fiber) no backend, Next.js 14 com TypeScript no frontend, PostgreSQL 16 e Redis. Arquitetura production-ready com Docker.' },
-        pousada: { desc: 'Site institucional para pousada em Cabo Frio. Hero com animações sutis de vento, seções de suítes, experiências e depoimentos, e formulário de reserva integrado ao WhatsApp. Tipografia editorial, paleta sereno/areia/terracota, totalmente responsivo e otimizado para SEO local.' },
-        cleantrack: { desc: 'Plataforma SaaS multi-tenant em Django para rastreamento de limpeza de equipamentos médicos. Registro via QR code, integrações Stripe e Resend, dashboard em tempo real, relatórios auditáveis e suporte a impressoras térmicas (Brother, Zebra, DYMO). Arquitetura HIPAA-safe.' },
-        estimate: { desc: 'Aplicação de visão computacional que estima materiais de construção a partir de fotos com objetos de referência (cartão, porta) para detecção automática de escala. Detecção via OpenCV, seleção interativa de área e cálculo de tinta/azulejos.' },
-        discord: { desc: 'Plataforma SaaS completa em Next.js 15 com autenticação Clerk, pagamentos Stripe (PRO/FREE), notificações Discord em tempo real e dashboard responsivo de categorias, eventos e quotas. Arquitetura production-ready com TypeScript e Prisma.' },
-        microstack: { desc: 'Plataforma SaaS com arquitetura de microserviços, design responsivo, integrações de pagamento (cartão, débito, PayPal, Payoneer), notificações automáticas e dashboard administrativo em tempo real.' },
-        athena: { desc: 'Framework modular de robótica em ROS2 Jazzy Jalisco, desenvolvido para Ubuntu 24.04 LTS. Controle e simulação de sistemas robóticos avançados.' },
-        fraud: { title: 'Sistema de Detecção de Fraudes', desc: 'Detecção de fraudes em tempo real com Inteligência Artificial — machine learning para identificar padrões suspeitos e prevenir transações fraudulentas.' }
-      },
-      contact: {
-        eyebrow: 'vamos conversar',
-        title: 'Tem um projeto em',
-        titleAccent: 'mente?',
-        subtitle: 'Estou aceitando novos projetos a partir do próximo mês. Respondo todas as mensagens em até 24 horas.',
-        btnWhatsapp: 'Falar no WhatsApp',
-        btnEmail: 'Enviar e-mail'
-      },
-      footer: {
-        rights: 'todos os direitos reservados',
-        built: 'construído com'
-      }
-    },
-
-    en: {
-      nav: { home: 'Home', experience: 'Experience', about: 'About', projects: 'Projects', contact: 'Contact' },
-      hero: {
-        status: 'Available for new projects',
-        greeting: 'Hi, I\'m Natália Barros',
-        title: 'Full Stack',
-        titleAccent: 'Developer',
-        subtitle: 'I build modern web applications with <span class="hl">Python, TypeScript and Go</span> — from back to front, from MVP to scale.',
-        ctaProjects: 'View Projects',
-        ctaContact: 'Get in Touch'
-      },
-      experience: {
-        eyebrow: 'journey',
-        title: 'Professional',
-        titleAccent: 'Experience',
-        subtitle: 'Building digital products end-to-end — from Python back-end to Next.js front-end.',
-        items: [
-          {
-            role: 'Full Stack Developer',
-            period: '2024 — Present',
-            company: 'Golden Glow IT Solutions · Freelance',
-            desc: 'End-to-end development of multi-tenant SaaS, institutional websites and MVPs for clients in healthcare, e-commerce and tourism. Heterogeneous stack: Python/Django/FastAPI on the backend, Go (Fiber) for high-concurrency services, Next.js + TypeScript on the front. Stripe, Resend, PIX and Discord integrations. Deploys via Docker and own infra.',
-            stack: ['Python', 'Django', 'FastAPI', 'Go', 'Next.js', 'TypeScript', 'PostgreSQL', 'Docker', 'Stripe']
-          },
-          {
-            role: 'Full Stack Developer',
-            period: '2023 — 2024',
-            company: 'Personal projects & contract work',
-            desc: 'Built complete SaaS platforms (Discord SaaS, MicroStack), computer vision applications (EstiMate MVP) and microservice architectures with queues (Celery), cache (Redis) and relational databases. Focused on production-readiness from commit one.',
-            stack: ['Next.js 15', 'TypeScript', 'Prisma', 'FastAPI', 'OpenCV', 'Redis', 'Celery']
-          },
-          {
-            role: 'Python Developer',
-            period: '2022 — 2023',
-            company: 'Early career · training projects',
-            desc: 'RESTful APIs, process automation, first multi-tenant systems and robotics exploration with ROS2 (Athena Robotic Framework). Deepened skills in Python, Flask, Django and software engineering fundamentals.',
-            stack: ['Python', 'Flask', 'Django', 'PostgreSQL', 'ROS2', 'Linux']
-          }
-        ]
-      },
-      about: {
-        eyebrow: 'about me',
-        title: 'Solving problems with',
-        titleAccent: 'code that lasts.',
-        p1: 'I\'m a <strong>Full Stack</strong> developer. I work comfortably on both sides of the stack — back-end in <strong>Python (Django, FastAPI)</strong>, <strong>Go</strong> and <strong>Node.js</strong>; front-end in <strong>Next.js</strong>, <strong>React</strong> and <strong>TypeScript</strong>.',
-        p2: 'I build product: from the architecture sketch to payment integration, from the database schema to the deploy. I have no religious preference for any language — I use what makes sense for the problem.',
-        p3: 'I\'ve shipped computer-vision MVPs, multi-tenant SaaS platforms in production, microservices with queues and cache, and institutional websites with impeccable performance. Focused on clean, observable code that other people can read later.',
-        stats: {
-          experience: 'years of experience',
-          projects: 'projects delivered',
-          languages: 'languages & frameworks',
-          delivery: 'commitment'
-        }
-      },
-      skills: { backend: 'Back-end', frontend: 'Front-end', data: 'Data & infra' },
-      projects: {
-        eyebrow: 'portfolio',
-        title: 'Featured',
-        titleAccent: 'projects',
-        subtitle: 'A selection of recent work — SaaS, computer vision, microservices, institutional sites and robotics.',
-        featured: 'featured',
-        viewCode: 'View on GitHub',
-        npx: { desc: 'PDF-manipulation SaaS with native PIX payments, similar to iLovePDF but tailored for the Brazilian market. Nx monorepo with Go 1.22+ (Fiber) on the backend, Next.js 14 with TypeScript on the frontend, PostgreSQL 16 and Redis. Production-ready architecture with Docker.' },
-        pousada: { desc: 'Institutional website for an inn in Cabo Frio. Hero with subtle wind animations, sections for suites, experiences and testimonials, and a reservation form integrated with WhatsApp. Editorial typography, serene/sand/terracotta palette, fully responsive and optimized for local SEO.' },
-        cleantrack: { desc: 'Multi-tenant Django SaaS platform for tracking medical equipment cleaning. QR code registration, Stripe and Resend integrations, real-time dashboard, auditable reports and thermal printer support (Brother, Zebra, DYMO). HIPAA-safe architecture.' },
-        estimate: { desc: 'Computer vision app that estimates construction materials from photos using reference objects (credit card, door) for automatic scale detection. OpenCV detection, interactive area selection and paint/tile calculation.' },
-        discord: { desc: 'Full SaaS platform in Next.js 15 with Clerk auth, Stripe payments (PRO/FREE), real-time Discord notifications and a responsive dashboard for categories, events and quotas. Production-ready with TypeScript and Prisma.' },
-        microstack: { desc: 'SaaS platform with microservices architecture, responsive design, payment integrations (card, debit, PayPal, Payoneer), automatic notifications and real-time admin dashboard.' },
-        athena: { desc: 'Modular robotics framework in ROS2 Jazzy Jalisco, built for Ubuntu 24.04 LTS. Control and simulation of advanced robotic systems.' },
-        fraud: { title: 'Fraud Detection System', desc: 'Real-time fraud detection with AI — machine learning to identify suspicious patterns and prevent fraudulent transactions.' }
-      },
-      contact: {
-        eyebrow: 'let\'s talk',
-        title: 'Got a project in',
-        titleAccent: 'mind?',
-        subtitle: 'I\'m taking on new projects starting next month. I respond to all messages within 24 hours.',
-        btnWhatsapp: 'Talk on WhatsApp',
-        btnEmail: 'Send an email'
-      },
-      footer: {
-        rights: 'all rights reserved',
-        built: 'built with'
-      }
-    }
-  };
-
-  // ============ STATE ============
-  let currentLang = localStorage.getItem('preferredLanguage') || 'pt';
-
-  // ============ HELPERS ============
-  const $ = (sel, root = document) => root.querySelector(sel);
-  const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
-
-  const resolveKey = (obj, path) => {
-    return path.split('.').reduce((acc, k) => (acc && acc[k] !== undefined ? acc[k] : undefined), obj);
-  };
-
-  // ============ RENDER EXPERIENCE ============
-  function renderExperience() {
-    const container = $('#expTimeline');
-    if (!container) return;
-    const items = translations[currentLang].experience.items;
-    container.innerHTML = items.map(item => `
-      <article class="exp-card reveal in">
-        <div class="exp-header">
-          <h3 class="exp-role">${item.role}</h3>
-          <span class="exp-period">${item.period}</span>
-        </div>
-        <div class="exp-company"><span class="dot"></span>${item.company}</div>
-        <p class="exp-desc">${item.desc}</p>
-        <div class="exp-stack">
-          ${item.stack.map(t => `<span class="tag">${t}</span>`).join('')}
-        </div>
-      </article>
-    `).join('');
-  }
-
-  // ============ TRANSLATE ============
-  function applyTranslations() {
-    const dict = translations[currentLang];
-    $$('[data-i18n]').forEach(el => {
-      const value = resolveKey(dict, el.getAttribute('data-i18n'));
-      if (typeof value === 'string') el.textContent = value;
+    AOS.init({
+        duration: 800,
+        once: true,
+        offset: 100
     });
-    $$('[data-i18n-html]').forEach(el => {
-      const value = resolveKey(dict, el.getAttribute('data-i18n-html'));
-      if (typeof value === 'string') el.innerHTML = value;
-    });
-  }
-
-  function setLanguage(lang) {
-    currentLang = lang;
-    localStorage.setItem('preferredLanguage', lang);
-    document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en';
-    applyTranslations();
-    renderExperience();
-    const btn = $('#currentLang');
-    if (btn) btn.textContent = lang.toUpperCase();
-  }
-
-  // ============ NAVBAR ============
-  const navbar = $('#navbar');
-  const onScroll = () => {
-    if (window.scrollY > 60) navbar.classList.add('scrolled');
-    else navbar.classList.remove('scrolled');
-  };
-  window.addEventListener('scroll', onScroll, { passive: true });
-
-  // active link highlight
-  function updateActiveLink() {
-    const sections = ['experiencia', 'sobre', 'projetos', 'contato'];
-    const scrollY = window.scrollY + 120;
-    let active = null;
-    for (const id of sections) {
-      const el = document.getElementById(id);
-      if (el && el.offsetTop <= scrollY) active = id;
-    }
-    $$('.nav-links a').forEach(a => {
-      a.classList.toggle('active', a.getAttribute('href') === '#' + active);
-    });
-  }
-  window.addEventListener('scroll', updateActiveLink, { passive: true });
-
-  // ============ MOBILE MENU ============
-  const mobileToggle = $('#mobileToggle');
-  const mobileNav = $('#mobileNav');
-  const toggleIcon = mobileToggle?.querySelector('i');
-
-  function openMobile() {
-    mobileNav.classList.add('open');
-    mobileToggle.setAttribute('aria-expanded', 'true');
-    toggleIcon?.classList.replace('fa-bars', 'fa-times');
-    document.body.style.overflow = 'hidden';
-  }
-  function closeMobile() {
-    mobileNav.classList.remove('open');
-    mobileToggle.setAttribute('aria-expanded', 'false');
-    toggleIcon?.classList.replace('fa-times', 'fa-bars');
-    document.body.style.overflow = '';
-  }
-  mobileToggle?.addEventListener('click', () => {
-    if (mobileNav.classList.contains('open')) closeMobile();
-    else openMobile();
-  });
-  $$('.mobile-nav a').forEach(a => a.addEventListener('click', closeMobile));
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape' && mobileNav.classList.contains('open')) closeMobile();
-  });
-
-  // ============ LANGUAGE TOGGLE ============
-  $('#langToggle')?.addEventListener('click', () => {
-    setLanguage(currentLang === 'pt' ? 'en' : 'pt');
-  });
-
-  // ============ REVEAL ON SCROLL ============
-  if ('IntersectionObserver' in window) {
-    const io = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('in');
-          io.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
-    $$('.reveal').forEach(el => io.observe(el));
-  } else {
-    $$('.reveal').forEach(el => el.classList.add('in'));
-  }
-
-  // ============ FOOTER YEAR ============
-  const yearEl = $('#year');
-  if (yearEl) yearEl.textContent = new Date().getFullYear();
-
-  // ============ INIT ============
-  document.addEventListener('DOMContentLoaded', () => {
-    setLanguage(currentLang);
-    onScroll();
-    updateActiveLink();
-  });
-
-  // run init eagerly in case DOMContentLoaded already fired
-  if (document.readyState !== 'loading') {
-    setLanguage(currentLang);
-    onScroll();
-    updateActiveLink();
-  }
-})();
 </script>
 
 </body>
