@@ -78,7 +78,7 @@ def index():
 
     # Whitelist de projetos que devem SEMPRE aparecer como destaque
     # independentemente de estrelas ou outras métricas
-    forced_featured_names = {"NPX-PDF-BRASIL", "plataforma-de-agendamento-com-IA", "customerpulse-ai"}
+    forced_featured_names = {"NPX-PDF-BRASIL", "plataforma-de-agendamento-com-IA", "customerpulse-ai", "IMOBIA"}
 
     # Encontrar projetos forçados por nome
     forced_featured = [p for p in projects if p.get('name') in forced_featured_names]

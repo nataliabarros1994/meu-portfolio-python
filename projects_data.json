@@ -24,6 +24,27 @@
       "size": 184
     },
     {
+      "id": 1243968143,
+      "name": "IMOBIA",
+      "title": "ImobIA — Mercado Imobiliário do Rio",
+      "description": "Projeto end-to-end de Ciência de Dados que prevê preços de imóveis no Rio de Janeiro com MAPE de 13.6% (R² = 0.910). Pipeline completo de coleta, limpeza, feature engineering, modelagem supervisionada (Linear, Random Forest, Gradient Boosting, XGBoost, LightGBM) e não-supervisionada (KMeans + PCA), tuning com Optuna e dashboard interativo em Streamlit.",
+      "language": "Python",
+      "languages": ["Python", "Jupyter Notebook"],
+      "technologies": ["Python 3.13", "LightGBM", "XGBoost", "Scikit-learn", "Optuna", "Pandas", "NumPy", "Streamlit", "KMeans", "PCA"],
+      "github_url": "https://github.com/nataliabarros1994/IMOBIA",
+      "demo_url": null,
+      "stars": 0,
+      "forks": 0,
+      "watchers": 0,
+      "created_at": "2026-05-19",
+      "updated_at": "2026-05-19",
+      "topics": ["data-science", "machine-learning", "real-estate", "lightgbm", "xgboost", "optuna", "streamlit"],
+      "has_wiki": true,
+      "has_pages": false,
+      "is_recent": true,
+      "size": 30
+    },
+    {
       "id": 1139999999,
       "name": "customerpulse-ai",
       "title": "CustomerPulse AI — Previsor de Churn",
