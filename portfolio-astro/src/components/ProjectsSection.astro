@@ -1,0 +1,24 @@
+---
+import { projects } from '../data/projects';
+import ProjectCard from './ProjectCard.astro';
+---
+
+<section class="section" id="projetos">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-eyebrow" data-i18n="projects.eyebrow">portfólio</span>
+      <h2 class="section-title">
+        <span data-i18n="projects.title">Projetos em</span>
+        <span class="gradient-text" data-i18n="projects.titleAccent">destaque</span>
+      </h2>
+      <p class="section-subtitle" data-i18n="projects.subtitle">
+        Uma seleção dos trabalhos mais recentes — SaaS, agendamento com IA, ciência de
+        dados, visão computacional, microserviços, site institucional e robótica.
+      </p>
+    </div>
+
+    <div class="projects-grid">
+      {projects.map((project) => <ProjectCard project={project} />)}
+    </div>
+  </div>
+</section>

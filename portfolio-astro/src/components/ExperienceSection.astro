@@ -1,0 +1,47 @@
+---
+import { experiences } from '../data/experiences';
+---
+
+<section class="section" id="experiencia">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-eyebrow" data-i18n="experience.eyebrow">trajetória</span>
+      <h2 class="section-title">
+        <span data-i18n="experience.title">Experiência</span>
+        <span class="gradient-text" data-i18n="experience.titleAccent">Profissional</span>
+      </h2>
+      <p class="section-subtitle" data-i18n="experience.subtitle">
+        Construindo produtos digitais de ponta a ponta — do back-end Python ao front-end
+        Next.js.
+      </p>
+    </div>
+    <div class="exp-timeline">
+      {
+        experiences.map((exp, i) => (
+          <article class="exp-card reveal">
+            <div class="exp-header">
+              <h3 class="exp-role" data-i18n={`experience.items.${i}.role`}>
+                {exp.role}
+              </h3>
+              <span class="exp-period" data-i18n={`experience.items.${i}.period`}>
+                {exp.period}
+              </span>
+            </div>
+            <div class="exp-company">
+              <span class="dot" />
+              <span data-i18n={`experience.items.${i}.company`}>{exp.company}</span>
+            </div>
+            <p class="exp-desc" data-i18n={`experience.items.${i}.desc`}>
+              {exp.description}
+            </p>
+            <div class="exp-stack">
+              {exp.stack.map((tech) => (
+                <span class="tag">{tech}</span>
+              ))}
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>

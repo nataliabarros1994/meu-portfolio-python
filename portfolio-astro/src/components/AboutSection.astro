@@ -1,0 +1,77 @@
+---
+const skills = {
+  backend: ['Python', 'Django', 'FastAPI', 'Go', 'Fiber', 'Node.js'],
+  frontend: ['Next.js', 'React', 'TypeScript', 'JavaScript', 'HTML5 / CSS3', 'Tailwind'],
+  data: ['PostgreSQL', 'Redis', 'Docker', 'Prisma', 'Stripe', 'Git / GitHub'],
+};
+
+const stats = [
+  { num: '3+', key: 'experience', label: 'anos de experiência' },
+  { num: '20+', key: 'projects', label: 'projetos entregues' },
+  { num: '8', key: 'languages', label: 'linguagens & frameworks' },
+  { num: '100%', key: 'delivery', label: 'comprometimento' },
+];
+
+const skillCats: Array<{ key: 'backend' | 'frontend' | 'data'; label: string }> = [
+  { key: 'backend', label: 'Back-end' },
+  { key: 'frontend', label: 'Front-end' },
+  { key: 'data', label: 'Dados & infra' },
+];
+---
+
+<section class="section" id="sobre">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <span class="section-eyebrow" data-i18n="about.eyebrow">sobre mim</span>
+        <h2 class="section-title">
+          <span data-i18n="about.title">Resolvendo problemas com</span>
+          <span class="gradient-text" data-i18n="about.titleAccent">código que dura.</span>
+        </h2>
+        <p data-i18n-html="about.p1">
+          Sou desenvolvedora <strong>Full Stack</strong>. Trabalho confortavelmente nos dois
+          lados da stack — back-end em <strong>Python (Django, FastAPI)</strong>,
+           <strong>Go</strong> e <strong>Node.js</strong>; front-end em
+           <strong>Next.js</strong>, <strong>React</strong> e <strong>TypeScript</strong>.
+        </p>
+        <p data-i18n="about.p2">
+          Faço produto: do esboço da arquitetura à integração de pagamento, do schema do banco
+          ao deploy. Não tenho preferência religiosa por linguagem — uso o que faz sentido para
+          o problema.
+        </p>
+        <p data-i18n="about.p3">
+          Já entreguei MVPs em visão computacional, plataformas SaaS multi-tenant em produção,
+          microserviços com filas e cache, e sites institucionais com performance impecável.
+          Foco em código limpo, observável e que outras pessoas conseguem ler depois.
+        </p>
+        <div class="about-stats">
+          {
+            stats.map((stat) => (
+              <div class="stat-card">
+                <span class="stat-num">{stat.num}</span>
+                <span class="stat-label" data-i18n={`about.stats.${stat.key}`}>
+                  {stat.label}
+                </span>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+
+      <aside class="skills-block reveal">
+        {
+          skillCats.map((cat) => (
+            <div class="skill-cat">
+              <h4 data-i18n={`skills.${cat.key}`}>{cat.label}</h4>
+              <div class="skill-list">
+                {skills[cat.key].map((skill) => (
+                  <span class="tag">{skill}</span>
+                ))}
+              </div>
+            </div>
+          ))
+        }
+      </aside>
+    </div>
+  </div>
+</section>

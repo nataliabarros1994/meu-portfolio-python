@@ -1,0 +1,66 @@
+---
+const whatsappText = encodeURIComponent(
+  'Olá Natália! Vi seu portfolio e gostaria de conversar.',
+);
+const whatsappUrl = `https://wa.me/5522981507669?text=${whatsappText}`;
+const emailUrl =
+  'https://mail.google.com/mail/?view=cm&to=natalia.goldenglowitsolutions@gmail.com';
+---
+
+<section class="section" id="contato">
+  <div class="container">
+    <div class="contact-wrap reveal">
+      <div class="contact-inner">
+        <span
+          class="section-eyebrow"
+          data-i18n="contact.eyebrow"
+          style="justify-content: center;"
+        >
+          vamos conversar
+        </span>
+        <h2 class="contact-title">
+          <span data-i18n="contact.title">Tem um projeto em</span>
+          <span class="gradient-text" data-i18n="contact.titleAccent">mente?</span>
+        </h2>
+        <p class="contact-subtitle" data-i18n="contact.subtitle">
+          Estou aceitando novos projetos a partir do próximo mês. Respondo todas as mensagens
+          em até 24 horas.
+        </p>
+        <div class="contact-actions">
+          <a href={whatsappUrl} target="_blank" rel="noopener" class="btn btn-primary">
+            <i class="fab fa-whatsapp"></i>
+            <span data-i18n="contact.btnWhatsapp">Falar no WhatsApp</span>
+          </a>
+          <a href={emailUrl} target="_blank" rel="noopener" class="btn btn-ghost">
+            <i class="fas fa-envelope"></i>
+            <span data-i18n="contact.btnEmail">Enviar e-mail</span>
+          </a>
+        </div>
+        <div class="contact-info">
+          <span>
+            <i class="fas fa-envelope"></i>
+            <a href={emailUrl} target="_blank" rel="noopener">
+              natalia.goldenglowitsolutions@gmail.com
+            </a>
+          </span>
+          <span>
+            <i class="fab fa-linkedin"></i>
+            <a
+              href="https://www.linkedin.com/in/nataliachagas1994/"
+              target="_blank"
+              rel="noopener"
+            >
+              /in/nataliachagas1994
+            </a>
+          </span>
+          <span>
+            <i class="fab fa-github"></i>
+            <a href="https://github.com/nataliabarros1994" target="_blank" rel="noopener">
+              @nataliabarros1994
+            </a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
