@@ -1006,7 +1006,29 @@ footer {
         </a>
       </article>
 
-      <!-- 5. Pousada Praia do Forte (NEW) -->
+      <!-- 5. CheeseDate — Automação de Relatórios de Laticínios -->
+      <article class="project-card reveal">
+        <div class="project-header">
+          <div class="project-icon"><i class="fas fa-file-excel"></i></div>
+        </div>
+        <h3 class="project-title">CheeseDate — Automação de Relatórios</h3>
+        <p class="project-desc" data-i18n="projects.cheesedate.desc">
+          Ferramenta de automação de planilhas Excel que transforma dados brutos de produção de queijos em relatório profissional com 5 abas formatadas, indicadores e gráficos nativos editáveis. Pipeline completo em Python: geração da base, limpeza/validação, análise (produção mensal, ranking de queijos, consumo de matéria-prima, sazonalidade) e exportação automática do .xlsx.
+        </p>
+        <div class="project-tags">
+          <span class="tag">Python 3.13</span>
+          <span class="tag">pandas</span>
+          <span class="tag">openpyxl</span>
+          <span class="tag">matplotlib</span>
+          <span class="tag">pytest</span>
+          <span class="tag">ruff</span>
+        </div>
+        <a href="https://github.com/nataliabarros1994/cheese-date" target="_blank" rel="noopener" class="project-link">
+          <i class="fab fa-github"></i> <span data-i18n="projects.viewCode">Ver no GitHub</span> <i class="fas fa-arrow-right"></i>
+        </a>
+      </article>
+
+      <!-- 6. Pousada Praia do Forte (NEW) -->
       <article class="project-card reveal">
         <div class="project-header">
           <div class="project-icon"><i class="fas fa-umbrella-beach"></i></div>
@@ -1277,6 +1299,7 @@ footer {
         veluri: { desc: 'SaaS multi-tenant de agendamento para PMEs brasileiras (salões, clínicas estéticas, personal trainers, psicólogos). Booking público em 4 passos, painel premium e atendente IA "Aura" em português com 7 tools (Claude tool-use). Lembretes por email via Resend + BullMQ, backend Fastify, Next.js 15, PostgreSQL com Prisma, Redis e Docker em produção.' },
         customerpulse: { desc: 'Projeto de Ciência de Dados que prevê o risco de cancelamento de clientes (churn) com Machine Learning. Modelo Random Forest treinado com Scikit-learn, análise exploratória com Pandas, NumPy, Seaborn e Matplotlib, e dashboard interativo em Streamlit para visualizar as variáveis mais importantes (salário, tempo como cliente) e o score de churn de cada cliente.' },
         imobia: { desc: 'Projeto end-to-end de Ciência de Dados que prevê preços de imóveis no Rio de Janeiro com MAPE de 13.6% (R² = 0.910). Pipeline completo de coleta, limpeza, feature engineering, modelagem supervisionada (Linear, Random Forest, Gradient Boosting, XGBoost, LightGBM) e não-supervisionada (KMeans + PCA), tuning com Optuna e dashboard interativo em Streamlit. Enriquecimento com dados socioeconômicos do IBGE (IDH + renda) explica 54% da variação de preços.' },
+        cheesedate: { desc: 'Ferramenta de automação de planilhas Excel que transforma dados brutos de produção de queijos em relatório profissional com 5 abas formatadas, indicadores e gráficos nativos editáveis. Pipeline completo em Python: geração da base, limpeza/validação, análise (produção mensal, ranking de queijos, consumo de matéria-prima, sazonalidade) e exportação automática do .xlsx.' },
         pousada: { desc: 'Site institucional para pousada em Cabo Frio. Hero com animações sutis de vento, seções de suítes, experiências e depoimentos, e formulário de reserva integrado ao WhatsApp. Tipografia editorial, paleta sereno/areia/terracota, totalmente responsivo e otimizado para SEO local.' },
         cleantrack: { desc: 'Plataforma SaaS multi-tenant em Django para rastreamento de limpeza de equipamentos médicos. Registro via QR code, integrações Stripe e Resend, dashboard em tempo real, relatórios auditáveis e suporte a impressoras térmicas (Brother, Zebra, DYMO). Arquitetura HIPAA-safe.' },
         estimate: { desc: 'Aplicação de visão computacional que estima materiais de construção a partir de fotos com objetos de referência (cartão, porta) para detecção automática de escala. Detecção via OpenCV, seleção interativa de área e cálculo de tinta/azulejos.' },
@@ -1365,6 +1388,7 @@ footer {
         veluri: { desc: 'Multi-tenant scheduling SaaS for Brazilian SMBs (beauty salons, aesthetic clinics, personal trainers, therapists). 4-step public booking, premium dashboard and an in-Portuguese AI assistant "Aura" with 7 tools (Claude tool-use). Email reminders via Resend + BullMQ, Fastify backend, Next.js 15, PostgreSQL with Prisma, Redis and Docker in production.' },
         customerpulse: { desc: 'Data Science project that predicts customer churn risk with Machine Learning. Random Forest model trained with Scikit-learn, exploratory analysis with Pandas, NumPy, Seaborn and Matplotlib, and an interactive Streamlit dashboard to visualize the most important features (salary, tenure) and each customer\'s churn score.' },
         imobia: { desc: 'End-to-end Data Science project that predicts real-estate prices in Rio de Janeiro with 13.6% MAPE (R² = 0.910). Full pipeline of collection, cleaning, feature engineering, supervised modeling (Linear, Random Forest, Gradient Boosting, XGBoost, LightGBM) and unsupervised modeling (KMeans + PCA), hyperparameter tuning with Optuna and an interactive Streamlit dashboard. Enrichment with IBGE socioeconomic data (HDI + income) explains 54% of price variation.' },
+        cheesedate: { desc: 'Excel automation tool that turns raw cheese production data into a professional report with 5 formatted tabs, KPIs and editable native charts. Full Python pipeline: dataset generation, cleaning/validation, analysis (monthly production, cheese ranking, raw-material consumption, seasonality) and automatic .xlsx export.' },
         pousada: { desc: 'Institutional website for an inn in Cabo Frio. Hero with subtle wind animations, sections for suites, experiences and testimonials, and a reservation form integrated with WhatsApp. Editorial typography, serene/sand/terracotta palette, fully responsive and optimized for local SEO.' },
         cleantrack: { desc: 'Multi-tenant Django SaaS platform for tracking medical equipment cleaning. QR code registration, Stripe and Resend integrations, real-time dashboard, auditable reports and thermal printer support (Brother, Zebra, DYMO). HIPAA-safe architecture.' },
         estimate: { desc: 'Computer vision app that estimates construction materials from photos using reference objects (credit card, door) for automatic scale detection. OpenCV detection, interactive area selection and paint/tile calculation.' },
